@@ -1,83 +1,105 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-About Us | PharmaPlus
-{% endblock %}
+{% block title %}About Us | PharmaPlus{% endblock %}
 
 {% block content %}
 <!-- About Hero -->
-<section class="about-hero">
-    <div class="about-hero-content">
-        <h1>About PharmaPlus</h1>
-        <p>Committed to providing accessible, high-quality healthcare and wellness products to our community.</p>
+<section class="about-hero-gradient text-white text-center" style="padding: 6rem 2rem;">
+    <div class="container" style="max-width: 700px;">
+        <h1 class="fw-bolder text-white mb-3" style="font-size: 3.5rem;">About PharmaPlus</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; line-height: 1.6;">Committed to providing accessible, high-quality healthcare and wellness products to our community.</p>
     </div>
 </section>
 
 <!-- Mission & Vision -->
-<section class="mission-vision section-padding">
-    <div class="grid-container two-cols">
-        <div class="mission-card">
-            <div class="icon-circle large">🎯</div>
-            <h2>Our Mission</h2>
-            <p>To revolutionize the way people access healthcare by providing a seamless, reliable, and secure platform for ordering authentic medicines and health products directly to their doorstep.</p>
-        </div>
-        <div class="mission-card">
-            <div class="icon-circle large">👁️</div>
-            <h2>Our Vision</h2>
-            <p>To become the most trusted and preferred healthcare partner for families worldwide, fostering a healthier future through innovation and uncompromising quality standards.</p>
+<section style="padding: 5rem 0;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center" style="border-radius: 1.25rem; border-top: 4px solid #10b981 !important; padding: 3rem;">
+                    <div class="mx-auto mb-3" style="font-size: 2.5rem; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; background-color: #d1fae5;">🎯</div>
+                    <h2 class="h3 fw-bold mb-3 text-dark">Our Mission</h2>
+                    <p class="text-muted mb-0" style="font-size: 1.1rem; line-height: 1.7;">To revolutionize the way people access healthcare by providing a seamless, reliable, and secure platform for ordering authentic medicines and health products directly to their doorstep.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center" style="border-radius: 1.25rem; border-top: 4px solid #10b981 !important; padding: 3rem;">
+                    <div class="mx-auto mb-3" style="font-size: 2.5rem; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; background-color: #d1fae5;">👁️</div>
+                    <h2 class="h3 fw-bold mb-3 text-dark">Our Vision</h2>
+                    <p class="text-muted mb-0" style="font-size: 1.1rem; line-height: 1.7;">To become the most trusted and preferred healthcare partner for families worldwide, fostering a healthier future through innovation and uncompromising quality standards.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Stats Section -->
-<section class="stats-section bg-light section-padding">
-    <div class="grid-container stats-grid">
-        <div class="stat-item">
-            <h3>10k+</h3>
-            <p>Happy Customers</p>
-        </div>
-        <div class="stat-item">
-            <h3>500+</h3>
-            <p>Certified Brands</p>
-        </div>
-        <div class="stat-item">
-            <h3>15+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-            <h3>24/7</h3>
-            <p>Customer Support</p>
+<section style="padding: 5rem 0; background-color: #f1f5f9;">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-sm-6 col-lg-3">
+                <div class="p-4">
+                    <h3 class="fw-bolder mb-2" style="font-size: 3rem; color: #10b981;">10k+</h3>
+                    <p class="fw-semibold text-dark mb-0" style="font-size: 1.1rem;">Happy Customers</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="p-4">
+                    <h3 class="fw-bolder mb-2" style="font-size: 3rem; color: #10b981;">500+</h3>
+                    <p class="fw-semibold text-dark mb-0" style="font-size: 1.1rem;">Certified Brands</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="p-4">
+                    <h3 class="fw-bolder mb-2" style="font-size: 3rem; color: #10b981;">15+</h3>
+                    <p class="fw-semibold text-dark mb-0" style="font-size: 1.1rem;">Years Experience</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="p-4">
+                    <h3 class="fw-bolder mb-2" style="font-size: 3rem; color: #10b981;">24/7</h3>
+                    <p class="fw-semibold text-dark mb-0" style="font-size: 1.1rem;">Customer Support</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Team Section -->
-<section class="team-section section-padding">
-    <h2>Meet Our Leadership</h2>
-    <div class="grid-container team-grid">
-        <div class="team-card">
-            <div class="team-img-placeholder team-1"></div>
-            <div class="team-info">
-                <h4>Dr. Sarah Jenkins</h4>
-                <p class="role">Chief Medical Officer</p>
-                <p class="bio">With over 20 years in pharmacology, Dr. Jenkins ensures our catalog meets the highest medical standards.</p>
+<section style="padding: 5rem 0;">
+    <div class="container">
+        <h2 class="text-center fw-bolder mb-5" style="font-size: 2.25rem; color: #0f172a; letter-spacing: -0.5px;">Meet Our Leadership</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border card-lift" style="border-radius: 1.25rem; overflow: hidden; border-color: #e2e8f0;">
+                    <div class="team-img-placeholder bg-gradient-1" style="height: 300px; background-size: cover;"></div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Dr. Sarah Jenkins</h4>
+                        <p class="fw-semibold mb-3" style="color: #10b981; font-size: 0.95rem;">Chief Medical Officer</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">With over 20 years in pharmacology, Dr. Jenkins ensures our catalog meets the highest medical standards.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="team-card">
-            <div class="team-img-placeholder team-2"></div>
-            <div class="team-info">
-                <h4>Michael Chang</h4>
-                <p class="role">Founder & CEO</p>
-                <p class="bio">A visionary in health-tech, Michael founded PharmaPlus to bridge the gap between pharmacies and patients.</p>
+            <div class="col-md-4">
+                <div class="card h-100 border card-lift" style="border-radius: 1.25rem; overflow: hidden; border-color: #e2e8f0;">
+                    <div class="team-img-placeholder bg-gradient-2" style="height: 300px; background-size: cover;"></div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Michael Chang</h4>
+                        <p class="fw-semibold mb-3" style="color: #10b981; font-size: 0.95rem;">Founder & CEO</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">A visionary in health-tech, Michael founded PharmaPlus to bridge the gap between pharmacies and patients.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="team-card">
-            <div class="team-img-placeholder team-3"></div>
-            <div class="team-info">
-                <h4>Priya Patel</h4>
-                <p class="role">Head of Operations</p>
-                <p class="bio">Priya orchestrates our logistics network, ensuring your health essentials arrive on time, every time.</p>
+            <div class="col-md-4">
+                <div class="card h-100 border card-lift" style="border-radius: 1.25rem; overflow: hidden; border-color: #e2e8f0;">
+                    <div class="team-img-placeholder bg-gradient-3" style="height: 300px; background-size: cover;"></div>
+                    <div class="card-body text-center p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Priya Patel</h4>
+                        <p class="fw-semibold mb-3" style="color: #10b981; font-size: 0.95rem;">Head of Operations</p>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">Priya orchestrates our logistics network, ensuring your health essentials arrive on time, every time.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

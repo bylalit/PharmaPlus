@@ -1,135 +1,158 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-Home | PharmaPlus
-{% endblock %}
-
-{% block extra_css %}
-{% endblock %}
+{% block title %}Home | PharmaPlus{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Your Health, Our Priority</h1>
-        <p>Your one-stop destination for health and wellness products with premium quality, professional care, and swift delivery right to your door.</p>
-        <div class="hero-actions">
-            <a href="#" class="btn btn-primary">Shop Now</a>
-            <a href="#" class="btn btn-outline">Upload Prescription</a>
+<section class="d-flex align-items-center justify-content-center text-center position-relative overflow-hidden" style="padding: 9rem 2rem; background: radial-gradient(circle at 50% 50%, #d1fae5 0%, #ecfdf5 40%, #f8fafc 100%);">
+    <div style="max-width: 800px; z-index: 10;">
+        <h1 class="fw-bolder" style="font-size: 3.75rem; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -1.5px;">Your Health, Our Priority</h1>
+        <p class="mx-auto" style="font-size: 1.25rem; color: #475569; max-width: 600px; line-height: 1.7; margin-bottom: 3rem;">Your one-stop destination for health and wellness products with premium quality, professional care, and swift delivery right to your door.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-semibold" style="font-size: 1rem;">Shop Now</a>
+            <a href="#" class="btn btn-outline-custom rounded-pill px-4 py-2 fw-semibold" style="font-size: 1rem;">Upload Prescription</a>
         </div>
     </div>
 </section>
 
 <!-- Categories Section -->
-<section class="categories section-padding">
-    <h2>Shop By Category</h2>
-    <div class="grid-container categories-grid">
-        <div class="category-card">
-            <div class="icon">💊</div>
-            <h3>Medicines</h3>
-            <p>Prescription & OTC</p>
-        </div>
-        <div class="category-card">
-            <div class="icon">🌿</div>
-            <h3>Wellness</h3>
-            <p>Vitamins & Supplements</p>
-        </div>
-        <div class="category-card">
-            <div class="icon">🧴</div>
-            <h3>Personal Care</h3>
-            <p>Skincare & Hygiene</p>
-        </div>
-        <div class="category-card">
-            <div class="icon">⚕️</div>
-            <h3>Equipment</h3>
-            <p>Medical Devices & Tools</p>
+<section style="padding: 5rem 0;">
+    <div class="container">
+        <h2 class="text-center fw-bolder mb-5" style="font-size: 2.25rem; color: #0f172a; letter-spacing: -0.5px;">Shop By Category</h2>
+        <div class="row g-4">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 text-center border card-lift" style="border-radius: 1.25rem; padding: 2.5rem 1rem; border-color: #e2e8f0; cursor: pointer;">
+                    <div class="mx-auto mb-3" style="font-size: 3.5rem; background-color: #d1fae5; width: 80px; height: 80px; line-height: 80px; border-radius: 50%;">💊</div>
+                    <h3 class="h5 fw-bold text-dark">Medicines</h3>
+                    <p class="text-muted small mb-0">Prescription & OTC</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 text-center border card-lift" style="border-radius: 1.25rem; padding: 2.5rem 1rem; border-color: #e2e8f0; cursor: pointer;">
+                    <div class="mx-auto mb-3" style="font-size: 3.5rem; background-color: #d1fae5; width: 80px; height: 80px; line-height: 80px; border-radius: 50%;">🌿</div>
+                    <h3 class="h5 fw-bold text-dark">Wellness</h3>
+                    <p class="text-muted small mb-0">Vitamins & Supplements</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 text-center border card-lift" style="border-radius: 1.25rem; padding: 2.5rem 1rem; border-color: #e2e8f0; cursor: pointer;">
+                    <div class="mx-auto mb-3" style="font-size: 3.5rem; background-color: #d1fae5; width: 80px; height: 80px; line-height: 80px; border-radius: 50%;">🧴</div>
+                    <h3 class="h5 fw-bold text-dark">Personal Care</h3>
+                    <p class="text-muted small mb-0">Skincare & Hygiene</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 text-center border card-lift" style="border-radius: 1.25rem; padding: 2.5rem 1rem; border-color: #e2e8f0; cursor: pointer;">
+                    <div class="mx-auto mb-3" style="font-size: 3.5rem; background-color: #d1fae5; width: 80px; height: 80px; line-height: 80px; border-radius: 50%;">⚕️</div>
+                    <h3 class="h5 fw-bold text-dark">Equipment</h3>
+                    <p class="text-muted small mb-0">Medical Devices & Tools</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Featured Products -->
-<section class="featured-products section-padding bg-light">
-    <h2>Featured Products</h2>
-    <div class="grid-container products-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <div class="product-badge">20% OFF</div>
-            <div class="product-img-placeholder placeholder-1">
-                <span>💊</span>
-            </div>
-            <div class="product-info">
-                <h4>Multivitamin Complex</h4>
-                <p class="brand">HealthPlus</p>
-                <div class="price">
-                    <span class="current">$15.99</span>
-                    <span class="old">$19.99</span>
+<section style="padding: 5rem 0; background-color: #f1f5f9;">
+    <div class="container">
+        <h2 class="text-center fw-bolder mb-5" style="font-size: 2.25rem; color: #0f172a; letter-spacing: -0.5px;">Featured Products</h2>
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm card-lift position-relative" style="border-radius: 1.25rem; overflow: hidden;">
+                    <span class="badge position-absolute" style="top: 1rem; right: 1rem; background-color: #ef4444; z-index: 10;">20% OFF</span>
+                    <div class="product-img-placeholder bg-gradient-1">
+                        <span>💊</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Multivitamin Complex</h4>
+                        <p class="text-muted small mb-3">HealthPlus</p>
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <span class="fs-5 fw-bolder" style="color: #059669;">$15.99</span>
+                            <span class="text-muted text-decoration-line-through small">$19.99</span>
+                        </div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill fw-semibold py-2">Add to Cart</button>
+                    </div>
                 </div>
-                <button class="btn btn-primary btn-block">Add to Cart</button>
             </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="product-card">
-            <div class="product-img-placeholder placeholder-2">
-                <span>🥤</span>
-            </div>
-            <div class="product-info">
-                <h4>Organic Whey Protein</h4>
-                <p class="brand">FitNutrition</p>
-                <div class="price">
-                    <span class="current">$45.00</span>
+            <!-- Product 2 -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm card-lift position-relative" style="border-radius: 1.25rem; overflow: hidden;">
+                    <div class="product-img-placeholder bg-gradient-2">
+                        <span>🥤</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Organic Whey Protein</h4>
+                        <p class="text-muted small mb-3">FitNutrition</p>
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <span class="fs-5 fw-bolder" style="color: #059669;">$45.00</span>
+                        </div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill fw-semibold py-2">Add to Cart</button>
+                    </div>
                 </div>
-                <button class="btn btn-primary btn-block">Add to Cart</button>
             </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="product-card">
-            <div class="product-img-placeholder placeholder-3">
-                <span>🩺</span>
-            </div>
-            <div class="product-info">
-                <h4>Blood Pressure Monitor</h4>
-                <p class="brand">MediTech</p>
-                <div class="price">
-                    <span class="current">$35.50</span>
+            <!-- Product 3 -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm card-lift position-relative" style="border-radius: 1.25rem; overflow: hidden;">
+                    <div class="product-img-placeholder bg-gradient-3">
+                        <span>🩺</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Blood Pressure Monitor</h4>
+                        <p class="text-muted small mb-3">MediTech</p>
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <span class="fs-5 fw-bolder" style="color: #059669;">$35.50</span>
+                        </div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill fw-semibold py-2">Add to Cart</button>
+                    </div>
                 </div>
-                <button class="btn btn-primary btn-block">Add to Cart</button>
             </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="product-card">
-            <div class="product-img-placeholder placeholder-4">
-                <span>🧴</span>
-            </div>
-            <div class="product-info">
-                <h4>Aloe Vera Gel</h4>
-                <p class="brand">NatureCare</p>
-                <div class="price">
-                    <span class="current">$8.99</span>
+            <!-- Product 4 -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm card-lift position-relative" style="border-radius: 1.25rem; overflow: hidden;">
+                    <div class="product-img-placeholder bg-gradient-4">
+                        <span>🧴</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="h5 fw-bold text-dark mb-1">Aloe Vera Gel</h4>
+                        <p class="text-muted small mb-3">NatureCare</p>
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <span class="fs-5 fw-bolder" style="color: #059669;">$8.99</span>
+                        </div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill fw-semibold py-2">Add to Cart</button>
+                    </div>
                 </div>
-                <button class="btn btn-primary btn-block">Add to Cart</button>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Why Choose Us -->
-<section class="features section-padding">
-    <div class="grid-container features-grid">
-        <div class="feature-item">
-            <div class="icon-circle">🚚</div>
-            <h4>Fast Delivery</h4>
-            <p>Same day delivery available for priority medicines.</p>
-        </div>
-        <div class="feature-item">
-            <div class="icon-circle">🔒</div>
-            <h4>Secure Payments</h4>
-            <p>100% secure, encrypted payment gateways.</p>
-        </div>
-        <div class="feature-item">
-            <div class="icon-circle">💯</div>
-            <h4>Genuine Products</h4>
-            <p>Quality items sourced directly from certified brands.</p>
+<section style="padding: 5rem 0;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="p-4 bg-white border border-light rounded-4 shadow-sm h-100">
+                    <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 72px; height: 72px; background-color: #d1fae5; color: #059669; border-radius: 50%; border-radius: 50%; font-size: 1.75rem;">🚚</div>
+                    <h4 class="h5 fw-bold mb-2">Fast Delivery</h4>
+                    <p class="text-muted mb-0" style="line-height: 1.6;">Same day delivery available for priority medicines.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="p-4 bg-white border border-light rounded-4 shadow-sm h-100">
+                    <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 72px; height: 72px; background-color: #d1fae5; color: #059669; border-radius: 50%; border-radius: 50%; font-size: 1.75rem;">🔒</div>
+                    <h4 class="h5 fw-bold mb-2">Secure Payments</h4>
+                    <p class="text-muted mb-0" style="line-height: 1.6;">100% secure, encrypted payment gateways.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="p-4 bg-white border border-light rounded-4 shadow-sm h-100">
+                    <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 72px; height: 72px; background-color: #d1fae5; color: #059669; border-radius: 50%; border-radius: 50%; font-size: 1.75rem;">💯</div>
+                    <h4 class="h5 fw-bold mb-2">Genuine Products</h4>
+                    <p class="text-muted mb-0" style="line-height: 1.6;">Quality items sourced directly from certified brands.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

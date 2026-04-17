@@ -1,268 +1,53 @@
-:root {
-    --primary: #10b981;
-    --primary-dark: #059669;
-    --primary-light: #d1fae5;
-    --secondary: #3b82f6;
-    --bg-color: #f8fafc;
-    --bg-light: #f1f5f9;
-    --text-main: #0f172a;
-    --text-light: #475569;
-    --border-color: #e2e8f0;
-    --white: #ffffff;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
+/* Important Custom Styles Only 
+   (Layout and generic utility classes have been migrated to Bootstrap 5 and inline CSS) */
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Base Utility Classes */
-.section-padding { padding: 5rem 2rem; }
-.bg-light { background-color: var(--bg-light); }
-
-.grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 2rem;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.25rem;
-    color: var(--text-main);
-    margin-top: 0;
-    margin-bottom: 3rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 0.875rem 1.75rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
+/* Core Buttons with specific shadows/animations not found in Bootstrap */
+.btn-primary-custom {
+    background-color: #10b981;
+    color: white;
     box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-dark);
+.btn-primary-custom:hover {
+    background-color: #059669;
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.23);
 }
 
-.btn-outline {
+.btn-outline-custom {
     background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.btn-outline:hover {
-    background-color: var(--primary-light);
-    transform: translateY(-2px);
-}
-
-.btn-block { width: 100%; box-sizing: border-box; }
-
-/* Navbar Styling */
-nav {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: var(--shadow-sm);
-    padding: 1.25rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-}
-
-nav .brand {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--primary);
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-nav .nav-links {
-    display: flex;
-    gap: 2.5rem;
-}
-
-nav .nav-links a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-nav .nav-links a:hover {
-    color: var(--primary);
-}
-
-main { flex-grow: 1; }
-
-footer {
-    background-color: #0f172a;
-    color: var(--white);
-    text-align: center;
-    padding: 3rem 2rem;
-    margin-top: auto;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 9rem 2rem;
-    background: radial-gradient(circle at 50% 50%, #d1fae5 0%, #ecfdf5 40%, #f8fafc 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    max-width: 800px;
-    z-index: 10;
-}
-
-.hero h1 {
-    font-size: 3.75rem;
-    color: var(--text-main);
-    margin-bottom: 1.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    margin: 0 auto 3rem;
-    max-width: 600px;
-    line-height: 1.7;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-/* Categories Section */
-.categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.category-card {
-    background: var(--white);
-    padding: 2.5rem 2rem;
-    border-radius: 1.25rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-light);
-}
-
-.category-card .icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.25rem;
-    display: inline-block;
-    padding: 1rem;
-    background-color: var(--primary-light);
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    line-height: 50px;
-}
-
-.category-card h3 {
-    margin: 0 0 0.5rem 0;
-    color: var(--text-main);
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.category-card p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* Featured Products */
-.products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.product-card {
-    background: var(--white);
-    border-radius: 1.25rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    position: relative;
+    color: #10b981;
+    border: 2px solid #10b981;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.product-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-5px);
+.btn-outline-custom:hover {
+    background-color: #d1fae5;
+    color: #10b981;
+    transform: translateY(-2px);
 }
 
-.product-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #ef4444;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.3rem 0.75rem;
-    border-radius: 999px;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(239, 68, 68, 0.3);
+/* Custom Card Hover Animation (Lift & Shadow) */
+.card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Aesthetic Product Image Placeholders via CSS Gradients */
+.card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1) !important;
+    border-color: #d1fae5 !important;
+}
+
+/* Custom Image Placeholders with Hover Blur Effect */
 .product-img-placeholder {
     height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 5rem;
-    border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -277,228 +62,21 @@ footer {
     transition: opacity 0.3s ease;
 }
 
-.product-card:hover .product-img-placeholder::after {
+.card:hover .product-img-placeholder::after {
     opacity: 1;
 }
 
-.placeholder-1 { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
-.placeholder-2 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
-.placeholder-3 { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
-.placeholder-4 { background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%); }
+/* Premium Gradients */
+.bg-gradient-1 { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
+.bg-gradient-2 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
+.bg-gradient-3 { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
+.bg-gradient-4 { background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%); }
+.about-hero-gradient { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
 
-.product-info {
-    padding: 1.75rem;
+/* Navbar link hover */
+.nav-link-custom {
+    transition: color 0.2s ease;
 }
-
-.product-info h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.125rem;
-    color: var(--text-main);
-    font-weight: 700;
-}
-
-.product-info .brand {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    margin: 0 0 1.25rem 0;
-}
-
-.price {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.price .current {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: var(--primary-dark);
-}
-
-.price .old {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    text-decoration: line-through;
-}
-
-/* Features */
-.features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.feature-item {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    background: var(--white);
-    border-radius: 1.25rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-}
-
-.feature-item .icon-circle {
-    width: 72px;
-    height: 72px;
-    background: var(--primary-light);
-    color: var(--primary-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    margin: 0 auto 1.5rem;
-}
-
-.feature-item h4 {
-    margin: 0 0 0.75rem 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.feature-item p {
-    margin: 0;
-    color: var(--text-light);
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.75rem; }
-    .hero-actions { flex-direction: column; }
-    nav .nav-links { display: none; }
-}
-
-/* About Us Page Styles */
-.about-hero {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-    color: var(--white);
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-.about-hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.about-hero h1 {
-    font-size: 3.5rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-    font-weight: 800;
-}
-
-.about-hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-.two-cols {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.mission-card {
-    background: var(--white);
-    padding: 3rem;
-    border-radius: 1.25rem;
-    box-shadow: var(--shadow-md);
-    border-top: 4px solid var(--primary);
-    text-align: center;
-}
-
-.mission-card .icon-circle.large {
-    width: 80px;
-    height: 80px;
-    font-size: 2.5rem;
-}
-
-.mission-card h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-main);
-}
-
-.mission-card p {
-    color: var(--text-light);
-    line-height: 1.7;
-    font-size: 1.1rem;
-}
-
-/* Stats Section */
-.stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.stat-item {
-    text-align: center;
-    padding: 2rem;
-}
-
-.stat-item h3 {
-    font-size: 3.5rem;
-    color: var(--primary);
-    margin: 0 0 0.5rem 0;
-    font-weight: 800;
-}
-
-.stat-item p {
-    font-size: 1.1rem;
-    color: var(--text-main);
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Team Section */
-.team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.team-card {
-    background: var(--white);
-    border-radius: 1.25rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-img-placeholder {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-}
-
-.team-1 { background: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%); }
-.team-2 { background: linear-gradient(to bottom, #84fab0 0%, #8fd3f4 100%); }
-.team-3 { background: linear-gradient(to bottom, #fccb90 0%, #d57eeb 100%); }
-
-.team-info {
-    padding: 2rem;
-    text-align: center;
-}
-
-.team-info h4 {
-    font-size: 1.25rem;
-    margin: 0 0 0.25rem 0;
-    color: var(--text-main);
-    font-weight: 700;
-}
-
-.team-info .role {
-    color: var(--primary);
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    font-size: 0.95rem;
-}
-
-.team-info .bio {
-    color: var(--text-light);
-    line-height: 1.6;
-    margin: 0;
-    font-size: 0.95rem;
+.nav-link-custom:hover {
+    color: #10b981 !important;
 }
