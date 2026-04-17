@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>PharmaPlus</h1>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+Home | PharmaPlus
+{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Welcome to PharmaPlus</h1>
+    <p>Your one-stop destination for health and wellness products with premium quality and swift delivery.</p>
+</section>
+{% endblock %}
