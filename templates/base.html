@@ -29,9 +29,18 @@
             display: flex; justify-content: center; align-items: center; flex-direction: column;
             transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
         }
-        .spinner-custom { 
-            width: 3.5rem; height: 3.5rem; color: #10b981; border-width: 0.35em; 
+        
+        .logo-pulse { 
+            animation: pulse 1.5s infinite ease-in-out; 
+            mix-blend-mode: multiply;
         }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 10px rgba(16,185,129,0.2)); }
+            50% { transform: scale(1.05); opacity: 0.8; filter: drop-shadow(0 0 20px rgba(16,185,129,0.4)); }
+            100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 10px rgba(16,185,129,0.2)); }
+        }
+        
+        /* Thin loading bar at top */
         #top-loading-bar {
             position: fixed; top: 0; left: 0; height: 4px;
             background: linear-gradient(90deg, #059669 0%, #34d399 100%);
@@ -44,13 +53,13 @@
 </head>
 <body class="loading" style="font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; overflow-x: hidden; width: 100%;">
 
-    <!-- Preloader & Top Loading Bar -->
+    <!-- Preloader & Top Loading Bar component -->
     <div id="top-loading-bar"></div>
     <div id="preloader">
-        <div class="spinner-border spinner-custom mb-3" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="mb-3 d-flex align-items-center justify-content-center" style="width: 140px; height: 140px; overflow: hidden;">
+             <img src="{% static 'img/logo.png' %}" alt="Loading Logo" style="height: 250px; mix-blend-mode: multiply;" class="logo-pulse">
         </div>
-        <h3 style="color: #059669; font-weight: 800; letter-spacing: -0.5px;">PharmaPlus</h3>
+        <h3 style="color: #059669; font-weight: 800; letter-spacing: -0.5px; opacity: 0.9;">PharmaPlus</h3>
     </div>
 
     <!-- Main Layout Container -->
@@ -59,7 +68,12 @@
         <!-- Sidebar Navigation (Desktop Left Side) -->
         <nav class="sidebar bg-white border-end d-flex flex-column shadow-sm">
             <div class="p-4 border-bottom text-center">
-                 <a class="text-decoration-none fw-bold" href="{% url 'index' %}" style="color: #10b981; font-size: 2rem; letter-spacing: -0.5px;">PharmaPlus</a>
+                 <a class="text-decoration-none fw-bold d-flex flex-column align-items-center justify-content-center gap-1" href="{% url 'index' %}" style="color: #0f172a; font-size: 1.7rem; letter-spacing: -0.5px;">
+                     <div style="width: 120px; height: 100px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                         <img src="{% static 'img/logo.png' %}" alt="PharmaPlus Logo" style="height: 190px; mix-blend-mode: multiply;">
+                     </div>
+                     <span style="margin-top: -15px;"><span style="color: #10b981;">Pharma</span>Plus</span>
+                 </a>
             </div>
             
             <div class="p-4 flex-grow-1">
@@ -98,7 +112,12 @@
             
             <!-- Mobile Header (Visible only on small screens) -->
             <header class="mobile-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center sticky-top shadow-sm w-100">
-                <a class="text-decoration-none fw-bold" href="{% url 'index' %}" style="color: #10b981; font-size: 1.5rem; letter-spacing: -0.5px;">PharmaPlus</a>
+                <a class="text-decoration-none fw-bold d-flex align-items-center gap-2" href="{% url 'index' %}" style="color: #0f172a; font-size: 1.35rem; letter-spacing: -0.5px;">
+                     <div style="width: 50px; height: 45px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                         <img src="{% static 'img/logo.png' %}" alt="PharmaPlus Logo" style="height: 90px; mix-blend-mode: multiply;">
+                     </div>
+                     <span><span style="color: #10b981;">Pharma</span>Plus</span>
+                </a>
                 <button class="btn border-0 text-dark fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
                     ☰
                 </button>
