@@ -9,6 +9,9 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -64,22 +67,22 @@
                 <ul class="nav flex-column gap-2">
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="{% url 'index' %}">
-                            <span class="me-2 fs-5">🏠</span> Home
+                            <i class="bi bi-house-door me-2 fs-5" style="color: #10b981;"></i> Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="#">
-                            <span class="me-2 fs-5">💊</span> Products
+                            <i class="bi bi-capsule me-2 fs-5" style="color: #10b981;"></i> Products
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="{% url 'about' %}">
-                            <span class="me-2 fs-5">ℹ️</span> About Us
+                            <i class="bi bi-info-circle me-2 fs-5" style="color: #10b981;"></i> About Us
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="#">
-                            <span class="me-2 fs-5">📞</span> Contact Us
+                            <i class="bi bi-telephone me-2 fs-5" style="color: #10b981;"></i> Contact Us
                         </a>
                     </li>
                 </ul>
@@ -104,10 +107,10 @@
             <!-- Mobile Menu Dropdown -->
             <div class="collapse text-bg-white border-bottom shadow-sm mobile-header w-100 position-absolute" id="mobileMenu" style="z-index: 1050; top: 70px;">
                 <ul class="nav flex-column p-4 gap-3 bg-white">
-                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'index' %}">🏠 Home</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#">💊 Products</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'about' %}">ℹ️ About Us</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#">📞 Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'index' %}"><i class="bi bi-house-door me-2" style="color: #10b981;"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#"><i class="bi bi-capsule me-2" style="color: #10b981;"></i> Products</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'about' %}"><i class="bi bi-info-circle me-2" style="color: #10b981;"></i> About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#"><i class="bi bi-telephone me-2" style="color: #10b981;"></i> Contact Us</a></li>
                     <li class="nav-item mt-3"><a class="btn btn-primary-custom w-100 fw-semibold rounded-pill py-2" href="#">Account Login</a></li>
                 </ul>
             </div>
