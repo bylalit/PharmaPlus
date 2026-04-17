@@ -73,10 +73,39 @@
 .bg-gradient-4 { background: linear-gradient(135deg, #cd9cf2 0%, #f6f3ff 100%); }
 .about-hero-gradient { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
 
-/* Navbar link hover */
 .nav-link-custom {
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 .nav-link-custom:hover {
     color: #10b981 !important;
+    background-color: #f1f5f9;
+}
+
+/* Sidebar Responsive Layout */
+@media (min-width: 992px) {
+    .sidebar {
+        width: 300px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    .content-wrapper {
+        margin-left: 300px;
+        width: calc(100% - 300px);
+    }
+    .mobile-header {
+        display: none !important;
+    }
+}
+@media (max-width: 991.98px) {
+    .sidebar {
+        display: none !important;
+    }
+    .content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
 }

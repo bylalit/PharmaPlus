@@ -15,7 +15,7 @@
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Global Styles (Important animations/gradients only) -->
+    <!-- Global Styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <style>
@@ -26,28 +26,22 @@
             display: flex; justify-content: center; align-items: center; flex-direction: column;
             transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
         }
-        
         .spinner-custom { 
-            width: 3.5rem; height: 3.5rem; 
-            color: #10b981; border-width: 0.35em; 
+            width: 3.5rem; height: 3.5rem; color: #10b981; border-width: 0.35em; 
         }
-        
-        /* Thin loading bar at top */
         #top-loading-bar {
             position: fixed; top: 0; left: 0; height: 4px;
             background: linear-gradient(90deg, #059669 0%, #34d399 100%);
             width: 0%; z-index: 10000; transition: width 0.4s ease;
         }
-
-        /* Prevent scroll dynamically during load if needed */
         body.loading { overflow: hidden; }
     </style>
 
     {% block extra_css %}{% endblock %}
 </head>
-<body class="loading" style="font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+<body class="loading" style="font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0;">
 
-    <!-- Preloader & Top Loading Bar component -->
+    <!-- Preloader & Top Loading Bar -->
     <div id="top-loading-bar"></div>
     <div id="preloader">
         <div class="spinner-border spinner-custom mb-3" role="status">
@@ -56,81 +50,117 @@
         <h3 style="color: #059669; font-weight: 800; letter-spacing: -0.5px;">PharmaPlus</h3>
     </div>
 
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); padding: 1rem 5%;">
-        <div class="container-fluid" data-aos="fade-down" data-aos-duration="600">
-            <a class="navbar-brand fw-bold" href="{% url 'index' %}" style="color: #10b981; font-size: 1.75rem; letter-spacing: -0.5px;">PharmaPlus</a>
+    <!-- Main Layout Container -->
+    <div class="d-flex" style="min-height: 100vh;">
+        
+        <!-- Sidebar Navigation (Desktop Left Side) -->
+        <nav class="sidebar bg-white border-end d-flex flex-column shadow-sm">
+            <div class="p-4 border-bottom text-center">
+                 <a class="text-decoration-none fw-bold" href="{% url 'index' %}" style="color: #10b981; font-size: 2rem; letter-spacing: -0.5px;">PharmaPlus</a>
+            </div>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-3">
+            <div class="p-4 flex-grow-1">
+                <div class="text-muted small fw-bold mb-3 text-uppercase" style="letter-spacing: 1px;">Menu</div>
+                <ul class="nav flex-column gap-2">
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom fw-semibold" style="color: #475569;" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="{% url 'index' %}">
+                            <span class="me-2 fs-5">🏠</span> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom fw-semibold" style="color: #475569;" href="#">Products</a>
+                        <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="#">
+                            <span class="me-2 fs-5">💊</span> Products
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom fw-semibold" style="color: #475569;" href="{% url 'about' %}">About Us</a>
+                        <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="{% url 'about' %}">
+                            <span class="me-2 fs-5">ℹ️</span> About Us
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom fw-semibold" style="color: #475569;" href="#">Contact</a>
+                        <a class="nav-link nav-link-custom fw-semibold rounded" style="color: #475569; padding: 0.85rem 1.25rem;" href="#">
+                            <span class="me-2 fs-5">📞</span> Contact Us
+                        </a>
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+            
+            <div class="p-4 border-top mt-auto bg-light">
+                <a href="#" class="btn btn-primary-custom w-100 fw-semibold rounded-pill py-2">Account Login</a>
+            </div>
+        </nav>
 
-    <!-- Main Content Section -->
-    <main class="flex-grow-1">
-        {% block content %}
-        {% endblock %}
-    </main>
+        <!-- Right Side Content Wrapper -->
+        <div class="content-wrapper d-flex flex-column">
+            
+            <!-- Mobile Header (Visible only on small screens) -->
+            <header class="mobile-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center sticky-top shadow-sm w-100">
+                <a class="text-decoration-none fw-bold" href="{% url 'index' %}" style="color: #10b981; font-size: 1.5rem; letter-spacing: -0.5px;">PharmaPlus</a>
+                <button class="btn border-0 text-dark fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    ☰
+                </button>
+            </header>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div class="collapse text-bg-white border-bottom shadow-sm mobile-header w-100 position-absolute" id="mobileMenu" style="z-index: 1050; top: 70px;">
+                <ul class="nav flex-column p-4 gap-3 bg-white">
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'index' %}">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#">💊 Products</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="{% url 'about' %}">ℹ️ About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom fw-semibold text-dark" href="#">📞 Contact Us</a></li>
+                    <li class="nav-item mt-3"><a class="btn btn-primary-custom w-100 fw-semibold rounded-pill py-2" href="#">Account Login</a></li>
+                </ul>
+            </div>
 
-    <!-- Footer Section -->
-    <footer class="mt-auto text-white pt-5 pb-4" style="background-color: #0f172a;">
-        <div class="container" data-aos="fade-up" data-aos-duration="800">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="fw-bold mb-3" style="color: #10b981; letter-spacing: -0.5px;">PharmaPlus</h4>
-                    <p style="color: #94a3b8; line-height: 1.6; font-size: 0.95rem;">Empowering your health journey with premium quality medicines, expert advice, and swift delivery right to your doorstep.</p>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.95rem;">
-                        <li><a href="{% url 'index' %}" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
-                        <li><a href="{% url 'about' %}" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
-                        <li><a href="#" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Products</a></li>
-                        <li><a href="#" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="fw-bold text-white mb-3">Contact Info</h5>
-                    <ul class="list-unstyled d-flex flex-column gap-2" style="color: #94a3b8; font-size: 0.95rem;">
-                        <li>📍 123 Health Avenue, Medical District</li>
-                        <li>📧 support@pharmaplus.com</li>
-                        <li>📞 +1 (800) 123-4567</li>
-                        <li>🕒 Mon-Sat: 8:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="fw-bold text-white mb-3">Newsletter</h5>
-                    <p style="color: #94a3b8; font-size: 0.95rem;">Subscribe to get the latest health tips and exclusive offers.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address" style="font-size: 0.9rem;">
-                        <button class="btn btn-primary-custom fw-semibold" type="button" style="font-size: 0.9rem;">Subscribe</button>
+            <!-- Page Content -->
+            <main class="flex-grow-1 w-100">
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <!-- Footer Section -->
+            <footer class="mt-auto text-white pt-5 pb-4 w-100" style="background-color: #0f172a;">
+                <div class="container-fluid px-5" data-aos="fade-up" data-aos-duration="800">
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-4 col-md-6">
+                            <h4 class="fw-bold mb-3" style="color: #10b981; letter-spacing: -0.5px;">PharmaPlus</h4>
+                            <p style="color: #94a3b8; line-height: 1.6; font-size: 0.95rem;">Empowering your health journey with premium quality medicines, expert advice, and swift delivery right to your doorstep.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.95rem;">
+                                <li><a href="{% url 'index' %}" class="text-decoration-none nav-link-custom" style="color: #94a3b8;">Home</a></li>
+                                <li><a href="{% url 'about' %}" class="text-decoration-none nav-link-custom" style="color: #94a3b8;">About Us</a></li>
+                                <li><a href="#" class="text-decoration-none nav-link-custom" style="color: #94a3b8;">Products</a></li>
+                                <li><a href="#" class="text-decoration-none nav-link-custom" style="color: #94a3b8;">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="fw-bold text-white mb-3">Contact Info</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-2" style="color: #94a3b8; font-size: 0.95rem;">
+                                <li>📍 123 Health Avenue, Medical District</li>
+                                <li>📧 support@pharmaplus.com</li>
+                                <li>📞 +1 (800) 123-4567</li>
+                                <li>🕒 Mon-Sat: 8:00 AM - 9:00 PM</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5 class="fw-bold text-white mb-3">Newsletter</h5>
+                            <p style="color: #94a3b8; font-size: 0.95rem;">Subscribe to get the latest health tips and exclusive offers.</p>
+                            <div class="input-group">
+                                <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address" style="font-size: 0.9rem;">
+                                <button class="btn btn-primary-custom fw-semibold" type="button" style="font-size: 0.9rem;">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="border-secondary mb-4">
+                    <div class="text-center" style="color: #64748b; font-size: 0.9rem;">
+                        <p class="mb-0">&copy; 2026 PharmaPlus. All rights reserved.</p>
                     </div>
                 </div>
-            </div>
-            <hr class="border-secondary mb-4">
-            <div class="text-center" style="color: #64748b; font-size: 0.9rem;">
-                <p class="mb-0">&copy; 2026 PharmaPlus. All rights reserved.</p>
-            </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -163,10 +193,8 @@
                     preloader.style.visibility = 'hidden';
                 }
                 if(topBar) topBar.style.opacity = '0';
-                
-                // Allow scrolling again
                 document.body.classList.remove('loading');
-            }, 600); // Wait bit after reaching 100% to fade out
+            }, 600);
         });
     </script>
     {% block extra_js %}{% endblock %}
