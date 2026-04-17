@@ -91,10 +91,44 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="mt-auto text-white text-center py-5" style="background-color: #0f172a;">
+    <footer class="mt-auto text-white pt-5 pb-4" style="background-color: #0f172a;">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
-            <h4 class="fw-bold mb-3" style="color: #10b981;">PharmaPlus</h4>
-            <p class="mb-0" style="opacity: 0.9;">&copy; 2026 PharmaPlus. All rights reserved.</p>
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="fw-bold mb-3" style="color: #10b981; letter-spacing: -0.5px;">PharmaPlus</h4>
+                    <p style="color: #94a3b8; line-height: 1.6; font-size: 0.95rem;">Empowering your health journey with premium quality medicines, expert advice, and swift delivery right to your doorstep.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 0.95rem;">
+                        <li><a href="{% url 'index' %}" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">About Us</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Products</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #94a3b8; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#94a3b8'">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Contact Info</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="color: #94a3b8; font-size: 0.95rem;">
+                        <li>📍 123 Health Avenue, Medical District</li>
+                        <li>📧 support@pharmaplus.com</li>
+                        <li>📞 +1 (800) 123-4567</li>
+                        <li>🕒 Mon-Sat: 8:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">Newsletter</h5>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Subscribe to get the latest health tips and exclusive offers.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address" style="font-size: 0.9rem;">
+                        <button class="btn btn-primary-custom fw-semibold" type="button" style="font-size: 0.9rem;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mb-4">
+            <div class="text-center" style="color: #64748b; font-size: 0.9rem;">
+                <p class="mb-0">&copy; 2026 PharmaPlus. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
