@@ -54,9 +54,9 @@ div, p, span, small, label, del {
     color: var(--text-color) !important; 
 }
 .text-white { 
-    color: var(--heading-color) !important; /* Forces invisible white text to adapt to dark heading colors in light mode */
+    color: var(--heading-color) !important; 
 }
-body.dark-mode .bg-white, .bg-white { 
+body.dark-mode .bg-white { 
     background-color: transparent !important; 
 }
 body.dark-mode .bg-light { 
@@ -87,6 +87,14 @@ body.dark-mode .bg-light {
     box-shadow: var(--shadow-base) !important;
     transition: all 0.3s ease;
 }
+
+/* Defend Category & Product Images */
+.glass-card img {
+    position: relative;
+    z-index: 10;
+    opacity: 1 !important;
+}
+
 .glass-card { padding: 15px; border-radius: 1.5rem; }
 .glass-card:hover {
     transform: translateY(-8px);
@@ -222,9 +230,8 @@ body.dark-mode .hero-overlay {
 
 /* Mega Footer */
 .mega-footer {
-    background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.98));
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     backdrop-filter: blur(20px);
-    color: white;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 body.dark-mode .mega-footer {
@@ -232,13 +239,28 @@ body.dark-mode .mega-footer {
     border-top: 1px solid rgba(255,255,255,0.05) !important;
 }
 .mega-footer a { 
-    color: var(--link-color) !important; 
+    color: #e2e8f0 !important; 
+    opacity: 0.8;
     text-decoration: none; 
-    transition: color 0.3s ease; 
+    transition: all 0.3s ease; 
 }
-.mega-footer a:hover { color: var(--accent-color) !important; }
+.mega-footer a:hover { 
+    color: var(--accent-color) !important; 
+    opacity: 1;
+}
 .mega-footer h1, .mega-footer h2, .mega-footer h3, .mega-footer h4, .mega-footer h5, .mega-footer h6, .mega-footer p, .mega-footer li {
-    color: #f8fafc !important; /* Footer is permanently dark by design */
+    color: #f8fafc !important; 
+}
+.mega-footer .logo-heading {
+    color: #ffffff !important; /* Forces static white contrast on permanent dark footer */
+}
+
+/* Form Visibility Overrides */
+label, .form-label {
+    color: var(--heading-color) !important;
+}
+input, .glass-input {
+    color: var(--text-color) !important;
 }
 
 /* Accordions */
