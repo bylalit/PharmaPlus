@@ -78,47 +78,158 @@
     </div>
 
     <div class="row g-4 mb-5">
-        {% for i in '12345678' %}
-        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="{{ forloop.counter }}50">
+        <!-- Dynamic Distinct Products -->
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="50">
             <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
-                <!-- Promo Badge -->
-                {% if forloop.counter == 1 or forloop.counter == 4 %}
-                    <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-1 fs-6 px-3 shadow-sm">Sale 20%</span>
-                {% endif %}
-                
+                <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-1 fs-6 px-3 shadow-sm">Sale 20%</span>
                 <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
-                    <!-- Image using the generated product asset -->
-                    <img src="{% static 'img/product_main.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
-                    
-                    <!-- Quick action overlay -->
+                    <img src="{% static 'img/prod_1.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
                     <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
                         <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
                     </div>
                 </div>
-                
                 <div class="p-4 d-flex flex-column flex-grow-1">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                        <small class="text-muted fw-bold">supplements</small>
+                        <small class="text-muted fw-bold">Devices</small>
                         <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.9</div>
                     </div>
                     <a href="/product_detail/" class="text-decoration-none">
-                        <h5 class="fw-bolder mb-3 text-body">Premium Multivitamin Complex {{i}}</h5>
+                        <h5 class="fw-bolder mb-3 text-body">Digital BP Monitor</h5>
                     </a>
                     <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
                         <div class="d-flex flex-column">
-                            {% if forloop.counter == 1 or forloop.counter == 4 %}
-                                <del class="text-muted small">$35.00</del>
-                                <span class="fs-4 fw-black text-success fw-bolder">$28.00</span>
-                            {% else %}
-                                <span class="fs-4 fw-black text-body fw-bolder">$24.99</span>
-                            {% endif %}
+                            <del class="text-muted small">$85.00</del>
+                            <span class="fs-4 fw-black text-success fw-bolder">$68.00</span>
                         </div>
                         <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
+
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
+                    <img src="{% static 'img/prod_2.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
+                    <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
+                        <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted fw-bold">Supplements</small>
+                        <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.8</div>
+                    </div>
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <h5 class="fw-bolder mb-3 text-body">Vitamin Gummies</h5>
+                    </a>
+                    <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                        <span class="fs-4 fw-black text-body fw-bolder">$24.99</span>
+                        <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
+                    <img src="{% static 'img/prod_3.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
+                    <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
+                        <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted fw-bold">Skincare</small>
+                        <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.7</div>
+                    </div>
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <h5 class="fw-bolder mb-3 text-body">Advanced Restoring Serum</h5>
+                    </a>
+                    <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                        <span class="fs-4 fw-black text-body fw-bolder">$42.00</span>
+                        <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-1 fs-6 px-3 shadow-sm">Sale 20%</span>
+                <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
+                    <img src="{% static 'img/prod_4.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
+                    <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
+                        <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted fw-bold">Medicine</small>
+                        <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.5</div>
+                    </div>
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <h5 class="fw-bolder mb-3 text-body">Natural Cough Syrup</h5>
+                    </a>
+                    <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                        <div class="d-flex flex-column">
+                            <del class="text-muted small">$18.00</del>
+                            <span class="fs-4 fw-black text-success fw-bolder">$14.40</span>
+                        </div>
+                        <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="250">
+            <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
+                    <img src="{% static 'img/prod_5.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
+                    <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
+                        <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted fw-bold">First Aid</small>
+                        <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.9</div>
+                    </div>
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <h5 class="fw-bolder mb-3 text-body">Premium First Aid Kit</h5>
+                    </a>
+                    <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                        <span class="fs-4 fw-black text-body fw-bolder">$35.00</span>
+                        <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                <div class="p-4 pb-0 text-center position-relative" style="height: 240px;">
+                    <img src="{% static 'img/prod_6.png' %}" class="img-fluid rounded-4 shadow-sm w-100 h-100" style="object-fit: cover; object-position: center;" alt="Product">
+                    <div class="position-absolute top-0 end-0 p-3 pt-4 pe-4">
+                        <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center text-muted custom-icon-hover" style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                    </div>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted fw-bold">Diet & Nutrition</small>
+                        <div class="text-warning small"><i class="bi bi-star-fill"></i> 4.8</div>
+                    </div>
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <h5 class="fw-bolder mb-3 text-body">100% Whey Protein Tub</h5>
+                    </a>
+                    <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-secondary-subtle">
+                        <span class="fs-4 fw-black text-body fw-bolder">$55.99</span>
+                        <a href="/cart/" class="btn-glass-primary px-3 py-2 rounded-3 shadow-sm"><i class="bi bi-cart-plus fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

@@ -168,21 +168,23 @@
         // Dark Mode Logic
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
+        const htmlObj = document.documentElement;
         
         // Check local storage for preference
         if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
+            htmlObj.setAttribute('data-bs-theme', 'dark');
             themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
             themeIcon.classList.add('text-warning');
         }
 
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
+            if (htmlObj.getAttribute('data-bs-theme') !== 'dark') {
+                htmlObj.setAttribute('data-bs-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
                 themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
                 themeIcon.classList.add('text-warning');
             } else {
+                htmlObj.setAttribute('data-bs-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
                 themeIcon.classList.remove('text-warning');
