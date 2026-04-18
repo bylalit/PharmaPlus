@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
 
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
 
     <!-- Priority Notification Bar -->
@@ -27,45 +29,54 @@
     <!-- Mega Glass Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top glass-navbar py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'index' %}" style="font-size: 1.6rem; letter-spacing: -0.5px;">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'index' %}"
+                style="font-size: 1.6rem; letter-spacing: -0.5px;">
                 <i class="bi bi-capsule-pill fs-3 text-gradient"></i>
                 <span class="text-gradient">Pharma</span><span class="logo-text">Plus</span>
             </a>
-            
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#megaMenu">
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#megaMenu">
                 <i class="bi bi-list fs-1" style="color: inherit;"></i>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="megaMenu">
                 <!-- Search -->
                 <div class="mx-auto my-3 my-lg-0 w-100" style="max-width: 450px;">
                     <div class="position-relative">
                         <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                        <input type="text" class="glass-input ps-5 py-2" placeholder="Search medicines, devices, wellness...">
+                        <input type="text" class="glass-input ps-5 py-2"
+                            placeholder="Search medicines, devices, wellness...">
                     </div>
                 </div>
-                
+
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-3 fw-medium">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/products/">Catalog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-                    
-                    <span class="border-start border-secondary mx-2 d-none d-lg-block" style="height: 30px; opacity: 0.2;"></span>
-                    
+
+                    <span class="border-start border-secondary mx-2 d-none d-lg-block"
+                        style="height: 30px; opacity: 0.2;"></span>
+
                     <!-- Dark Mode Toggle -->
                     <li class="nav-item">
-                        <button id="themeToggle" class="btn btn-sm btn-link text-decoration-none text-muted p-2" title="Toggle Theme">
+                        <button id="themeToggle" class="btn btn-sm btn-link text-decoration-none text-muted p-2"
+                            title="Toggle Theme">
                             <i class="bi bi-moon-stars-fill fs-5" id="themeIcon"></i>
                         </button>
                     </li>
-                    
+
                     <!-- Auth / Cart -->
                     <li class="nav-item d-flex gap-2">
-                        <a href="/login/" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm d-flex align-items-center border-0 text-success" style="background: rgba(255,255,255,0.8);"><i class="bi bi-person me-2 fs-5"></i> Log in</a>
-                        <a href="/cart/" class="btn btn-success rounded-pill d-flex align-items-center justify-content-center px-3 shadow-sm border-0 position-relative">
+                        <a href="/login/"
+                            class="btn btn-light rounded-pill px-4 fw-bold shadow-sm d-flex align-items-center border-0 text-success"
+                            style="background: rgba(255,255,255,0.8);"><i class="bi bi-person me-2 fs-5"></i> Log in</a>
+                        <a href="/cart/"
+                            class="btn btn-success rounded-pill d-flex align-items-center justify-content-center px-3 shadow-sm border-0 position-relative">
                             <i class="bi bi-cart3 fs-5 text-white"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-white">2</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-white">2</span>
                         </a>
                     </li>
                 </ul>
@@ -84,19 +95,30 @@
             <div class="row g-5 mb-5">
                 <!-- Branding -->
                 <div class="col-lg-4 pe-lg-5">
-                    <a class="navbar-brand fw-bold d-flex align-items-center gap-2 mb-4" href="{% url 'index' %}" style="font-size: 1.8rem; color: white;">
+                    <a class="navbar-brand fw-bold d-flex align-items-center gap-2 mb-4" href="{% url 'index' %}"
+                        style="font-size: 1.8rem; color: white;">
                         <i class="bi bi-capsule-pill fs-2 text-gradient"></i>
                         <span>PharmaPlus</span>
                     </a>
-                    <p class="text-white-50 fs-6" style="line-height: 1.8;">Leading the digital healthcare revolution. We provide authentic medicines, medical equipment, and organic wellness supplements delivered globally with cold-chain verified logistics.</p>
+                    <p class="text-white-50 fs-6" style="line-height: 1.8;">Leading the digital healthcare revolution.
+                        We provide authentic medicines, medical equipment, and organic wellness supplements delivered
+                        globally with cold-chain verified logistics.</p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;"><i class="bi bi-twitter-x fs-5"></i></a>
-                        <a href="#" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;"><i class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#"
+                            class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                            style="width: 45px; height: 45px;"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#"
+                            class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                            style="width: 45px; height: 45px;"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="#"
+                            class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                            style="width: 45px; height: 45px;"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#"
+                            class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                            style="width: 45px; height: 45px;"><i class="bi bi-linkedin fs-5"></i></a>
                     </div>
                 </div>
-                
+
                 <!-- Links Column 1 -->
                 <div class="col-sm-6 col-lg-2 offset-lg-1">
                     <h5 class="fw-bold mb-4 text-white">Categories</h5>
@@ -108,7 +130,7 @@
                         <li><a href="#">Medical Devices</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Links Column 2 -->
                 <div class="col-sm-6 col-lg-2">
                     <h5 class="fw-bold mb-4 text-white">Company</h5>
@@ -124,16 +146,19 @@
                 <!-- App Download & Trust -->
                 <div class="col-lg-3">
                     <h5 class="fw-bold mb-4 text-white">Mobile Tracking</h5>
-                    <p class="text-white-50 small mb-4">Download our app to track your prescriptions and deliveries in real-time.</p>
+                    <p class="text-white-50 small mb-4">Download our app to track your prescriptions and deliveries in
+                        real-time.</p>
                     <div class="d-flex flex-column gap-2 mb-4">
-                        <button class="btn btn-dark border border-secondary text-start d-flex align-items-center p-2 rounded-3 w-100">
+                        <button
+                            class="btn btn-dark border border-secondary text-start d-flex align-items-center p-2 rounded-3 w-100">
                             <i class="bi bi-apple fs-2 mx-2"></i>
                             <div>
                                 <small class="d-block text-white-50" style="line-height: 1;">Download on the</small>
                                 <span class="fw-bold fs-6">App Store</span>
                             </div>
                         </button>
-                        <button class="btn btn-dark border border-secondary text-start d-flex align-items-center p-2 rounded-3 w-100">
+                        <button
+                            class="btn btn-dark border border-secondary text-start d-flex align-items-center p-2 rounded-3 w-100">
                             <i class="bi bi-google-play fs-2 mx-2 text-success"></i>
                             <div>
                                 <small class="d-block text-white-50" style="line-height: 1;">GET IT ON</small>
@@ -143,9 +168,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <hr class="border-secondary mb-4 opacity-50">
-            
+
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 small">
                 <p class="mb-2 mb-md-0">&copy; 2026 PharmaPlus Digital Healthcare Inc. All Rights Reserved.</p>
                 <div class="d-flex gap-3">
@@ -168,7 +193,7 @@
         // Dark Mode Logic
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        
+
         // Check local storage for preference
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
@@ -191,4 +216,5 @@
     </script>
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
