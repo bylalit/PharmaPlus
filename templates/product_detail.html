@@ -1,63 +1,178 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Omega-3 Fish Oil | PharmaPlus{% endblock %}
+{% block title %}Product Details | PharmaPlus{% endblock %}
 
 {% block content %}
 <div class="container py-5">
-    
+    <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-success text-decoration-none">Home</a></li>
-            <li class="breadcrumb-item"><a href="/products/" class="text-success text-decoration-none">Products</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Omega-3 Fish Oil</li>
+            <li class="breadcrumb-item"><a href="/" class="text-success text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item"><a href="/products/" class="text-success text-decoration-none">Supplements</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Advanced Multivitamin Complex</li>
         </ol>
     </nav>
 
-    <div class="glass-container rounded-5 p-4 p-lg-5 position-relative overflow-hidden shadow-sm">
+    <!-- Main Product Layout -->
+    <div class="glass-container rounded-5 p-4 p-xl-5 mb-5 shadow-sm">
         <div class="row g-5 align-items-center">
             
-            <!-- Product Image Gallery -->
+            <!-- Product Images -->
             <div class="col-lg-5" data-aos="fade-right">
-                <div class="glass-card p-4 text-center h-100 d-flex align-items-center justify-content-center" style="min-height: 400px; background: rgba(255,255,255,0.7);">
-                    <div class="img-placeholder rounded-4 w-100 h-100 shadow-sm">
-                        <i class="bi bi-box-seam" style="font-size: 5rem;"></i>
+                <div class="glass-card position-relative overflow-hidden shadow-sm border mb-3" style="aspect-ratio: 1; padding: 2rem;">
+                    <!-- Floating absolute badges -->
+                    <span class="badge bg-success position-absolute top-0 start-0 m-3 fs-6">Best Seller</span>
+                    <button class="btn btn-light rounded-circle shadow-sm position-absolute top-0 end-0 m-3 text-danger"><i class="bi bi-heart-fill"></i></button>
+                    
+                    <img src="{% static 'img/product_main.png' %}" class="w-100 h-100 object-fit-contain img-fluid" style="filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); transform: scale(1.1);" alt="Main Product">
+                </div>
+                <!-- Thumbnails Gallery -->
+                <div class="row g-3">
+                    <div class="col-4">
+                        <div class="glass-card border border-success p-2 cursor-pointer shadow-sm" style="aspect-ratio: 1;">
+                            <img src="{% static 'img/product_main.png' %}" class="w-100 h-100 object-fit-contain" alt="Thumb">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="glass-card p-2 cursor-pointer opacity-75 hover-opacity-100" style="aspect-ratio: 1;">
+                            <img src="{% static 'img/product_main.png' %}" class="w-100 h-100 object-fit-contain" alt="Thumb" style="filter: grayscale(1);">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="glass-card p-2 cursor-pointer opacity-75" style="aspect-ratio: 1;">
+                            <img src="{% static 'img/product_main.png' %}" class="w-100 h-100 object-fit-contain" alt="Thumb" style="filter: grayscale(1);">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Product Specs & Action -->
+            <!-- Product Details -->
             <div class="col-lg-7" data-aos="fade-left">
-                <div class="mb-2 d-flex align-items-center gap-2">
-                    <span class="glass-badge bg-success text-white">In Stock</span>
-                    <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <small class="text-muted ms-1">(128 Reviews)</small></span>
+                <div class="mb-3 d-flex align-items-center gap-3">
+                    <span class="text-uppercase text-secondary fw-bold tracking-widest small">NatureMade Lab</span>
+                    <span class="d-flex text-warning fs-5 align-items-center"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <span class="text-secondary ms-2 small fs-6">(1,284 Reviews)</span></span>
                 </div>
                 
-                <h1 class="display-6 fw-bolder text-dark mb-3">Premium Omega-3 Fish Oil</h1>
-                <p class="text-secondary fs-5 mb-4" style="line-height: 1.6;">High-potency, burpless fish oil supplement designed to support heart, brain, and joint health. Sourced from deep-sea, cold-water fish and purified to eliminate heavy metals.</p>
+                <h1 class="display-5 fw-bolder mb-3 text-body" style="line-height: 1.1;">Advanced Multivitamin Complex (120 Capsules)</h1>
                 
-                <h2 class="display-5 fw-bolder text-dark mb-4">$24.99</h2>
+                <p class="fs-5 opacity-75 mb-4" style="line-height: 1.7;">
+                    A comprehensive daily multivitamin formulated with premium, highly bioavailable ingredients. Supports energy metabolism, immune health, and cellular repair without stomach upset.
+                </p>
                 
-                <div class="d-flex align-items-center gap-3 mb-5">
-                    <!-- Quantity Selector (UI Only) -->
-                    <div class="glass-input p-1 d-inline-flex align-items-center rounded-pill" style="width: auto;">
-                        <button class="btn btn-sm btn-light rounded-circle text-success fw-bold border-0 shadow-sm" style="width: 35px; height: 35px;">-</button>
-                        <span class="fw-bold px-3">1</span>
-                        <button class="btn btn-sm btn-light rounded-circle text-success fw-bold border-0 shadow-sm" style="width: 35px; height: 35px;">+</button>
+                <!-- Price and Availability -->
+                <div class="d-flex align-items-end gap-3 mb-4 pb-4 border-bottom border-secondary-subtle">
+                    <h2 class="display-4 fw-black text-success fw-bolder mb-0">$29.99</h2>
+                    <span class="fs-5 text-muted text-decoration-line-through fw-bold mb-2">$39.99</span>
+                    <span class="ms-auto badge bg-light text-success border border-success px-3 py-2 rounded-pill fw-bold"><i class="bi bi-check-circle-fill me-1"></i> In Stock (Ships today)</span>
+                </div>
+                
+                <!-- Highlights Grid -->
+                <div class="row g-3 mb-5">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center fs-5" style="width: 45px; height: 45px;"><i class="bi bi-shield-check"></i></div>
+                            <span class="fw-semibold text-body">Non-GMO Verified</span>
+                        </div>
                     </div>
-                    
-                    <button class="btn-glass-primary flex-grow-1"><i class="bi bi-cart-plus me-2"></i> Add to Cart</button>
-                    <button class="btn-icon-circular border-0" style="width: 50px; height: 50px;"><i class="bi bi-heart fs-5"></i></button>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center fs-5" style="width: 45px; height: 45px;"><i class="bi bi-capsule"></i></div>
+                            <span class="fw-semibold text-body">Vegan Capsules</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="glass-card p-4 rounded-4" style="background: rgba(255,255,255,0.4);">
-                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Purity:</strong> Triple strength, molecularly distilled.</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Form:</strong> 120 Easy-to-swallow softgels.</li>
-                        <li><i class="bi bi-truck text-success me-2"></i> <strong>Delivery:</strong> Ships same day if ordered before 2 PM.</li>
-                    </ul>
+                <!-- Add to Cart Flow -->
+                <div class="glass-card p-4 rounded-4" style="background: rgba(16,185,129,0.05); border-color: rgba(16,185,129,0.2);">
+                    <div class="d-flex flex-wrap flex-md-nowrap gap-3">
+                        <!-- Quantity UI -->
+                        <div class="glass-input p-2 d-inline-flex flex-shrink-0 align-items-center justify-content-between rounded-pill bg-white border border-secondary border-opacity-25" style="width: 140px;">
+                            <button class="btn btn-sm btn-light rounded-circle shadow-sm" style="width: 35px; height: 35px;">-</button>
+                            <span class="fw-bolder fs-5 text-body">1</span>
+                            <button class="btn btn-sm btn-light rounded-circle shadow-sm text-success" style="width: 35px; height: 35px;">+</button>
+                        </div>
+                        
+                        <!-- CTA -->
+                        <button class="btn-glass-primary flex-grow-1 fs-5 py-3 shadow border-0" style="border-radius: 50px;"><i class="bi bi-cart3 me-2"></i> Add to Cart</button>
+                    </div>
+                    
+                    <div class="d-flex gap-4 mt-3 pt-3 border-top border-success border-opacity-10 justify-content-center text-muted small fw-semibold">
+                        <span><i class="bi bi-shield-lock text-success me-1"></i> Secure Transaction</span>
+                        <span><i class="bi bi-arrow-return-left text-success me-1"></i> 30-Day Returns</span>
+                    </div>
                 </div>
             </div>
             
+        </div>
+    </div>
+
+    <!-- Product Info Tabs -->
+    <div class="glass-container rounded-5 p-4 p-md-5 mb-5">
+        <ul class="nav nav-pills mb-4 gap-2 border-bottom pb-4 border-secondary-subtle" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-pill px-4 py-2 fw-bold" id="desc-tab" data-bs-toggle="pill" data-bs-target="#desc" type="button" role="tab" style="background-color: var(--primary-color); color: white;">Description</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="glass-input nav-link rounded-pill px-4 py-2 fw-bold text-body border-0 shadow-sm" id="usage-tab" data-bs-toggle="pill" data-bs-target="#usage" type="button" role="tab">Usage & Ingredients</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="glass-input nav-link rounded-pill px-4 py-2 fw-bold text-body border-0 shadow-sm" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab">Reviews (1K+)</button>
+            </li>
+        </ul>
+        <div class="tab-content text-body opacity-75" id="productTabsContent" style="line-height: 1.8; font-size: 1.1rem;">
+            <div class="tab-pane fade show active" id="desc" role="tabpanel">
+                <p>Designed specially by clinical nutritionists, this Advanced Multivitamin complex provides 100% of the daily required vitamins and minerals. The slow-release formula ensures your body absorbs nutrients steadily throughout the day, preventing the common "vitamin crash" or nausea associated with cheap alternatives.</p>
+                <p>Sourced from non-GMO plants and organic farms, our vitamins bypass synthetic processing methodologies.</p>
+            </div>
+            <div class="tab-pane fade" id="usage" role="tabpanel">
+                <h5 class="fw-bold mb-3">Directions</h5>
+                <p>Take two (2) capsules daily with a meal and a full glass of water. Do not take on an empty stomach.</p>
+                <h5 class="fw-bold mb-3 mt-4">Active Ingredients</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li><i class="bi bi-dot"></i> Vitamin A (as Beta-Carotene) - 900mcg</li>
+                    <li><i class="bi bi-dot"></i> Vitamin C (Ascorbic Acid) - 90mg</li>
+                    <li><i class="bi bi-dot"></i> Vitamin D3 (Cholecalciferol) - 20mcg</li>
+                    <li><i class="bi bi-dot"></i> Zinc (as Zinc Citrate) - 11mg</li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="reviews" role="tabpanel">
+                <h4 class="fw-bold mb-4">Customer Reviews</h4>
+                <div class="glass-card mb-3 p-4 border border-secondary-subtle shadow-sm bg-transparent">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-bold">Johnathan D.</span>
+                        <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                    </div>
+                    <p class="mb-0">"These multivitamins are fantastic! I've noticed a significant increase in my energy levels within the first week of use. They are easy to swallow with no weird aftertaste. Highly recommended."</p>
+                </div>
+                <div class="glass-card mb-3 p-4 border border-secondary-subtle shadow-sm bg-transparent">
+                     <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-bold">Samantha T.</span>
+                        <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                    </div>
+                    <p class="mb-0">"Great product, clean ingredients. Love the glass jar packaging, feels very premium."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="mb-5 border-top border-secondary-subtle pt-5">
+        <h3 class="fw-bold mb-4" data-aos="fade-up">You Might Also Like</h3>
+        <div class="row flex-nowrap overflow-x-auto pb-4 pe-3" style="scroll-snap-type: x mandatory;">
+            {% for i in '12345' %}
+            <div class="col-10 col-sm-6 col-md-4 col-xl-3" style="scroll-snap-align: start;">
+                <div class="glass-card position-relative overflow-hidden border">
+                    <div class="p-3 text-center" style="height: 180px;">
+                        <img src="{% static 'img/product_main.png' %}" class="img-fluid rounded-4 h-100" style="object-fit: contain; filter: grayscale(1);" alt="Product">
+                    </div>
+                    <div class="p-3">
+                        <h6 class="fw-bold text-body text-truncate mb-1">Immune Support Gummies</h6>
+                        <span class="text-success fw-bold">$18.50</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
