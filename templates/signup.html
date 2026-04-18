@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up | PharmaPlus{% endblock %}
+
+{% block content %}
+<div class="container py-5 d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    
+    <div class="position-absolute rounded-circle" style="width: 400px; height: 400px; background: rgba(14, 165, 233, 0.2); filter: blur(80px); z-index: -1;"></div>
+    
+    <div class="glass-container rounded-5 p-5 shadow-lg w-100" style="max-width: 550px;" data-aos="zoom-in">
+        <div class="text-center mb-4">
+            <h2 class="fw-bolder text-dark mb-2">Create Account</h2>
+            <p class="text-secondary">Join PharmaPlus for a healthier tomorrow.</p>
+        </div>
+        
+        <form>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold text-secondary small ms-2">First Name</label>
+                    <input type="text" class="glass-input px-4 py-3" placeholder="John">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold text-secondary small ms-2">Last Name</label>
+                    <input type="text" class="glass-input px-4 py-3" placeholder="Doe">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold text-secondary small ms-2">Email Address</label>
+                <input type="email" class="glass-input px-4 py-3" placeholder="you@example.com">
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-semibold text-secondary small ms-2">Password</label>
+                <input type="password" class="glass-input px-4 py-3" placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="btn-glass-primary w-100 py-3 mb-4 fs-5">Sign Up Now</button>
+            
+        </form>
+        
+        <p class="text-center mt-3 mb-0 text-secondary">
+            Already have an account? <a href="/login/" class="text-success fw-bold text-decoration-none">Log in</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

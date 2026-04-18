@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Products | PharmaPlus{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    
+    <!-- Header -->
+    <div class="row mb-5 align-items-end" data-aos="fade-in">
+        <div class="col-md-8">
+            <h1 class="display-5 fw-bolder text-dark mb-2">Our Products</h1>
+            <p class="text-secondary fs-5">Browse our complete catalog of premium health and wellness items.</p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <select class="glass-input form-select d-inline-block w-auto shadow-sm">
+                <option selected>Sort by Relevance</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest Arrivals</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <!-- Sidebar Filters -->
+        <aside class="col-lg-3" data-aos="fade-right">
+            <div class="glass-card p-4 sticky-top" style="top: 100px;">
+                <h5 class="fw-bold mb-4">Filters</h5>
+                
+                <h6 class="fw-semibold text-dark mb-3">Categories</h6>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-4">
+                    <li><label class="d-flex align-items-center gap-2"><input type="checkbox" class="form-check-input mt-0 shadow-none text-success" checked> <span>All Products (120)</span></label></li>
+                    <li><label class="d-flex align-items-center gap-2"><input type="checkbox" class="form-check-input mt-0 shadow-none"> <span>Vitamins (45)</span></label></li>
+                    <li><label class="d-flex align-items-center gap-2"><input type="checkbox" class="form-check-input mt-0 shadow-none"> <span>Skincare (32)</span></label></li>
+                    <li><label class="d-flex align-items-center gap-2"><input type="checkbox" class="form-check-input mt-0 shadow-none"> <span>Equipment (18)</span></label></li>
+                </ul>
+
+                <h6 class="fw-semibold text-dark mb-3">Price Range</h6>
+                <input type="range" class="form-range" min="0" max="200" id="priceRange">
+                <div class="d-flex justify-content-between text-muted small mt-2">
+                    <span>$0</span><span>$200+</span>
+                </div>
+                
+                <hr class="my-4" style="opacity: 0.1;">
+                <button class="btn-glass-primary w-100 py-2">Apply Filters</button>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="col-lg-9">
+            <div class="row g-4">
+                {% for i in '123456789' %}
+                <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="/product_detail/" class="text-decoration-none">
+                        <div class="glass-card h-100 position-relative overflow-hidden d-flex flex-column">
+                            <div class="p-3 pb-0" style="height: 220px;">
+                                <div class="img-placeholder rounded-4 w-100 h-100">
+                                    <i class="bi bi-image fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="p-4 d-flex flex-column flex-grow-1">
+                                <p class="text-muted small fw-semibold mb-1">Category</p>
+                                <h5 class="fw-bold mb-2 text-dark">Premium Product {{i}}</h5>
+                                <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top" style="border-color: rgba(0,0,0,0.05) !important;">
+                                    <span class="fs-5 fw-bolder text-dark">$29.99</span>
+                                    <button class="btn-icon-circular border-0 bg-success text-white shadow-sm" style="width: 35px; height: 35px;">
+                                        <i class="bi bi-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Pagination UI -->
+            <div class="d-flex justify-content-center mt-5 pt-3">
+                <ul class="pagination gap-2 shadow-sm rounded-pill p-2 glass-container" style="border-radius: 50px;">
+                    <li class="page-item disabled"><a class="page-link border-0 bg-transparent text-secondary rounded-circle" href="#">&laquo;</a></li>
+                    <li class="page-item active"><a class="page-link border-0 rounded-circle text-white fw-bold shadow-sm" style="background-color: #10b981; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link border-0 bg-transparent text-dark rounded-circle" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link border-0 bg-transparent text-dark rounded-circle" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link border-0 bg-transparent text-dark rounded-circle" href="#">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

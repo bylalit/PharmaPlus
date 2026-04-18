@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Omega-3 Fish Oil | PharmaPlus{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}" class="text-success text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item"><a href="/products/" class="text-success text-decoration-none">Products</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Omega-3 Fish Oil</li>
+        </ol>
+    </nav>
+
+    <div class="glass-container rounded-5 p-4 p-lg-5 position-relative overflow-hidden shadow-sm">
+        <div class="row g-5 align-items-center">
+            
+            <!-- Product Image Gallery -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="glass-card p-4 text-center h-100 d-flex align-items-center justify-content-center" style="min-height: 400px; background: rgba(255,255,255,0.7);">
+                    <div class="img-placeholder rounded-4 w-100 h-100 shadow-sm">
+                        <i class="bi bi-box-seam" style="font-size: 5rem;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Specs & Action -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="mb-2 d-flex align-items-center gap-2">
+                    <span class="glass-badge bg-success text-white">In Stock</span>
+                    <span class="text-warning"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <small class="text-muted ms-1">(128 Reviews)</small></span>
+                </div>
+                
+                <h1 class="display-6 fw-bolder text-dark mb-3">Premium Omega-3 Fish Oil</h1>
+                <p class="text-secondary fs-5 mb-4" style="line-height: 1.6;">High-potency, burpless fish oil supplement designed to support heart, brain, and joint health. Sourced from deep-sea, cold-water fish and purified to eliminate heavy metals.</p>
+                
+                <h2 class="display-5 fw-bolder text-dark mb-4">$24.99</h2>
+                
+                <div class="d-flex align-items-center gap-3 mb-5">
+                    <!-- Quantity Selector (UI Only) -->
+                    <div class="glass-input p-1 d-inline-flex align-items-center rounded-pill" style="width: auto;">
+                        <button class="btn btn-sm btn-light rounded-circle text-success fw-bold border-0 shadow-sm" style="width: 35px; height: 35px;">-</button>
+                        <span class="fw-bold px-3">1</span>
+                        <button class="btn btn-sm btn-light rounded-circle text-success fw-bold border-0 shadow-sm" style="width: 35px; height: 35px;">+</button>
+                    </div>
+                    
+                    <button class="btn-glass-primary flex-grow-1"><i class="bi bi-cart-plus me-2"></i> Add to Cart</button>
+                    <button class="btn-icon-circular border-0" style="width: 50px; height: 50px;"><i class="bi bi-heart fs-5"></i></button>
+                </div>
+
+                <div class="glass-card p-4 rounded-4" style="background: rgba(255,255,255,0.4);">
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Purity:</strong> Triple strength, molecularly distilled.</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Form:</strong> 120 Easy-to-swallow softgels.</li>
+                        <li><i class="bi bi-truck text-success me-2"></i> <strong>Delivery:</strong> Ships same day if ordered before 2 PM.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
