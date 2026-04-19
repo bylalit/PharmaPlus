@@ -8,89 +8,79 @@
         <h2 class="fw-bold mb-1" style="letter-spacing: -0.5px;">Dashboard Overview</h2>
         <p class="text-muted mb-0 border-start border-3 border-primary ps-2 ms-1">Welcome back, here's what's happening with your store today.</p>
     </div>
-    <button class="btn-modern btn-modern-primary d-none d-md-flex">
-        <i class="bi bi-cloud-download"></i> Export Data
-    </button>
+    <div class="d-flex gap-2">
+        <button class="btn btn-light shadow-sm rounded-pill px-4 fw-bold text-muted d-none d-md-flex align-items-center"><i class="bi bi-calendar-event me-2"></i> Oct 24 - Oct 31</button>
+        <button class="btn-modern btn-modern-primary d-none d-md-flex"><i class="bi bi-cloud-download"></i> Export Data</button>
+    </div>
 </div>
 
-<!-- Stats Row -->
+<!-- Expanded Stats Row -->
 <div class="row g-4 mb-4">
     <!-- Stat 1 -->
-    <div class="col-md-6 col-xl-3">
-        <div class="dashboard-card p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
-                    <i class="bi bi-box-fill fs-3"></i>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
-                </div>
-            </div>
-            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Products</h6>
-            <h3 class="fw-bolder mb-2 text-dark">532</h3>
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +4.5%</span> 
-                <span class="text-muted small">vs last month</span>
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white">
+            <div class="d-flex flex-column h-100 position-relative">
+                <i class="bi bi-box-seam fs-4 text-primary mb-2 opacity-75"></i>
+                <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 1px;">Products</h6>
+                <h4 class="fw-bolder mb-0 text-dark">532</h4>
+                <div class="mt-auto pt-2"><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2" style="font-size: 0.65rem;"><i class="bi bi-arrow-up-right"></i> 4.5%</span></div>
             </div>
         </div>
     </div>
-    
     <!-- Stat 2 -->
-    <div class="col-md-6 col-xl-3">
-        <div class="dashboard-card p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
-                    <i class="bi bi-cart-check-fill fs-3"></i>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
-                </div>
-            </div>
-            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Orders</h6>
-            <h3 class="fw-bolder mb-2 text-dark">1,245</h3>
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +12%</span> 
-                <span class="text-muted small">vs last month</span>
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white">
+            <div class="d-flex flex-column h-100">
+                <i class="bi bi-cart3 fs-4 text-success mb-2 opacity-75"></i>
+                <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 1px;">Orders</h6>
+                <h4 class="fw-bolder mb-0 text-dark">1,245</h4>
+                <div class="mt-auto pt-2"><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2" style="font-size: 0.65rem;"><i class="bi bi-arrow-up-right"></i> 12%</span></div>
             </div>
         </div>
     </div>
-
     <!-- Stat 3 -->
-    <div class="col-md-6 col-xl-3">
-        <div class="dashboard-card p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
-                    <i class="bi bi-people-fill fs-3"></i>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
-                </div>
-            </div>
-            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Users</h6>
-            <h3 class="fw-bolder mb-2 text-dark">892</h3>
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +8.1%</span> 
-                <span class="text-muted small">vs last month</span>
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white">
+            <div class="d-flex flex-column h-100">
+                <i class="bi bi-people fs-4 text-info mb-2 opacity-75"></i>
+                <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 1px;">Users</h6>
+                <h4 class="fw-bolder mb-0 text-dark">892</h4>
+                <div class="mt-auto pt-2"><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2" style="font-size: 0.65rem;"><i class="bi bi-arrow-up-right"></i> 8.1%</span></div>
             </div>
         </div>
     </div>
-
     <!-- Stat 4 -->
-    <div class="col-md-6 col-xl-3">
-        <div class="dashboard-card p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
-                    <i class="bi bi-currency-dollar fs-3"></i>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
-                </div>
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white">
+            <div class="d-flex flex-column h-100 position-relative text-white" style="background: linear-gradient(135deg, #0ea5e9, #10b981); border-radius: 12px; margin: -10px; padding: 18px !important;">
+                <i class="bi bi-currency-dollar fs-4 text-white mb-2 opacity-75"></i>
+                <h6 class="fw-bold text-uppercase mb-1 text-white opacity-75" style="font-size: 0.65rem; letter-spacing: 1px;">Revenue Stream</h6>
+                <h4 class="fw-bolder mb-0 text-white">$45,210</h4>
+                <div class="mt-auto pt-2"><span class="badge bg-white text-dark bg-opacity-25 rounded-pill px-2" style="font-size: 0.65rem;"><i class="bi bi-arrow-down-right text-danger"></i> 2.4%</span></div>
             </div>
-            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Revenue Stream</h6>
-            <h3 class="fw-bolder mb-2 text-dark">$45,210</h3>
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge badge-danger"><i class="bi bi-arrow-down-right me-1"></i> -2.4%</span> 
-                <span class="text-muted small">vs last month</span>
+            <!-- Hack to apply full background while inside card -->
+            <style>.dashboard-card:has(.text-white) { padding: 0 !important; background: transparent; }</style>
+        </div>
+    </div>
+    <!-- Stat 5 (NEW) -->
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white border-bottom border-danger border-3">
+            <div class="d-flex flex-column h-100">
+                <i class="bi bi-exclamation-triangle fs-4 text-danger mb-2 opacity-75"></i>
+                <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 1px;">Low Stock</h6>
+                <h4 class="fw-bolder mb-0 text-dark">12 Items</h4>
+                <div class="mt-auto pt-2 text-danger" style="font-size: 0.70rem; font-weight: 600;">Requires attention</div>
+            </div>
+        </div>
+    </div>
+    <!-- Stat 6 (NEW) -->
+    <div class="col-md-4 col-lg-2">
+        <div class="dashboard-card p-3 shadow-sm h-100 border-0 bg-white border-bottom border-warning border-3">
+            <div class="d-flex flex-column h-100">
+                <i class="bi bi-person-plus fs-4 text-warning mb-2 opacity-75"></i>
+                <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.65rem; letter-spacing: 1px;">New Signups</h6>
+                <h4 class="fw-bolder mb-0 text-dark">28</h4>
+                <div class="mt-auto pt-2 text-warning" style="font-size: 0.70rem; font-weight: 600;">Last 24 Hours</div>
             </div>
         </div>
     </div>
@@ -100,7 +90,7 @@
 <div class="row g-4 mb-4">
     <!-- Line Chart -->
     <div class="col-lg-8">
-        <div class="dashboard-card h-100 p-4">
+        <div class="dashboard-card h-100 p-4 border-0">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h5 class="fw-bold mb-0">Sales Overview</h5>
                 <select class="form-select form-select-sm border-0 bg-light fw-bold" style="width: auto;">
@@ -116,7 +106,7 @@
     
     <!-- Pie Chart -->
     <div class="col-lg-4">
-        <div class="dashboard-card h-100 p-4">
+        <div class="dashboard-card h-100 p-4 border-0">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h5 class="fw-bold mb-0">Sales By Category</h5>
             </div>
@@ -127,26 +117,63 @@
     </div>
 </div>
 
-<!-- Recent Activity & Bar Chart -->
+<!-- Recent Activity / Timeline & Orders -->
 <div class="row g-4">
-    <!-- Bar Chart -->
+    <!-- Activity Timeline -->
     <div class="col-lg-4">
-        <div class="dashboard-card h-100 p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="fw-bold mb-0">Daily Orders</h5>
+        <div class="dashboard-card h-100 p-0 border-0">
+            <div class="p-4 border-bottom border-light bg-light bg-opacity-25">
+                <h5 class="fw-bold mb-0">Activity Timeline</h5>
             </div>
-            <div style="height: 250px; width: 100%;">
-                <canvas id="ordersBarChart"></canvas>
+            <div class="p-4">
+                <div class="position-relative border-start border-2 border-secondary border-opacity-25 ms-2 py-2">
+                    <!-- Event 1 -->
+                    <div class="position-relative mb-4">
+                        <span class="position-absolute translate-middle bg-primary rounded-circle shadow border border-2 border-white" style="width: 14px; height: 14px; left: 0; top: 8px;"></span>
+                        <div class="ms-4">
+                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.9rem;">New Order Received</h6>
+                            <p class="text-muted small mb-0 mt-1">Order #ORD-1025 placed by Jane Smith</p>
+                            <span class="badge bg-light text-secondary border mt-2">12 mins ago</span>
+                        </div>
+                    </div>
+                    <!-- Event 2 -->
+                    <div class="position-relative mb-4">
+                        <span class="position-absolute translate-middle bg-info rounded-circle shadow border border-2 border-white" style="width: 14px; height: 14px; left: 0; top: 8px;"></span>
+                        <div class="ms-4">
+                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.9rem;">Product Updated</h6>
+                            <p class="text-muted small mb-0 mt-1">"Vitamin C 1000mg" stock replenished</p>
+                            <span class="badge bg-light text-secondary border mt-2">2 hours ago</span>
+                        </div>
+                    </div>
+                    <!-- Event 3 -->
+                    <div class="position-relative mb-4">
+                        <span class="position-absolute translate-middle bg-success rounded-circle shadow border border-2 border-white" style="width: 14px; height: 14px; left: 0; top: 8px;"></span>
+                        <div class="ms-4">
+                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.9rem;">Order Delivered</h6>
+                            <p class="text-muted small mb-0 mt-1">Order #ORD-1024 successfully delivered.</p>
+                            <span class="badge bg-light text-secondary border mt-2">5 hours ago</span>
+                        </div>
+                    </div>
+                    <!-- Event 4 -->
+                    <div class="position-relative">
+                        <span class="position-absolute translate-middle bg-warning rounded-circle shadow border border-2 border-white" style="width: 14px; height: 14px; left: 0; top: 8px;"></span>
+                        <div class="ms-4">
+                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.9rem;">New User Registration</h6>
+                            <p class="text-muted small mb-0 mt-1">Admin created new customer "Alex Johnson"</p>
+                            <span class="badge bg-light text-secondary border mt-2">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Recent Orders Table -->
     <div class="col-lg-8">
-        <div class="dashboard-card h-100 p-0">
+        <div class="dashboard-card h-100 p-0 border-0">
             <div class="p-4 border-bottom border-light bg-light bg-opacity-25 d-flex justify-content-between align-items-center">
-                <h5 class="fw-bold mb-0">Recent Activity - Orders</h5>
-                <a href="{% url 'dashboard_orders' %}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View All</a>
+                <h5 class="fw-bold mb-0">Recent Order Activity</h5>
+                <a href="{% url 'dashboard_orders' %}" class="btn btn-sm btn-light border shadow-sm rounded-pill px-3 fw-bold text-primary">View All</a>
             </div>
             <div class="table-responsive px-4 pb-4 pt-2">
                 <table class="table-modern">
@@ -167,7 +194,7 @@
                                     <div class="bg-secondary bg-opacity-10 rounded-circle d-flex justify-content-center align-items-center text-secondary fw-bold" style="width: 32px; height: 32px;">
                                         {{ order.customer|make_list|first }}
                                     </div>
-                                    <span class="fw-bold">{{ order.customer }}</span>
+                                    <span class="fw-bold text-dark">{{ order.customer }}</span>
                                 </div>
                             </td>
                             <td>
@@ -195,11 +222,9 @@
     // Initialize Chart.js configuration
     document.addEventListener("DOMContentLoaded", function() {
         
-        // 1. Line Chart (Sales Overview)
         const ctxLine = document.getElementById('salesLineChart').getContext('2d');
-        
         let gradientLine = ctxLine.createLinearGradient(0, 0, 0, 400);
-        gradientLine.addColorStop(0, 'rgba(14, 165, 233, 0.5)'); // Primary color fading out
+        gradientLine.addColorStop(0, 'rgba(14, 165, 233, 0.5)'); 
         gradientLine.addColorStop(1, 'rgba(14, 165, 233, 0.0)');
         
         new Chart(ctxLine, {
@@ -212,7 +237,7 @@
                     borderColor: '#0ea5e9',
                     backgroundColor: gradientLine,
                     borderWidth: 3,
-                    tension: 0.4, // Smooth curve
+                    tension: 0.4, 
                     fill: true,
                     pointBackgroundColor: '#ffffff',
                     pointBorderColor: '#0ea5e9',
@@ -224,9 +249,7 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
+                plugins: { legend: { display: false } },
                 scales: {
                     x: { grid: { display: false }, ticks: { color: '#64748b' } },
                     y: { 
@@ -237,32 +260,6 @@
             }
         });
 
-        // 2. Bar Chart (Orders per Day)
-        const ctxBar = document.getElementById('ordersBarChart').getContext('2d');
-        new Chart(ctxBar, {
-            type: 'bar',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-                datasets: [{
-                    label: 'Orders',
-                    data: [45, 62, 50, 78, 65],
-                    backgroundColor: '#10b981', // Success color
-                    borderRadius: 6,
-                    barPercentage: 0.6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { grid: { display: false }, ticks: { color: '#64748b' } },
-                    y: { grid: { borderDash: [5, 5], color: '#e2e8f0' }, ticks: { color: '#64748b', stepSize: 20 } }
-                }
-            }
-        });
-
-        // 3. Pie Chart (Category Distribution)
         const ctxPie = document.getElementById('categoryPieChart').getContext('2d');
         new Chart(ctxPie, {
             type: 'doughnut',
@@ -287,7 +284,6 @@
                 }
             }
         });
-
     });
 </script>
 {% endblock %}

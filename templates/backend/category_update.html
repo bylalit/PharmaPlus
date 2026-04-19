@@ -1,0 +1,56 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Edit Category | PharmaPlus Dashboard{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_categories' %}" class="text-decoration-none text-muted">Categories</a></li>
+        <li class="breadcrumb-item active fw-bold" aria-current="page">Edit #{{ id }}</li>
+    </ol>
+</nav>
+
+<div class="row justify-content-center pt-3">
+    <div class="col-lg-6">
+        <div class="dashboard-card border-0 mb-5">
+            <div class="p-4 px-5 border-bottom border-light bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="fw-bolder mb-0 text-dark">Edit Category #{{ id }}</h4>
+                    <p class="text-muted small mb-0 mt-1">Change category name or associate a new icon.</p>
+                </div>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-4 shadow-sm fw-bold"><i class="bi bi-trash3 me-1"></i> Delete</button>
+            </div>
+            
+            <form action="{% url 'dashboard_categories' %}" method="POST" class="p-5" onsubmit="event.preventDefault(); window.location.href=this.action;">
+                <div class="form-floating text-muted shadow-sm rounded-3 mb-4">
+                    <input type="text" class="form-control border-0 is-valid" id="editCatName" value="Prescription Medicines">
+                    <label for="editCatName" class="fw-bold">Category Name</label>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Active Icon Assignment</label>
+                    <div class="d-flex align-items-center gap-4 p-3 border rounded-3 bg-light bg-opacity-25">
+                        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle shadow-sm" style="font-size: 1.5rem;">
+                            <i class="bi bi-capsule"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <select class="form-select border-0 shadow-sm">
+                                <option>Medicine (Capsule)</option>
+                                <option>Vitamins (Flash)</option>
+                                <option>First Aid (Bandage)</option>
+                                <option>Baby Care (Heart)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-3 mt-5 pt-4 border-top border-light">
+                    <a href="{% url 'dashboard_categories' %}" class="btn btn-light px-4 rounded-pill shadow-sm fw-bold">Cancel</a>
+                    <button type="submit" class="btn-modern btn-modern-primary rounded-pill px-5 shadow-lg"><i class="bi bi-arrow-repeat me-2"></i> Update Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

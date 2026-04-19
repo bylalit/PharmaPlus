@@ -28,11 +28,15 @@ DUMMY_CATEGORIES = [
 def dashboard_home(request):
     return render(request, "backend/dashboard.html", {
         "recent_orders": DUMMY_ORDERS,
+        "recent_users": DUMMY_USERS,
         "top_products": [
             {"name": "Vitamin C", "sales": 450, "price": 15.99, "image": "https://via.placeholder.com/50"},
             {"name": "Protein Powder", "sales": 320, "price": 34.99, "image": "https://via.placeholder.com/50"}
         ]
     })
+
+def admin_login(request):
+    return render(request, "backend/admin_login.html")
 
 def products_list(request):
     return render(request, "backend/products_list.html", {"products": DUMMY_PRODUCTS})
@@ -45,6 +49,9 @@ def product_edit(request, id):
 
 def categories_list(request):
     return render(request, "backend/categories_list.html", {"categories": DUMMY_CATEGORIES})
+
+def category_update(request, id):
+    return render(request, "backend/category_update.html", {"id": id})
 
 def orders_list(request):
     return render(request, "backend/orders_list.html", {"orders": DUMMY_ORDERS})
