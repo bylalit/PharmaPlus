@@ -3,44 +3,63 @@
 {% block title %}Users | PharmaPlus Dashboard{% endblock %}
 
 {% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item active fw-bold" aria-current="page">User Management</li>
+    </ol>
+</nav>
+
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="fw-bold mb-0">Registered Users</h3>
+    <h3 class="fw-bolder mb-0 tracking-tight">Registered Users</h3>
 </div>
 
-<div class="glass-card">
-    <div class="table-responsive p-0">
-        <table class="table table-hover mb-0 align-middle">
-            <thead class="table-light">
+<div class="dashboard-card mb-5">
+    <div class="p-4 border-bottom border-light bg-light bg-opacity-25 d-flex justify-content-between align-items-center">
+        <div class="search-wrapper m-0">
+            <i class="bi bi-search text-muted"></i>
+            <input type="text" placeholder="Search users by name or email...">
+        </div>
+    </div>
+    
+    <div class="table-responsive px-4 pb-4 pt-2">
+        <table class="table-modern">
+            <thead>
                 <tr>
-                    <th class="ps-4">User</th>
-                    <th>Email</th>
+                    <th class="ps-3"><input class="form-check-input" type="checkbox"></th>
+                    <th>User</th>
+                    <th>Email Address</th>
                     <th>Role</th>
-                    <th>Joined</th>
+                    <th>Joined Date</th>
                     <th class="text-end pe-4">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for user in users %}
                 <tr>
-                    <td class="ps-4 fw-bold">
-                        <i class="bi bi-person-circle fs-4 text-muted me-2 align-middle"></i> {{ user.name }}
+                    <td class="ps-3"><input class="form-check-input" type="checkbox"></td>
+                    <td>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://ui-avatars.com/api/?name={{ user.name|urlencode }}&background=0284c7&color=fff&rounded=true" style="width: 40px; height: 40px; border-radius: 50%;">
+                            <span class="fw-bold text-dark">{{ user.name }}</span>
+                        </div>
                     </td>
-                    <td>{{ user.email }}</td>
+                    <td class="text-muted fw-medium">{{ user.email }}</td>
                     <td>
                         {% if user.role == 'Admin' %}
-                            <span class="badge bg-danger">Admin</span>
+                            <span class="badge-status badge-active text-uppercase" style="font-size: 0.65rem;">Admin</span>
                         {% else %}
-                            <span class="badge bg-secondary">Customer</span>
+                            <span class="badge-status badge-info text-uppercase" style="font-size: 0.65rem;">Customer</span>
                         {% endif %}
                     </td>
                     <td class="text-muted">{{ user.joined }}</td>
                     <td class="text-end pe-4">
-                        <button class="btn btn-sm btn-light border text-danger" title="Suspend"><i class="bi bi-slash-circle"></i></button>
+                        <button class="btn btn-sm btn-light border text-danger rounded-pill shadow-sm px-3 fw-bold" title="Suspend"><i class="bi bi-slash-circle me-1"></i> Suspend</button>
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="5" class="text-center py-4">No users registered yet.</td>
+                    <td colspan="6" class="text-center py-5 text-muted">No users registered yet.</td>
                 </tr>
                 {% endfor %}
             </tbody>

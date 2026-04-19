@@ -4,107 +4,182 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold mb-0">Dashboard Overview</h2>
-    <button class="btn btn-primary d-flex align-items-center gap-2 shadow-sm rounded-pill px-4">
-        <i class="bi bi-download"></i> Export Report
+    <div>
+        <h2 class="fw-bold mb-1" style="letter-spacing: -0.5px;">Dashboard Overview</h2>
+        <p class="text-muted mb-0 border-start border-3 border-primary ps-2 ms-1">Welcome back, here's what's happening with your store today.</p>
+    </div>
+    <button class="btn-modern btn-modern-primary d-none d-md-flex">
+        <i class="bi bi-cloud-download"></i> Export Data
     </button>
 </div>
 
 <!-- Stats Row -->
 <div class="row g-4 mb-4">
-    <div class="col-md-3">
-        <div class="glass-card p-4 h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h6 class="text-muted fw-bold mb-1">Total Revenue</h6>
-                    <h3 class="fw-bolder mb-0">$24,560</h3>
+    <!-- Stat 1 -->
+    <div class="col-md-6 col-xl-3">
+        <div class="dashboard-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
+                    <i class="bi bi-box-fill fs-3"></i>
                 </div>
-                <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
-                    <i class="bi bi-currency-dollar fs-4"></i>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
                 </div>
             </div>
-            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-arrow-up-right me-1"></i> +12.5%</span> <span class="text-muted small ms-1">from last month</span>
+            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Products</h6>
+            <h3 class="fw-bolder mb-2 text-dark">532</h3>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +4.5%</span> 
+                <span class="text-muted small">vs last month</span>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="glass-card p-4 h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h6 class="text-muted fw-bold mb-1">Total Orders</h6>
-                    <h3 class="fw-bolder mb-0">1,245</h3>
+    
+    <!-- Stat 2 -->
+    <div class="col-md-6 col-xl-3">
+        <div class="dashboard-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
+                    <i class="bi bi-cart-check-fill fs-3"></i>
                 </div>
-                <div class="bg-success bg-opacity-10 text-success p-2 rounded-3">
-                    <i class="bi bi-cart bg-success-transparent fs-4"></i>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
                 </div>
             </div>
-            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-arrow-up-right me-1"></i> +5.2%</span> <span class="text-muted small ms-1">from last month</span>
+            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Orders</h6>
+            <h3 class="fw-bolder mb-2 text-dark">1,245</h3>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +12%</span> 
+                <span class="text-muted small">vs last month</span>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="glass-card p-4 h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h6 class="text-muted fw-bold mb-1">Active Users</h6>
-                    <h3 class="fw-bolder mb-0">432</h3>
+
+    <!-- Stat 3 -->
+    <div class="col-md-6 col-xl-3">
+        <div class="dashboard-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
+                    <i class="bi bi-people-fill fs-3"></i>
                 </div>
-                <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-3">
-                    <i class="bi bi-people fs-4"></i>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
                 </div>
             </div>
-            <span class="badge bg-danger bg-opacity-10 text-danger"><i class="bi bi-arrow-down-right me-1"></i> -1.1%</span> <span class="text-muted small ms-1">from last month</span>
+            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Total Users</h6>
+            <h3 class="fw-bolder mb-2 text-dark">892</h3>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge badge-active"><i class="bi bi-arrow-up-right me-1"></i> +8.1%</span> 
+                <span class="text-muted small">vs last month</span>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="glass-card p-4 h-100">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h6 class="text-muted fw-bold mb-1">Products Listed</h6>
-                    <h3 class="fw-bolder mb-0">12</h3>
+
+    <!-- Stat 4 -->
+    <div class="col-md-6 col-xl-3">
+        <div class="dashboard-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 54px; height: 54px;">
+                    <i class="bi bi-currency-dollar fs-3"></i>
                 </div>
-                <div class="bg-info bg-opacity-10 text-info p-2 rounded-3">
-                    <i class="bi bi-box-seam fs-4"></i>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-link text-muted" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></button>
                 </div>
             </div>
-            <span class="text-muted small">Fully updated</span>
+            <h6 class="text-muted fw-bold text-uppercase mb-1" style="font-size: 0.75rem; letter-spacing: 1px;">Revenue Stream</h6>
+            <h3 class="fw-bolder mb-2 text-dark">$45,210</h3>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge badge-danger"><i class="bi bi-arrow-down-right me-1"></i> -2.4%</span> 
+                <span class="text-muted small">vs last month</span>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="row g-4">
-    <!-- Recent Orders -->
+<!-- Charts Section -->
+<div class="row g-4 mb-4">
+    <!-- Line Chart -->
     <div class="col-lg-8">
-        <div class="glass-card h-100">
-            <div class="p-4 border-bottom border-secondary-subtle d-flex justify-content-between align-items-center">
-                <h5 class="fw-bold mb-0">Recent Orders</h5>
-                <a href="{% url 'dashboard_orders' %}" class="btn btn-sm btn-light">View All</a>
+        <div class="dashboard-card h-100 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">Sales Overview</h5>
+                <select class="form-select form-select-sm border-0 bg-light fw-bold" style="width: auto;">
+                    <option>This Week</option>
+                    <option>This Month</option>
+                </select>
             </div>
-            <div class="table-responsive p-0">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
+            <div style="height: 300px; width: 100%;">
+                <canvas id="salesLineChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pie Chart -->
+    <div class="col-lg-4">
+        <div class="dashboard-card h-100 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">Sales By Category</h5>
+            </div>
+            <div style="height: 250px; width: 100%; display: flex; justify-content: center; align-items: center;" class="mt-4">
+                <canvas id="categoryPieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity & Bar Chart -->
+<div class="row g-4">
+    <!-- Bar Chart -->
+    <div class="col-lg-4">
+        <div class="dashboard-card h-100 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">Daily Orders</h5>
+            </div>
+            <div style="height: 250px; width: 100%;">
+                <canvas id="ordersBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Orders Table -->
+    <div class="col-lg-8">
+        <div class="dashboard-card h-100 p-0">
+            <div class="p-4 border-bottom border-light bg-light bg-opacity-25 d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Recent Activity - Orders</h5>
+                <a href="{% url 'dashboard_orders' %}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View All</a>
+            </div>
+            <div class="table-responsive px-4 pb-4 pt-2">
+                <table class="table-modern">
+                    <thead>
                         <tr>
-                            <th class="ps-4">Order ID</th>
+                            <th>Order ID</th>
                             <th>Customer</th>
-                            <th>Date</th>
                             <th>Status</th>
-                            <th class="text-end pe-4">Total</th>
+                            <th class="text-end">Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for order in recent_orders %}
                         <tr>
-                            <td class="ps-4 fw-medium text-primary">#ORD-{{ order.id }}</td>
-                            <td>{{ order.customer }}</td>
-                            <td class="text-muted">{{ order.date }}</td>
+                            <td class="fw-bold text-primary">#ORD-{{ order.id }}</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="bg-secondary bg-opacity-10 rounded-circle d-flex justify-content-center align-items-center text-secondary fw-bold" style="width: 32px; height: 32px;">
+                                        {{ order.customer|make_list|first }}
+                                    </div>
+                                    <span class="fw-bold">{{ order.customer }}</span>
+                                </div>
+                            </td>
                             <td>
                                 {% if order.status == 'Delivered' %}
-                                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3">Delivered</span>
+                                    <span class="badge-status badge-active text-uppercase" style="font-size: 0.65rem;">Delivered</span>
                                 {% elif order.status == 'Pending' %}
-                                    <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill px-3">Pending</span>
+                                    <span class="badge-status badge-pending text-uppercase" style="font-size: 0.65rem;">Pending</span>
                                 {% else %}
-                                    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 rounded-pill px-3">Shipped</span>
+                                    <span class="badge-status badge-info text-uppercase" style="font-size: 0.65rem;">Shipped</span>
                                 {% endif %}
                             </td>
-                            <td class="text-end pe-4 fw-bold">${{ order.total }}</td>
+                            <td class="text-end fw-bold fs-5 text-dark">${{ order.total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -112,28 +187,107 @@
             </div>
         </div>
     </div>
-    
-    <!-- Top Products -->
-    <div class="col-lg-4">
-        <div class="glass-card h-100">
-            <div class="p-4 border-bottom border-secondary-subtle">
-                <h5 class="fw-bold mb-0">Top Selling Products</h5>
-            </div>
-            <div class="p-4">
-                {% for product in top_products %}
-                <div class="d-flex align-items-center mb-4 pb-2 border-bottom border-light">
-                    <img src="{{ product.image }}" class="rounded shadow-sm" style="width: 50px; height: 50px; object-fit: cover;" alt="{{ product.name }}">
-                    <div class="ms-3 flex-grow-1">
-                        <h6 class="fw-bold mb-1 text-truncate" style="max-width: 150px;">{{ product.name }}</h6>
-                        <small class="text-muted">{{ product.sales }} Sales</small>
-                    </div>
-                    <div class="fw-bold text-success">${{ product.price }}</div>
-                </div>
-                {% empty %}
-                <p class="text-muted text-center py-4">No sales data available yet.</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize Chart.js configuration
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. Line Chart (Sales Overview)
+        const ctxLine = document.getElementById('salesLineChart').getContext('2d');
+        
+        let gradientLine = ctxLine.createLinearGradient(0, 0, 0, 400);
+        gradientLine.addColorStop(0, 'rgba(14, 165, 233, 0.5)'); // Primary color fading out
+        gradientLine.addColorStop(1, 'rgba(14, 165, 233, 0.0)');
+        
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Revenue ($)',
+                    data: [1200, 1900, 1500, 2200, 1800, 2800, 2400],
+                    borderColor: '#0ea5e9',
+                    backgroundColor: gradientLine,
+                    borderWidth: 3,
+                    tension: 0.4, // Smooth curve
+                    fill: true,
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#0ea5e9',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#64748b' } },
+                    y: { 
+                        grid: { borderDash: [5, 5], color: '#e2e8f0' },
+                        ticks: { color: '#64748b', callback: function(value) { return '$' + value; } }
+                    }
+                }
+            }
+        });
+
+        // 2. Bar Chart (Orders per Day)
+        const ctxBar = document.getElementById('ordersBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'Orders',
+                    data: [45, 62, 50, 78, 65],
+                    backgroundColor: '#10b981', // Success color
+                    borderRadius: 6,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#64748b' } },
+                    y: { grid: { borderDash: [5, 5], color: '#e2e8f0' }, ticks: { color: '#64748b', stepSize: 20 } }
+                }
+            }
+        });
+
+        // 3. Pie Chart (Category Distribution)
+        const ctxPie = document.getElementById('categoryPieChart').getContext('2d');
+        new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['Medicines', 'Vitamins', 'Personal Care', 'First Aid'],
+                datasets: [{
+                    data: [45, 25, 20, 10],
+                    backgroundColor: ['#0ea5e9', '#10b981', '#f59e0b', '#6366f1'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 20, usePointStyle: true, color: '#64748b', font: {family: "'Inter', sans-serif"} }
+                    }
+                }
+            }
+        });
+
+    });
+</script>
 {% endblock %}

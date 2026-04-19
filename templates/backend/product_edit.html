@@ -5,55 +5,68 @@
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{% url 'dashboard_products' %}" class="text-decoration-none">Products</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Edit #{{ id }}</li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_products' %}" class="text-decoration-none text-muted">Products</a></li>
+        <li class="breadcrumb-item active fw-bold" aria-current="page">Edit #{{ id }}</li>
     </ol>
 </nav>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center pt-3">
     <div class="col-lg-8">
-        <div class="glass-card">
-            <div class="p-4 border-bottom border-secondary-subtle bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
-                <h4 class="fw-bold mb-0">Edit Product #{{ id }}</h4>
-                <button class="btn btn-outline-danger btn-sm rounded-pill px-3"><i class="bi bi-trash"></i> Delete</button>
+        <div class="dashboard-card border-0 mb-5">
+            <div class="p-4 px-5 border-bottom border-light bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <div>
+                    <h4 class="fw-bolder mb-0 text-dark">Edit Product #{{ id }}</h4>
+                    <p class="text-muted small mb-0 mt-1">Make changes to your existing inventory item.</p>
+                </div>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-4 shadow-sm fw-bold"><i class="bi bi-trash3 me-1"></i> Delete</button>
             </div>
             
-            <form action="{% url 'dashboard_products' %}" method="POST" class="p-4" onsubmit="event.preventDefault(); window.location.href=this.action;">
+            <form action="{% url 'dashboard_products' %}" method="POST" class="p-5" onsubmit="event.preventDefault(); window.location.href=this.action;">
                 <div class="row g-4 mb-4">
                     <div class="col-md-8">
-                        <label class="form-label fw-bold">Product Name</label>
-                        <input type="text" class="form-control" value="Sample Product Name">
+                        <div class="form-floating text-muted shadow-sm rounded-3">
+                            <input type="text" class="form-control border-0" id="editName" value="Sample Product Name">
+                            <label for="editName" class="fw-bold">Product Name</label>
+                        </div>
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label fw-bold">Category</label>
-                        <select class="form-select">
-                            <option>Prescription Medicines</option>
-                            <option selected>Vitamins & Supplements</option>
-                            <option>Personal Care</option>
-                        </select>
+                        <div class="form-floating text-muted shadow-sm rounded-3">
+                            <select class="form-select border-0" id="editCat">
+                                <option>Prescription Medicines</option>
+                                <option selected>Vitamins & Supplements</option>
+                                <option>Personal Care</option>
+                            </select>
+                            <label for="editCat" class="fw-bold">Category</label>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row g-4 mb-4">
                     <div class="col-md-6">
-                        <label class="form-label fw-bold">Price ($)</label>
-                        <input type="number" step="0.01" class="form-control" value="24.99">
+                        <div class="form-floating text-muted shadow-sm rounded-3">
+                            <input type="number" step="0.01" class="form-control border-0" id="editPrice" value="24.99">
+                            <label for="editPrice" class="fw-bold">Price ($)</label>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label fw-bold">Current Stock</label>
-                        <input type="number" class="form-control" value="150">
+                        <div class="form-floating text-muted shadow-sm rounded-3">
+                            <input type="number" class="form-control border-0" id="editStock" value="150">
+                            <label for="editStock" class="fw-bold">Current Stock</label>
+                        </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label fw-bold">Product Description</label>
-                    <textarea class="form-control" rows="4">This is a fully editable dummy description for product #{{ id }}.</textarea>
+                    <div class="form-floating text-muted shadow-sm rounded-3">
+                        <textarea class="form-control border-0" id="editDesc" style="height: 120px">This is a fully editable dummy description for product #{{ id }}.</textarea>
+                        <label for="editDesc" class="fw-bold">Detailed Product Description</label>
+                    </div>
                 </div>
 
-                <div class="d-flex justify-content-end gap-2 mt-5 border-top border-light pt-4">
-                    <a href="{% url 'dashboard_products' %}" class="btn btn-light px-4">Cancel</a>
-                    <button type="submit" class="btn btn-primary px-4 shadow-sm"><i class="bi bi-check2 me-2"></i> Update Product</button>
+                <div class="d-flex justify-content-end gap-3 mt-5 pt-4 border-top border-light">
+                    <a href="{% url 'dashboard_products' %}" class="btn btn-light px-4 rounded-pill shadow-sm fw-bold">Cancel</a>
+                    <button type="submit" class="btn-modern btn-modern-primary rounded-pill px-5 shadow-lg"><i class="bi bi-arrow-repeat me-2"></i> Update Product</button>
                 </div>
             </form>
         </div>

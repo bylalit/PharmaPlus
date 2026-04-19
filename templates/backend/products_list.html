@@ -5,39 +5,42 @@
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none">Dashboard</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Products</li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none text-muted">Dashboard</a></li>
+        <li class="breadcrumb-item active fw-bold" aria-current="page">Products Center</li>
     </ol>
 </nav>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="fw-bold mb-0">Products <span class="badge bg-light text-dark fs-6">{{ products|length }}</span></h3>
-    <a href="{% url 'dashboard_product_add' %}" class="btn btn-primary d-flex align-items-center gap-2 shadow-sm rounded-pill">
+    <h3 class="fw-bolder mb-0 tracking-tight">Products Inventory</h3>
+    <a href="{% url 'dashboard_product_add' %}" class="btn-modern btn-modern-primary">
         <i class="bi bi-plus-lg"></i> Add New Product
     </a>
 </div>
 
-<div class="glass-card">
-    <div class="p-4 border-bottom border-secondary-subtle d-flex justify-content-between align-items-center bg-light bg-opacity-50">
-        <div class="input-group" style="max-width: 300px;">
-            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
-            <input type="text" class="form-control border-start-0 ps-0" placeholder="Search products...">
+<div class="dashboard-card position-relative z-1 mb-5">
+    <div class="p-4 border-bottom border-light bg-light bg-opacity-25 d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <div class="search-wrapper m-0">
+            <i class="bi bi-search text-muted"></i>
+            <input type="text" placeholder="Search by SKU or name...">
         </div>
-        <div>
-            <select class="form-select bg-white dropdown-toggle shadow-sm" style="width: 150px;">
-                <option selected>Category</option>
+        <div class="d-flex gap-2">
+            <select class="form-select border-0 bg-white shadow-sm fw-medium rounded-pill px-4">
+                <option selected>All Categories</option>
                 <option value="1">Medicines</option>
                 <option value="2">Vitamins</option>
             </select>
+            <button class="btn btn-light rounded-pill shadow-sm"><i class="bi bi-funnel"></i> Filter</button>
         </div>
     </div>
     
-    <div class="table-responsive p-0">
-        <table class="table table-hover mb-0 align-middle">
-            <thead class="table-light">
+    <div class="table-responsive px-4 pb-4 pt-2">
+        <table class="table-modern">
+            <thead>
                 <tr>
-                    <th class="ps-4">Product</th>
+                    <th class="ps-3"><input class="form-check-input" type="checkbox"></th>
+                    <th>Product Details</th>
                     <th>Category</th>
+                    <th>Status</th>
                     <th>Price</th>
                     <th>Stock</th>
                     <th class="text-end pe-4">Actions</th>
@@ -46,48 +49,58 @@
             <tbody>
                 {% for product in products %}
                 <tr>
-                    <td class="ps-4">
+                    <td class="ps-3"><input class="form-check-input" type="checkbox"></td>
+                    <td>
                         <div class="d-flex align-items-center">
-                            <img src="{{ product.image }}" class="rounded shadow-sm me-3" style="width: 45px; height: 45px; object-fit: cover;" alt="{{ product.name }}">
+                            <img src="{{ product.image }}" class="rounded shadow-sm me-3" style="width: 48px; height: 48px; object-fit: cover;" alt="{{ product.name }}">
                             <div>
-                                <h6 class="fw-bold mb-0">{{ product.name }}</h6>
-                                <small class="text-muted">ID: #PROD{{ product.id }}</small>
+                                <h6 class="fw-bold mb-1 text-dark">{{ product.name }}</h6>
+                                <small class="text-muted fw-medium">ID: #PROD{{ product.id }}</small>
                             </div>
                         </div>
                     </td>
-                    <td><span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25">{{ product.category }}</span></td>
-                    <td class="fw-bold text-success">${{ product.price }}</td>
+                    <td><span class="badge border border-secondary border-opacity-25 text-secondary bg-light px-3 py-2 rounded-pill">{{ product.category }}</span></td>
                     <td>
                         {% if product.stock > 10 %}
-                            <span class="text-success"><i class="bi bi-check-circle-fill me-1"></i> {{ product.stock }}</span>
+                            <span class="badge-status badge-active text-uppercase" style="font-size: 0.65rem;">Active</span>
                         {% else %}
-                            <span class="text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i> {{ product.stock }}</span>
+                            <span class="badge-status badge-danger text-uppercase" style="font-size: 0.65rem;">Low Stock</span>
                         {% endif %}
                     </td>
+                    <td class="fw-bold text-dark fs-6">${{ product.price }}</td>
+                    <td>
+                        <div class="fw-bold {% if product.stock > 10 %}text-success{% else %}text-danger{% endif %}">
+                            {{ product.stock }} Units
+                        </div>
+                    </td>
                     <td class="text-end pe-4">
-                        <div class="btn-group shadow-sm">
-                            <a href="{% url 'dashboard_product_edit' product.id %}" class="btn btn-sm btn-light border" title="Edit"><i class="bi bi-pencil text-primary"></i></a>
-                            <button class="btn btn-sm btn-light border text-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        <div class="dropdown">
+                            <button class="btn btn-light rounded-circle shadow-sm btn-sm border-0" type="button" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical text-muted"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4">
+                                <li><a class="dropdown-item py-2" href="{% url 'dashboard_product_edit' product.id %}"><i class="bi bi-pencil me-2 text-primary"></i> Edit Product</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item py-2 text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                            </ul>
                         </div>
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="5" class="text-center py-5 text-muted">No products found.</td>
+                    <td colspan="7" class="text-center py-5 text-muted">No products found.</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
     
-    <div class="p-3 border-top border-secondary-subtle bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
-        <span class="text-muted small">Showing 1 to 10 of {{ products|length }} entries</span>
+    <div class="p-4 border-top border-light bg-light bg-opacity-25 d-flex justify-content-between align-items-center">
+        <span class="text-muted small fw-medium">Showing 1 to 10 of {{ products|length }} entries</span>
         <nav aria-label="Page navigation">
             <ul class="pagination pagination-sm mb-0">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li class="page-item disabled"><a class="page-link border-0 shadow-sm rounded-start-pill px-3" href="#">Prev</a></li>
+                <li class="page-item active"><a class="page-link border-0 shadow-sm" href="#">1</a></li>
+                <li class="page-item"><a class="page-link border-0 shadow-sm" href="#">2</a></li>
+                <li class="page-item"><a class="page-link border-0 shadow-sm rounded-end-pill px-3" href="#">Next</a></li>
             </ul>
         </nav>
     </div>
