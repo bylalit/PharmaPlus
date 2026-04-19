@@ -1,0 +1,50 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}System Settings | PharmaPlus Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="glass-card">
+            <div class="p-4 border-bottom border-secondary-subtle">
+                <h4 class="fw-bold mb-0">System Configuration</h4>
+            </div>
+            <form action="#" method="POST" class="p-4" onsubmit="event.preventDefault();">
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Site Name</label>
+                    <input type="text" class="form-control" value="PharmaPlus">
+                </div>
+                
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Contact Email</label>
+                        <input type="email" class="form-control" value="support@pharmaplus.com">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Contact Phone</label>
+                        <input type="text" class="form-control" value="+1 (800) 123-4567">
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <h5 class="fw-bold mb-3">Taxes & Shipping</h5>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Default Tax Rate (%)</label>
+                        <input type="number" step="0.1" class="form-control" value="8.5">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Flat Shipping Cost ($)</label>
+                        <input type="number" step="0.01" class="form-control" value="5.00">
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-end border-top border-light pt-4 mt-5">
+                    <button class="btn btn-primary px-5 shadow-sm rounded-pill"><i class="bi bi-save me-2"></i> Save Settings</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Orders | PharmaPlus Dashboard{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'dashboard_home' %}" class="text-decoration-none">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Orders</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold mb-0">Order Management</h3>
+</div>
+
+<div class="glass-card">
+    <div class="p-4 border-bottom border-secondary-subtle bg-light bg-opacity-50">
+        <div class="d-flex gap-2">
+            <input type="text" class="form-control" style="max-width: 250px;" placeholder="Search Order ID or Customer...">
+            <select class="form-select" style="max-width: 150px;">
+                <option selected value="">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+        </div>
+    </div>
+    <div class="table-responsive p-0">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th class="text-end">Total Amount</th>
+                    <th class="text-end pe-4">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td class="ps-4 fw-bold text-primary">#ORD-{{ order.id }}</td>
+                    <td>{{ order.customer }}</td>
+                    <td class="text-muted">{{ order.date }}</td>
+                    <td>
+                        {% if order.status == 'Delivered' %}
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3">Delivered</span>
+                        {% elif order.status == 'Pending' %}
+                            <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill px-3">Pending</span>
+                        {% else %}
+                            <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 rounded-pill px-3">Shipped</span>
+                        {% endif %}
+                    </td>
+                    <td class="text-end fw-bold">${{ order.total }}</td>
+                    <td class="text-end pe-4">
+                        <a href="{% url 'dashboard_order_detail' order.id %}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

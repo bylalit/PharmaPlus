@@ -1,0 +1,139 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Overview | PharmaPlus Dashboard{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold mb-0">Dashboard Overview</h2>
+    <button class="btn btn-primary d-flex align-items-center gap-2 shadow-sm rounded-pill px-4">
+        <i class="bi bi-download"></i> Export Report
+    </button>
+</div>
+
+<!-- Stats Row -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h6 class="text-muted fw-bold mb-1">Total Revenue</h6>
+                    <h3 class="fw-bolder mb-0">$24,560</h3>
+                </div>
+                <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
+                    <i class="bi bi-currency-dollar fs-4"></i>
+                </div>
+            </div>
+            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-arrow-up-right me-1"></i> +12.5%</span> <span class="text-muted small ms-1">from last month</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h6 class="text-muted fw-bold mb-1">Total Orders</h6>
+                    <h3 class="fw-bolder mb-0">1,245</h3>
+                </div>
+                <div class="bg-success bg-opacity-10 text-success p-2 rounded-3">
+                    <i class="bi bi-cart bg-success-transparent fs-4"></i>
+                </div>
+            </div>
+            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-arrow-up-right me-1"></i> +5.2%</span> <span class="text-muted small ms-1">from last month</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h6 class="text-muted fw-bold mb-1">Active Users</h6>
+                    <h3 class="fw-bolder mb-0">432</h3>
+                </div>
+                <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-3">
+                    <i class="bi bi-people fs-4"></i>
+                </div>
+            </div>
+            <span class="badge bg-danger bg-opacity-10 text-danger"><i class="bi bi-arrow-down-right me-1"></i> -1.1%</span> <span class="text-muted small ms-1">from last month</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h6 class="text-muted fw-bold mb-1">Products Listed</h6>
+                    <h3 class="fw-bolder mb-0">12</h3>
+                </div>
+                <div class="bg-info bg-opacity-10 text-info p-2 rounded-3">
+                    <i class="bi bi-box-seam fs-4"></i>
+                </div>
+            </div>
+            <span class="text-muted small">Fully updated</span>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Recent Orders -->
+    <div class="col-lg-8">
+        <div class="glass-card h-100">
+            <div class="p-4 border-bottom border-secondary-subtle d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Recent Orders</h5>
+                <a href="{% url 'dashboard_orders' %}" class="btn btn-sm btn-light">View All</a>
+            </div>
+            <div class="table-responsive p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="ps-4">Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th class="text-end pe-4">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in recent_orders %}
+                        <tr>
+                            <td class="ps-4 fw-medium text-primary">#ORD-{{ order.id }}</td>
+                            <td>{{ order.customer }}</td>
+                            <td class="text-muted">{{ order.date }}</td>
+                            <td>
+                                {% if order.status == 'Delivered' %}
+                                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3">Delivered</span>
+                                {% elif order.status == 'Pending' %}
+                                    <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill px-3">Pending</span>
+                                {% else %}
+                                    <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 rounded-pill px-3">Shipped</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-end pe-4 fw-bold">${{ order.total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Top Products -->
+    <div class="col-lg-4">
+        <div class="glass-card h-100">
+            <div class="p-4 border-bottom border-secondary-subtle">
+                <h5 class="fw-bold mb-0">Top Selling Products</h5>
+            </div>
+            <div class="p-4">
+                {% for product in top_products %}
+                <div class="d-flex align-items-center mb-4 pb-2 border-bottom border-light">
+                    <img src="{{ product.image }}" class="rounded shadow-sm" style="width: 50px; height: 50px; object-fit: cover;" alt="{{ product.name }}">
+                    <div class="ms-3 flex-grow-1">
+                        <h6 class="fw-bold mb-1 text-truncate" style="max-width: 150px;">{{ product.name }}</h6>
+                        <small class="text-muted">{{ product.sales }} Sales</small>
+                    </div>
+                    <div class="fw-bold text-success">${{ product.price }}</div>
+                </div>
+                {% empty %}
+                <p class="text-muted text-center py-4">No sales data available yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

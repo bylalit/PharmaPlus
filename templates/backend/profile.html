@@ -1,0 +1,41 @@
+{% extends 'backend/base.html' %}
+
+{% block title %}Profile | PharmaPlus Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="glass-card mb-4">
+            <div class="p-4 border-bottom border-secondary-subtle">
+                <h4 class="fw-bold mb-0">Admin Profile</h4>
+            </div>
+            <div class="p-4 text-center">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold display-4 mx-auto mb-3 shadow" style="width: 100px; height: 100px;">
+                    A
+                </div>
+                <h5 class="fw-bold">Admin User</h5>
+                <p class="text-muted">Administrator</p>
+                <button class="btn btn-outline-primary rounded-pill px-4 btn-sm">Change Avatar</button>
+            </div>
+        </div>
+        
+        <div class="glass-card">
+            <form action="#" method="POST" class="p-4" onsubmit="event.preventDefault();">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Full Name</label>
+                    <input type="text" class="form-control" value="Admin User">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Email Address</label>
+                    <input type="email" class="form-control" value="admin@pharmaplus.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Password</label>
+                    <input type="password" class="form-control" placeholder="Leave blank to keep unchanged">
+                </div>
+                <button class="btn btn-primary w-100 mt-3 shadow-sm rounded-pill">Update Profile</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
