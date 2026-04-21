@@ -1,1 +1,130 @@
-/* All frontend CSS cleared as requested */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --pastel-green: #d1fae5;
+    --pastel-green-dark: #10b981;
+    --light-blue: #e0f2fe;
+    --light-blue-dark: #0ea5e9;
+    --soft-white: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.6);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--soft-white) 0%, var(--light-blue) 50%, var(--pastel-green) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 { color: var(--text-primary); font-weight: 600; }
+p, span, small { color: var(--text-secondary); }
+
+/* Glassmorphism Classes */
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.1);
+    border-color: rgba(255,255,255,0.9);
+}
+
+.glass-form-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.06);
+}
+
+/* Glass Buttons */
+.btn-glass-primary {
+    background: rgba(16, 185, 129, 0.8);
+    color: white;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-glass-primary:hover {
+    background: var(--pastel-green-dark);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-glass-secondary {
+    background: rgba(14, 165, 233, 0.8);
+    color: white;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-glass-secondary:hover {
+    background: var(--light-blue-dark);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+}
+
+/* Glass Inputs */
+.glass-input {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+.glass-input:focus {
+    background: rgba(255,255,255,0.8);
+    border-color: var(--light-blue-dark);
+    box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25);
+    outline: none;
+}
+
+/* Footer elements */
+.footer-glass {
+    background: rgba(255,255,255,0.2) !important;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
+}
+
+/* Images */
+.product-img {
+    height: 200px;
+    object-fit: contain;
+    background: rgba(255,255,255,0.5);
+    padding: 1rem;
+}

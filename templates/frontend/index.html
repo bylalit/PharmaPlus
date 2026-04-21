@@ -1,0 +1,113 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row align-items-center py-5 glass-card mb-5 px-4">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <span class="badge bg-primary bg-opacity-25 text-primary mb-3 px-3 py-2 rounded-pill">#1 Online Healthcare</span>
+            <h1 class="display-4 fw-bold text-dark mb-3">Your Trusted <span class="text-success">Online Pharmacy</span></h1>
+            <p class="lead text-secondary mb-4">Get your authentic prescriptions, vitamins, and daily medical devices delivered safely to your door with our secure cold-chain supply.</p>
+            <div class="d-flex gap-3">
+                <a href="/products/" class="btn btn-glass-primary btn-lg px-4"><i class="bi bi-bag me-2"></i> Shop Now</a>
+                <a href="/about/" class="btn btn-glass-secondary btn-lg px-4">Learn More</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center">
+            <!-- Dummy Image URL placeholder -->
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=800" alt="Pharmacy Banner" class="img-fluid rounded-4 shadow" style="max-height: 400px; object-fit: cover; opacity: 0.9;">
+        </div>
+    </div>
+
+    <!-- Category Section -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-4">Shop by Category</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="glass-card text-center p-4">
+                    <i class="bi bi-prescription2 display-4 text-primary mb-2 d-block"></i>
+                    <h5 class="m-0">Prescription</h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="glass-card text-center p-4">
+                    <i class="bi bi-capsule display-4 text-success mb-2 d-block"></i>
+                    <h5 class="m-0">Vitamins</h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="glass-card text-center p-4">
+                    <i class="bi bi-bandaid display-4 text-warning mb-2 d-block"></i>
+                    <h5 class="m-0">First Aid</h5>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="glass-card text-center p-4">
+                    <i class="bi bi-thermometer-half display-4 text-danger mb-2 d-block"></i>
+                    <h5 class="m-0">Devices</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="d-flex justify-content-between align-items-end mb-4">
+        <h2 class="fw-bold m-0">Featured Products</h2>
+        <a href="/products/" class="text-decoration-none text-primary fw-medium">View All <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <!-- Product 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Vitamin C">
+                <div class="p-4 pt-3">
+                    <h5 class="fw-bold mb-1">Immune Boost C</h5>
+                    <p class="text-muted small mb-2">500mg Supplements</p>
+                    <h4 class="text-primary fw-bold mb-3">$14.99</h4>
+                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Pain Reliever">
+                <div class="p-4 pt-3">
+                    <h5 class="fw-bold mb-1">PainRelief Plus</h5>
+                    <p class="text-muted small mb-2">Ibuprofen 400mg</p>
+                    <h4 class="text-primary fw-bold mb-3">$8.50</h4>
+                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Digital Thermometer">
+                <div class="p-4 pt-3">
+                    <h5 class="fw-bold mb-1">MediTemp Digital</h5>
+                    <p class="text-muted small mb-2">Fast Reading Device</p>
+                    <h4 class="text-primary fw-bold mb-3">$22.00</h4>
+                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Omega 3">
+                <div class="p-4 pt-3">
+                    <h5 class="fw-bold mb-1">Omega Heart Pro</h5>
+                    <p class="text-muted small mb-2">Fish Oil Extract</p>
+                    <h4 class="text-primary fw-bold mb-3">$18.75</h4>
+                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

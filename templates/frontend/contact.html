@@ -1,0 +1,82 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold display-5">Get in Touch</h2>
+        <p class="text-secondary lead mt-2">Have a question about a prescription or our services? Our medical support team is here to help.</p>
+    </div>
+
+    <div class="row g-5 justify-content-center">
+        <!-- Contact Info column -->
+        <div class="col-lg-4">
+            <div class="glass-card h-100 p-4 border-0">
+                <h4 class="fw-bold mb-4">Contact Information</h4>
+                
+                <div class="d-flex mb-4">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex justify-content-center align-items-center mb-auto" style="width: 50px; height: 50px;">
+                        <i class="bi bi-geo-alt fs-4"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1">Our Location</h6>
+                        <p class="text-secondary small mb-0">123 Healthway Avenue<br>Medical District, NY 10001<br>United States</p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-4">
+                    <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex justify-content-center align-items-center mb-auto" style="width: 50px; height: 50px;">
+                        <i class="bi bi-telephone fs-4"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1">Phone Number</h6>
+                        <p class="text-secondary small mb-0">+1 (800) 555-0199<br>Mon-Fri, 9am to 6pm EST</p>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-flex justify-content-center align-items-center mb-auto" style="width: 50px; height: 50px;">
+                        <i class="bi bi-envelope fs-4"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="fw-bold mb-1">Email Address</h6>
+                        <p class="text-secondary small mb-0">support@pharmaplus.com<br>pharmacist@pharmaplus.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="col-lg-6">
+            <div class="glass-form-card">
+                <h4 class="fw-bold mb-4">Send us a Message</h4>
+                <form>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-medium">Your Name</label>
+                            <input type="text" class="glass-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-medium">Your Email</label>
+                            <input type="email" class="glass-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label text-dark fw-medium">Subject</label>
+                        <input type="text" class="glass-input" placeholder="How can we help?" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label text-dark fw-medium">Message</label>
+                        <textarea class="glass-input" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-glass-primary w-100 btn-lg"><i class="bi bi-send me-2"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

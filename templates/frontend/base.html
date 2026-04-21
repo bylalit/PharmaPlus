@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaPlus | {% block title %}Your Trusted Pharmacy{% endblock %}</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Glass Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top glass-navbar py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2" href="{% url 'index' %}">
+                <i class="bi bi-capsule-pill"></i> PharmaPlus
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto fw-medium">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/products/">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex gap-2">
+                    <li class="nav-item">
+                        <a href="/cart/" class="nav-link position-relative">
+                            <i class="bi bi-cart3 fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-glass-secondary ms-2" href="/login/">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dynamic Content -->
+    <main class="flex-grow-1 my-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-glass py-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-primary"><i class="bi bi-capsule-pill"></i> PharmaPlus</h5>
+                    <p class="text-secondary small">Your Trusted Online Pharmacy providing reliable, affordable, and safe digital healthcare solutions globally.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-secondary small">
+                        <li><a href="/about/" class="text-decoration-none text-secondary">About Us</a></li>
+                        <li><a href="/contact/" class="text-decoration-none text-secondary">Contact</a></li>
+                        <li><a href="/products/" class="text-decoration-none text-secondary">Shop Now</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-secondary fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary fs-4"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-secondary opacity-25">
+            <div class="text-center text-secondary small">
+                &copy; 2026 PharmaPlus. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

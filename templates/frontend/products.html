@@ -1,0 +1,129 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">All Products</h2>
+        <div class="dropdown">
+            <button class="btn btn-glass-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Sort By
+            </button>
+            <ul class="dropdown-menu shadow">
+                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                <li><a class="dropdown-item" href="#">Newest Arrivals</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Products Grid (8 Items) -->
+    <div class="row g-4 mb-5">
+        
+        <!-- P1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Vitamin C"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">Immune Boost C</h5></a>
+                    <p class="text-muted small mb-2">500mg Supplements</p>
+                    <h4 class="text-primary fw-bold mb-3">$14.99</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Pain Reliever"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">PainRelief Plus</h5></a>
+                    <p class="text-muted small mb-2">Ibuprofen 400mg</p>
+                    <h4 class="text-primary fw-bold mb-3">$8.50</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Digital Thermometer"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">MediTemp Digital</h5></a>
+                    <p class="text-muted small mb-2">Fast Reading Device</p>
+                    <h4 class="text-primary fw-bold mb-3">$22.00</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Omega 3"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">Omega Heart Pro</h5></a>
+                    <p class="text-muted small mb-2">Fish Oil Extract</p>
+                    <h4 class="text-primary fw-bold mb-3">$18.75</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P5 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1542838531-1558273dfc29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Hand Sanitizer"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">PureClean Shield</h5></a>
+                    <p class="text-muted small mb-2">70% Alcohol Gel</p>
+                    <h4 class="text-primary fw-bold mb-3">$5.50</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P6 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1598288151044-f9dd1d5ee0e0?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Protein Powder"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">WheyFit Isolate</h5></a>
+                    <p class="text-muted small mb-2">Sports Nutrition</p>
+                    <h4 class="text-primary fw-bold mb-3">$35.00</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P7 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Face Masks"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">N95 Pro Masks</h5></a>
+                    <p class="text-muted small mb-2">Pack of 10</p>
+                    <h4 class="text-primary fw-bold mb-3">$12.99</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- P8 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass-card h-100 p-0 text-center">
+                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="First Aid Kit"></a>
+                <div class="p-4 pt-3">
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">CareKit First Aid</h5></a>
+                    <p class="text-muted small mb-2">Emergency Supples</p>
+                    <h4 class="text-primary fw-bold mb-3">$29.50</h4>
+                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

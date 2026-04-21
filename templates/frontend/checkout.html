@@ -1,0 +1,124 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Secure Checkout</h2>
+        <p class="text-secondary">Please enter your details below to complete your purchase.</p>
+    </div>
+
+    <div class="row g-5">
+        <!-- Delivery Details -->
+        <div class="col-lg-8">
+            <div class="glass-card mb-4 p-4 p-md-5">
+                <h4 class="fw-bold mb-4">1. Delivery Address</h4>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label class="form-label">First name</label>
+                            <input type="text" class="glass-input" placeholder="John" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label">Last name</label>
+                            <input type="text" class="glass-input" placeholder="Doe" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="glass-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="glass-input" placeholder="1234 Main St" required>
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label">Country</label>
+                            <select class="glass-input" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">State</label>
+                            <select class="glass-input" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Zip</label>
+                            <input type="text" class="glass-input" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="glass-card p-4 p-md-5">
+                <h4 class="fw-bold mb-4">2. Payment Method</h4>
+                <div class="my-3">
+                    <div class="form-check mb-2">
+                        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                        <label class="form-check-label" for="credit"><i class="bi bi-credit-card mx-2 text-primary"></i> Credit / Debit Card</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                        <label class="form-check-label" for="paypal"><i class="bi bi-paypal mx-2 text-primary"></i> PayPal</label>
+                    </div>
+                </div>
+
+                <div class="row gy-3 mt-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Name on card</label>
+                        <input type="text" class="glass-input" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Credit card number</label>
+                        <input type="text" class="glass-input" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Expiration</label>
+                        <input type="text" class="glass-input" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="glass-input" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="col-lg-4">
+            <div class="glass-card p-4 position-sticky" style="top: 100px;">
+                <h5 class="d-flex justify-content-between align-items-center mb-4">
+                    <span class="text-primary fw-bold">Order Summary</span>
+                    <span class="badge bg-primary rounded-pill">2</span>
+                </h5>
+                <ul class="list-group list-group-flush mb-4 bg-transparent">
+                    <li class="list-group-item d-flex justify-content-between lh-sm bg-transparent border-secondary border-opacity-25 py-3">
+                        <div>
+                            <h6 class="my-0">Immune Boost C</h6>
+                            <small class="text-secondary">Quantity: 1</small>
+                        </div>
+                        <span class="text-body-secondary">$14.99</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm bg-transparent border-secondary border-opacity-25 py-3">
+                        <div>
+                            <h6 class="my-0">PainRelief Plus</h6>
+                            <small class="text-secondary">Quantity: 2</small>
+                        </div>
+                        <span class="text-body-secondary">$17.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-transparent border-secondary border-opacity-25 py-3">
+                        <span class="fw-bold">Total (USD)</span>
+                        <strong class="text-primary fs-5">$31.99</strong>
+                    </li>
+                </ul>
+                <button class="btn btn-glass-primary w-100 btn-lg" type="submit">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
