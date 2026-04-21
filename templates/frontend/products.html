@@ -1,128 +1,237 @@
 {% extends 'frontend/base.html' %}
+{% load static %}
 
-{% block title %}Products{% endblock %}
+{% block title %}Shop Products{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">All Products</h2>
-        <div class="dropdown">
-            <button class="btn btn-glass-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Sort By
-            </button>
-            <ul class="dropdown-menu shadow">
-                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
-                <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
-                <li><a class="dropdown-item" href="#">Newest Arrivals</a></li>
-            </ul>
+<div class="container py-4">
+
+    <!-- Header Banner -->
+    <div class="glass-card mb-5 border-0 p-4 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="background: linear-gradient(to right, rgba(14, 165, 233, 0.1), rgba(255,255,255,0.4));">
+        <div>
+            <h1 class="fw-bold mb-2 display-6">All Healthcare Products</h1>
+            <p class="text-secondary mb-0">Browse our certified collection of wellness and medical items.</p>
+        </div>
+        <div class="mt-4 mt-md-0 d-flex gap-2">
+            <span class="text-muted small align-self-center me-2">Sort by:</span>
+            <select class="form-select glass-input border-0 py-2 w-auto shadow-sm cursor-pointer">
+                <option selected>Recommended</option>
+                <option value="1">Price: Low to High</option>
+                <option value="2">Price: High to Low</option>
+                <option value="3">Newest Arrivals</option>
+            </select>
         </div>
     </div>
 
-    <!-- Products Grid (8 Items) -->
-    <div class="row g-4 mb-5">
-        
-        <!-- P1 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Vitamin C"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">Immune Boost C</h5></a>
-                    <p class="text-muted small mb-2">500mg Supplements</p>
-                    <h4 class="text-primary fw-bold mb-3">$14.99</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+    <div class="row g-5">
+        <!-- Filter Sidebar (UI Only) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="glass-card p-4 position-sticky" style="top: 100px;">
+                <h5 class="fw-bold mb-4 d-flex justify-content-between align-items-center">
+                    Filters
+                    <i class="bi bi-funnel text-primary"></i>
+                </h5>
+                
+                <!-- Category Filter -->
+                <div class="mb-4">
+                    <h6 class="fw-bold mb-3">Categories</h6>
+                    <div class="form-check mb-2 custom-check">
+                        <input class="form-check-input" type="checkbox" id="cat1" checked>
+                        <label class="form-check-label text-muted" for="cat1">All Products <span class="ms-1 text-secondary small">(124)</span></label>
+                    </div>
+                    <div class="form-check mb-2 custom-check">
+                        <input class="form-check-input" type="checkbox" id="cat2">
+                        <label class="form-check-label text-muted" for="cat2">Vitamins <span class="ms-1 text-secondary small">(45)</span></label>
+                    </div>
+                    <div class="form-check mb-2 custom-check">
+                        <input class="form-check-input" type="checkbox" id="cat3">
+                        <label class="form-check-label text-muted" for="cat3">Prescriptions <span class="ms-1 text-secondary small">(32)</span></label>
+                    </div>
+                    <div class="form-check mb-2 custom-check">
+                        <input class="form-check-input" type="checkbox" id="cat4">
+                        <label class="form-check-label text-muted" for="cat4">First Aid <span class="ms-1 text-secondary small">(18)</span></label>
+                    </div>
+                    <div class="form-check mb-2 custom-check">
+                        <input class="form-check-input" type="checkbox" id="cat5">
+                        <label class="form-check-label text-muted" for="cat5">Medical Devices <span class="ms-1 text-secondary small">(29)</span></label>
+                    </div>
                 </div>
+
+                <hr class="border-secondary opacity-25">
+
+                <!-- Price Filter (UI) -->
+                <div class="mb-4 mt-4">
+                    <h6 class="fw-bold mb-3">Price Range</h6>
+                    <input type="range" class="form-range" min="0" max="200" id="priceRange">
+                    <div class="d-flex justify-content-between mt-2">
+                        <span class="text-secondary small">$0</span>
+                        <span class="text-secondary small">$200+</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-glass-outline w-100 py-2">Apply Filters</button>
             </div>
         </div>
 
-        <!-- P2 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Pain Reliever"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">PainRelief Plus</h5></a>
-                    <p class="text-muted small mb-2">Ibuprofen 400mg</p>
-                    <h4 class="text-primary fw-bold mb-3">$8.50</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+        <!-- Products Grid Area -->
+        <div class="col-lg-9">
+            <div class="row g-4 mb-5 pb-5">
+                <!-- Repeated Product Card Logic (8 Cards) -->
+                <!-- P1 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">-15%</span>
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">Immune Boost C</h6></a>
+                            <p class="text-muted small mb-3">500mg Supplements</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$14.99</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- P3 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Digital Thermometer"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">MediTemp Digital</h5></a>
-                    <p class="text-muted small mb-2">Fast Reading Device</p>
-                    <h4 class="text-primary fw-bold mb-3">$22.00</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P2 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">PainRelief Plus</h6></a>
+                            <p class="text-muted small mb-3">Ibuprofen 400mg</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$8.50</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- P4 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Omega 3"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">Omega Heart Pro</h5></a>
-                    <p class="text-muted small mb-2">Fish Oil Extract</p>
-                    <h4 class="text-primary fw-bold mb-3">$18.75</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P3 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">MediTemp Digital</h6></a>
+                            <p class="text-muted small mb-3">Fast Reading Device</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$22.00</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- P5 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1542838531-1558273dfc29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Hand Sanitizer"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">PureClean Shield</h5></a>
-                    <p class="text-muted small mb-2">70% Alcohol Gel</p>
-                    <h4 class="text-primary fw-bold mb-3">$5.50</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P4 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">Omega Heart Pro</h6></a>
+                            <p class="text-muted small mb-3">Fish Oil Extract - 60 Caps</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$18.75</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+                
+                <!-- P5 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">New</span>
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1542838531-1558273dfc29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">PureClean Shield</h6></a>
+                            <p class="text-muted small mb-3">70% Alcohol Gel</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$5.50</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- P6 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1598288151044-f9dd1d5ee0e0?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Protein Powder"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">WheyFit Isolate</h5></a>
-                    <p class="text-muted small mb-2">Sports Nutrition</p>
-                    <h4 class="text-primary fw-bold mb-3">$35.00</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P6 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1598288151044-f9dd1d5ee0e0?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">WheyFit Isolate</h6></a>
+                            <p class="text-muted small mb-3">Sports Nutrition</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$35.00</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- P7 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Face Masks"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">N95 Pro Masks</h5></a>
-                    <p class="text-muted small mb-2">Pack of 10</p>
-                    <h4 class="text-primary fw-bold mb-3">$12.99</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P7 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">N95 Pro Masks</h6></a>
+                            <p class="text-muted small mb-3">Pack of 10</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$12.99</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- P8 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="First Aid Kit"></a>
-                <div class="p-4 pt-3">
-                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold mb-1 text-dark">CareKit First Aid</h5></a>
-                    <p class="text-muted small mb-2">Emergency Supples</p>
-                    <h4 class="text-primary fw-bold mb-3">$29.50</h4>
-                    <a href="/cart/" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+                <!-- P8 -->
+                <div class="col-12 col-md-4 col-sm-6">
+                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
+                        <div class="product-img-wrapper" style="height: 200px;">
+                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                        </div>
+                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
+                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">CareKit First Aid</h6></a>
+                            <p class="text-muted small mb-3">Emergency Supplies</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary fw-bold m-0">$29.50</h5>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Product Pagination" class="mb-5 pb-5">
+                <ul class="pagination justify-content-center gap-2">
+                    <li class="page-item disabled">
+                        <a class="page-link rounded-circle border-0 shadow-sm text-muted d-flex align-items-center justify-content-center" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.5);"><i class="bi bi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-sm d-flex align-items-center justify-content-center fw-bold bg-primary text-white" href="#" style="width: 40px; height: 40px;">1</a></li>
+                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);">2</a></li>
+                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);"><i class="bi bi-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </div>
 </div>

@@ -1,113 +1,300 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Premium Online Pharmacy & Medical Supplies{% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Hero Section -->
-    <div class="row align-items-center py-5 glass-card mb-5 px-4">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-            <span class="badge bg-primary bg-opacity-25 text-primary mb-3 px-3 py-2 rounded-pill">#1 Online Healthcare</span>
-            <h1 class="display-4 fw-bold text-dark mb-3">Your Trusted <span class="text-success">Online Pharmacy</span></h1>
-            <p class="lead text-secondary mb-4">Get your authentic prescriptions, vitamins, and daily medical devices delivered safely to your door with our secure cold-chain supply.</p>
-            <div class="d-flex gap-3">
-                <a href="/products/" class="btn btn-glass-primary btn-lg px-4"><i class="bi bi-bag me-2"></i> Shop Now</a>
-                <a href="/about/" class="btn btn-glass-secondary btn-lg px-4">Learn More</a>
+<div class="container mt-2">
+    <!-- Extremely Rich Hero Section -->
+    <div class="glass-card mb-5 border-0 overflow-hidden position-relative">
+        <!-- Abstract Decoration overlay -->
+        <div class="position-absolute top-0 end-0 bg-primary opacity-25 rounded-circle" style="width: 400px; height: 400px; filter: blur(80px); transform: translate(30%, -30%); z-index: 0;"></div>
+        
+        <div class="row align-items-center p-4 p-lg-5 position-relative z-1">
+            <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                <div class="glass-pill mb-4">
+                    <span class="badge bg-success rounded-pill me-2">New</span> Complete Cold-Chain Delivery Active
+                </div>
+                <h1 class="display-3 fw-bold text-dark mb-4 lh-sm">
+                    Re-imagining Your <span class="text-primary">Pharmacy</span> Experience
+                </h1>
+                <p class="lead text-secondary mb-5 pe-lg-4" style="line-height: 1.8;">
+                    Gain digital access to thousands of certified wellness products, essential prescriptions, and medical equipment. Delivered securely and discretely to your home.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3">
+                    <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg"><i class="bi bi-cart3 me-2"></i> Browse Medicines</a>
+                    <a href="/about/" class="btn btn-lg btn-glass-outline d-flex align-items-center justify-content-center">
+                        <i class="bi bi-play-circle-fill me-2 fs-5"></i> Watch How It Works
+                    </a>
+                </div>
+                
+                <!-- Trust indicators -->
+                <div class="d-flex align-items-center gap-4 mt-5 pt-3 border-top border-secondary border-opacity-25">
+                    <div class="d-flex align-items-center">
+                        <h2 class="fw-bold m-0 me-2">50k+</h2>
+                        <small class="text-muted lh-1">Happy<br>Patients</small>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <h2 class="fw-bold m-0 me-2 text-success">100%</h2>
+                        <small class="text-muted lh-1">Verified<br>Products</small>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6 text-center">
-            <!-- Dummy Image URL placeholder -->
-            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=800" alt="Pharmacy Banner" class="img-fluid rounded-4 shadow" style="max-height: 400px; object-fit: cover; opacity: 0.9;">
+            
+            <div class="col-lg-6 position-relative text-center">
+                <!-- High-quality hero image -->
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Doctor providing medication" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; height: 500px; border: 4px solid rgba(255,255,255,0.8);">
+                
+                <!-- Floating Glass Card -->
+                <div class="glass-card position-absolute bottom-0 start-0 translate-middle-x ms-5 mb-5 p-3 d-flex align-items-center gap-3 text-start shadow-lg border-0 d-none d-md-flex" style="max-width: 250px;">
+                    <div class="bg-success text-white rounded-circle p-2 d-flex"><i class="bi bi-shield-check fs-4"></i></div>
+                    <div>
+                        <h6 class="fw-bold m-0">Pharmacist Approved</h6>
+                        <small class="text-muted">Rigorous quality checks</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Category Section -->
-    <div class="text-center mb-5">
-        <h2 class="fw-bold mb-4">Shop by Category</h2>
-        <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-3">
-                <div class="glass-card text-center p-4">
-                    <i class="bi bi-prescription2 display-4 text-primary mb-2 d-block"></i>
-                    <h5 class="m-0">Prescription</h5>
-                </div>
+    <!-- Features Section (Newly Added) -->
+    <div class="row g-4 mb-5 pb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="glass-card p-4 h-100 border-0 text-center">
+                <i class="bi bi-truck fs-1 text-primary mb-3"></i>
+                <h5 class="fw-bold">Fast Delivery</h5>
+                <p class="text-muted small mb-0">Free standard shipping over $50. Real-time temperature tracked.</p>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="glass-card text-center p-4">
-                    <i class="bi bi-capsule display-4 text-success mb-2 d-block"></i>
-                    <h5 class="m-0">Vitamins</h5>
-                </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="glass-card p-4 h-100 border-0 text-center">
+                <i class="bi bi-shield-plus fs-1 text-success mb-3"></i>
+                <h5 class="fw-bold">100% Authentic</h5>
+                <p class="text-muted small mb-0">Sourced directly from certified and global manufacturers.</p>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="glass-card text-center p-4">
-                    <i class="bi bi-bandaid display-4 text-warning mb-2 d-block"></i>
-                    <h5 class="m-0">First Aid</h5>
-                </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="glass-card p-4 h-100 border-0 text-center">
+                <i class="bi bi-headset fs-1 text-warning mb-3"></i>
+                <h5 class="fw-bold">24/7 Support</h5>
+                <p class="text-muted small mb-0">Dedicated pharmacist helpline available whenever you need.</p>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="glass-card text-center p-4">
-                    <i class="bi bi-thermometer-half display-4 text-danger mb-2 d-block"></i>
-                    <h5 class="m-0">Devices</h5>
-                </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="glass-card p-4 h-100 border-0 text-center">
+                <i class="bi bi-credit-card-2-front fs-1 text-danger mb-3"></i>
+                <h5 class="fw-bold">Secure Payment</h5>
+                <p class="text-muted small mb-0">End-to-end encrypted AES-256 bit payment gateways.</p>
             </div>
         </div>
     </div>
 
-    <!-- Featured Products -->
+    <!-- Categories Section -->
     <div class="d-flex justify-content-between align-items-end mb-4">
-        <h2 class="fw-bold m-0">Featured Products</h2>
-        <a href="/products/" class="text-decoration-none text-primary fw-medium">View All <i class="bi bi-arrow-right"></i></a>
+        <div>
+            <span class="text-primary fw-bold text-uppercase small tracking-wide">Shop By Tag</span>
+            <h2 class="fw-bold m-0 display-6">Top Categories</h2>
+        </div>
+    </div>
+    
+    <div class="row g-4 mb-5 pb-5">
+        <div class="col-12 col-md-4">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Vitamins">
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0;">
+                    <h3 class="fw-bold text-white mb-1 shadow-sm">Vitamins & Diet</h3>
+                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Prescriptions">
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-primary bg-opacity-50" style="top:0; bottom:0; left:0; right:0;">
+                    <h3 class="fw-bold text-white mb-1 shadow-sm">Prescriptions</h3>
+                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+                <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Medical Devices">
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0;">
+                    <h3 class="fw-bold text-white mb-1 shadow-sm">Medical Devices</h3>
+                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promotional Banner (Newly Added) -->
+    <div class="glass-card rounded-4 p-5 mb-5 pb-5 text-center text-md-start" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(16, 185, 129, 0.1)); border: 1px solid var(--primary-color);">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-4 mb-md-0">
+                <span class="badge bg-danger rounded-pill px-3 py-2 mb-3">Limited Time Offer</span>
+                <h2 class="display-5 fw-bold mb-3">Get 20% Off Your First Digital Prescription</h2>
+                <p class="lead text-secondary mb-0">Use code <strong>HEALTH20</strong> at checkout alongside free standard logistics to your door.</p>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+                <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg">Shop Prescriptions Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="d-flex justify-content-between align-items-end mb-4 mt-5">
+        <div>
+            <span class="text-success fw-bold text-uppercase small tracking-wide">Trending</span>
+            <h2 class="fw-bold m-0 display-6">Featured Medicines</h2>
+        </div>
+        <a href="/products/" class="btn btn-glass-outline btn-sm px-4 rounded-pill d-none d-sm-block">View Entire Catalog</a>
     </div>
 
-    <div class="row g-4 mb-5">
-        <!-- Product 1 -->
+    <div class="row g-4 mb-5 pb-5">
+        <!-- P1 -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Vitamin C">
-                <div class="p-4 pt-3">
-                    <h5 class="fw-bold mb-1">Immune Boost C</h5>
-                    <p class="text-muted small mb-2">500mg Supplements</p>
-                    <h4 class="text-primary fw-bold mb-3">$14.99</h4>
-                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+            <div class="glass-card h-100 p-0 d-flex flex-column">
+                <div class="product-img-wrapper">
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">-15%</span>
+                    <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">Immune Boost C</h5></a>
+                    </div>
+                    <p class="text-muted small mb-3">500mg Supplements</p>
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary fw-bold m-0">$14.99</h4>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Product 2 -->
+        <!-- P2 -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Pain Reliever">
-                <div class="p-4 pt-3">
-                    <h5 class="fw-bold mb-1">PainRelief Plus</h5>
-                    <p class="text-muted small mb-2">Ibuprofen 400mg</p>
-                    <h4 class="text-primary fw-bold mb-3">$8.50</h4>
-                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+            <div class="glass-card h-100 p-0 d-flex flex-column">
+                <div class="product-img-wrapper">
+                    <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">PainRelief Plus</h5></a>
+                    </div>
+                    <p class="text-muted small mb-3">Ibuprofen 400mg</p>
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary fw-bold m-0">$8.50</h4>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Product 3 -->
+        <!-- P3 -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Digital Thermometer">
-                <div class="p-4 pt-3">
-                    <h5 class="fw-bold mb-1">MediTemp Digital</h5>
-                    <p class="text-muted small mb-2">Fast Reading Device</p>
-                    <h4 class="text-primary fw-bold mb-3">$22.00</h4>
-                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+            <div class="glass-card h-100 p-0 d-flex flex-column">
+                <div class="product-img-wrapper">
+                    <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">Best Seller</span>
+                    <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">MediTemp Digital</h5></a>
+                    </div>
+                    <p class="text-muted small mb-3">Fast Reading Device</p>
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary fw-bold m-0">$22.00</h4>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Product 4 -->
+        <!-- P4 -->
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 text-center">
-                <img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="img-fluid product-img w-100" alt="Omega 3">
-                <div class="p-4 pt-3">
-                    <h5 class="fw-bold mb-1">Omega Heart Pro</h5>
-                    <p class="text-muted small mb-2">Fish Oil Extract</p>
-                    <h4 class="text-primary fw-bold mb-3">$18.75</h4>
-                    <a href="#" class="btn btn-glass-primary w-100"><i class="bi bi-cart-plus"></i> Add to Cart</a>
+            <div class="glass-card h-100 p-0 d-flex flex-column">
+                <div class="product-img-wrapper">
+                    <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">Omega Heart Pro</h5></a>
+                    </div>
+                    <p class="text-muted small mb-3">Fish Oil Extract - 60 Caps</p>
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <h4 class="text-primary fw-bold m-0">$18.75</h4>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Testimonials Section (Newly Added) -->
+    <div class="text-center mb-5 mt-5">
+        <span class="text-primary fw-bold text-uppercase small tracking-wide">Reviews</span>
+        <h2 class="fw-bold m-0 display-6 mb-4">Patient Experiences</h2>
+        
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="glass-card p-4 border-0 text-start h-100">
+                    <div class="d-flex text-warning mb-3 fs-5">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="text-secondary fst-italic mb-4">"The delivery was incredibly fast and the packaging ensured my temperature-sensitive meds arrived perfectly chilled. PharmaPlus is a lifesaver!"</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">SJ</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Sarah Jenkins</h6>
+                            <small class="text-muted">Verified Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 border-0 text-start h-100">
+                    <div class="d-flex text-warning mb-3 fs-5">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                    <p class="text-secondary fst-italic mb-4">"Absolutely revolutionized how I manage my prescriptions. The interface is stunningly simple to use and customer service is 10/10."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">MR</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Michael Ross</h6>
+                            <small class="text-muted">Verified Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="glass-card p-4 border-0 text-start h-100">
+                    <div class="d-flex text-warning mb-3 fs-5">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="text-secondary fst-italic mb-4">"I use them for all my parent's diabetic supplies now. The transparent pricing and authentic sourcing gives me immense peace of mind."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-info text-dark rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">EL</div>
+                        <div>
+                            <h6 class="fw-bold m-0">Emily Larson</h6>
+                            <small class="text-muted">Verified Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section (Newly Added) -->
+    <div class="glass-card rounded-4 p-5 text-center mb-5 border-0 shadow-sm" style="background: rgba(255,255,255,0.7);">
+        <h2 class="fw-bold mb-3">Health Tips to Your Inbox</h2>
+        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px;">Subscribe to our newsletter to receive the latest medical insights, healthy lifestyle tips, and exclusive discount codes directly to your email.</p>
+        
+        <form class="mx-auto" style="max-width: 500px;">
+            <div class="glass-input-wrapper mb-3 shadow-sm rounded-pill overflow-hidden bg-white">
+                <i class="bi bi-envelope glass-input-icon mt-2"></i>
+                <input type="email" class="glass-input with-icon border-0 rounded-0" placeholder="Enter your email address" style="background: transparent;" required>
+                <button type="submit" class="btn btn-glass-primary m-1 rounded-pill px-4 z-3 position-relative">Subscribe</button>
+            </div>
+            <small class="text-muted">We respect your privacy. No spam ever.</small>
+        </form>
+    </div>
+
 </div>
 {% endblock %}

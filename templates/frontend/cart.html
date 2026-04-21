@@ -4,93 +4,129 @@
 
 {% block content %}
 <div class="container py-4">
-    <h2 class="fw-bold mb-4">Your Shopping Cart</h2>
+    <!-- Header -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-2">
+        <div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center">
+            <i class="bi bi-cart3 fs-3 m-0"></i>
+        </div>
+        <div>
+            <h1 class="fw-bold mb-0 display-6">Shopping Cart</h1>
+            <p class="text-muted m-0">Review items carefully and apply promo codes.</p>
+        </div>
+    </div>
     
-    <div class="row g-5">
+    <div class="row g-5 mb-5 pb-5">
         <div class="col-lg-8">
-            <div class="glass-card p-4">
+            <div class="glass-card border-0 p-0 overflow-hidden shadow-sm">
                 <div class="table-responsive">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr class="text-secondary">
-                                <th scope="col" class="border-0">Product</th>
-                                <th scope="col" class="border-0 text-center">Quantity</th>
-                                <th scope="col" class="border-0 text-end">Price</th>
-                                <th scope="col" class="border-0"></th>
+                    <table class="table align-middle m-0 table-hover" style="background: transparent;">
+                        <thead class="bg-white bg-opacity-50">
+                            <tr>
+                                <th scope="col" class="border-0 text-muted px-4 py-3 fw-medium">Product Details</th>
+                                <th scope="col" class="border-0 text-muted text-center py-3 fw-medium">Quantity</th>
+                                <th scope="col" class="border-0 text-muted text-end py-3 fw-medium">Price</th>
+                                <th scope="col" class="border-0 text-muted text-end px-4 py-3 fw-medium">Total</th>
                             </tr>
                         </thead>
                         <tbody class="border-top-0">
-                            <tr>
-                                <td class="py-4">
-                                    <div class="d-flex align-items-center">
-                                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" alt="Vitamin C" class="rounded shadow-sm me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <!-- Item 1 -->
+                            <tr class="bg-transparent border-bottom border-secondary border-opacity-10 position-relative">
+                                <td class="p-4">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-white rounded-3 p-2 shadow-sm border border-light">
+                                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" alt="Vitamin C" style="width: 60px; height: 60px; object-fit: contain;">
+                                        </div>
                                         <div>
-                                            <h6 class="mb-0 fw-bold">Immune Boost C</h6>
-                                            <small class="text-secondary">500mg Supplements</small>
+                                            <h6 class="mb-1 fw-bold text-dark">Immune Boost C</h6>
+                                            <small class="text-muted d-block">500mg Supplements</small>
+                                            <button class="btn btn-link text-danger text-decoration-none shadow-none p-0 mt-1 small text-start hover-danger"><i class="bi bi-trash3 me-1"></i> Remove</button>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center py-4">
-                                    <div class="d-flex justify-content-center">
-                                        <input type="number" class="glass-input text-center px-1" value="1" min="1" style="width: 60px;">
+                                <td class="text-center p-4">
+                                    <div class="input-group glass-input-wrapper shadow-sm rounded-pill overflow-hidden bg-white mx-auto" style="width: 100px;">
+                                        <button class="btn btn-light border-0 px-2 text-secondary" type="button"><i class="bi bi-dash"></i></button>
+                                        <input type="text" class="form-control px-0 text-center border-0 bg-transparent fw-bold" value="1" readonly>
+                                        <button class="btn btn-light border-0 px-2 text-secondary" type="button"><i class="bi bi-plus"></i></button>
                                     </div>
                                 </td>
-                                <td class="text-end fw-bold text-primary py-4">$14.99</td>
-                                <td class="text-end py-4">
-                                    <button class="btn btn-link text-danger text-decoration-none shadow-none"><i class="bi bi-trash3"></i></button>
-                                </td>
+                                <td class="text-end fw-medium text-dark p-4">$14.99</td>
+                                <td class="text-end fw-bold text-primary p-4 px-4">$14.99</td>
                             </tr>
-                            <tr>
-                                <td class="py-4">
-                                    <div class="d-flex align-items-center">
-                                        <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" alt="PainRelief" class="rounded shadow-sm me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <!-- Item 2 -->
+                            <tr class="bg-transparent">
+                                <td class="p-4">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-white rounded-3 p-2 shadow-sm border border-light">
+                                            <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" alt="PainRelief" style="width: 60px; height: 60px; object-fit: contain;">
+                                        </div>
                                         <div>
-                                            <h6 class="mb-0 fw-bold">PainRelief Plus</h6>
-                                            <small class="text-secondary">Ibuprofen 400mg</small>
+                                            <h6 class="mb-1 fw-bold text-dark">PainRelief Plus</h6>
+                                            <small class="text-muted d-block">Ibuprofen 400mg</small>
+                                            <button class="btn btn-link text-danger text-decoration-none shadow-none p-0 mt-1 small text-start hover-danger"><i class="bi bi-trash3 me-1"></i> Remove</button>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center py-4">
-                                    <div class="d-flex justify-content-center">
-                                        <input type="number" class="glass-input text-center px-1" value="2" min="1" style="width: 60px;">
+                                <td class="text-center p-4">
+                                    <div class="input-group glass-input-wrapper shadow-sm rounded-pill overflow-hidden bg-white mx-auto" style="width: 100px;">
+                                        <button class="btn btn-light border-0 px-2 text-secondary" type="button"><i class="bi bi-dash"></i></button>
+                                        <input type="text" class="form-control px-0 text-center border-0 bg-transparent fw-bold" value="2" readonly>
+                                        <button class="btn btn-light border-0 px-2 text-secondary" type="button"><i class="bi bi-plus"></i></button>
                                     </div>
                                 </td>
-                                <td class="text-end fw-bold text-primary py-4">$17.00</td>
-                                <td class="text-end py-4">
-                                    <button class="btn btn-link text-danger text-decoration-none shadow-none"><i class="bi bi-trash3"></i></button>
-                                </td>
+                                <td class="text-end fw-medium text-dark p-4">$8.50</td>
+                                <td class="text-end fw-bold text-primary p-4 px-4">$17.00</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            
+            <div class="mt-4">
+                <a href="/products/" class="btn btn-glass-outline rounded-pill"><i class="bi bi-arrow-left me-2"></i> Continue Shopping</a>
+            </div>
         </div>
         
+        <!-- Order Summary Column -->
         <div class="col-lg-4">
-            <div class="glass-card p-4">
-                <h5 class="fw-bold mb-4">Cart Total</h5>
+            <div class="glass-card p-4 p-xl-5 border-0 shadow-lg position-sticky" style="top: 100px;">
+                <h5 class="fw-bold mb-4">Summary</h5>
                 
                 <div class="d-flex justify-content-between mb-3">
-                    <span class="text-secondary">Subtotal</span>
-                    <span class="fw-bold">$31.99</span>
+                    <span class="text-muted">Subtotal</span>
+                    <span class="fw-bold text-dark">$31.99</span>
                 </div>
                 <div class="d-flex justify-content-between mb-3">
-                    <span class="text-secondary">Shipping</span>
+                    <span class="text-muted text-decoration-underline outline-none cursor-pointer" title="Calculated based on location">Estimated Shipping</span>
                     <span class="fw-bold text-success">Free</span>
                 </div>
-                <div class="d-flex justify-content-between mb-3">
-                    <span class="text-secondary">Tax</span>
-                    <span class="fw-bold">$2.50</span>
-                </div>
-                
-                <hr class="border-secondary opacity-25 my-3">
-                
                 <div class="d-flex justify-content-between mb-4">
-                    <span class="fs-5 fw-bold">Total</span>
-                    <span class="fs-5 fw-bold text-primary">$34.49</span>
+                    <span class="text-muted">Estimated Tax</span>
+                    <span class="fw-bold text-dark">$2.50</span>
                 </div>
                 
-                <a href="/checkout/" class="btn btn-glass-primary w-100 btn-lg">Proceed to Checkout</a>
+                <div class="glass-input-wrapper mb-4 bg-white rounded-pill p-1 shadow-sm d-flex">
+                    <input type="text" class="glass-input border-0 bg-transparent py-2 ps-3" placeholder="Promo code" style="box-shadow: none;">
+                    <button class="btn btn-primary rounded-pill px-4 m-0 shadow-sm" style="background: var(--primary-color);">Apply</button>
+                </div>
+                
+                <hr class="border-secondary opacity-25 mb-4">
+                
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <span class="fs-5 fw-bold text-dark">Total</span>
+                    <span class="display-6 fw-bold text-primary">$34.49</span>
+                </div>
+                
+                <a href="/checkout/" class="btn btn-glass-success w-100 btn-lg shadow-lg py-3 rounded-pill d-flex justify-content-center align-items-center gap-2">
+                    Proceed to Checkout <i class="bi bi-lock-fill"></i>
+                </a>
+                
+                <div class="d-flex gap-2 justify-content-center mt-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="20" class="opacity-75" alt="PayPal">
+                    <!-- Visa / Mastercard placeholder text/icons -->
+                    <span class="badge bg-secondary bg-opacity-25 text-dark">VISA</span>
+                    <span class="badge bg-secondary bg-opacity-25 text-dark">MC</span>
+                </div>
             </div>
         </div>
     </div>

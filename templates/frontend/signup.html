@@ -1,57 +1,73 @@
 {% extends 'frontend/base.html' %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}Create Account | PharmaPlus{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="container py-5 mt-4 mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-7 col-lg-6">
-            <div class="glass-form-card">
-                <div class="text-center mb-4">
-                    <i class="bi bi-shield-plus display-4 text-success"></i>
-                    <h3 class="fw-bold mt-3">Create an Account</h3>
-                    <p class="text-secondary">Join PharmaPlus to manage your health easily</p>
+        <div class="col-md-9 col-lg-7 col-xl-6">
+            <div class="glass-card border-0 shadow-lg p-4 p-sm-5 mx-auto" style="background: rgba(255,255,255,0.65);">
+                <div class="text-center mb-5">
+                    <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                        <i class="bi bi-shield-plus fs-1"></i>
+                    </div>
+                    <h2 class="fw-bold display-6">Create Your Account</h2>
+                    <p class="text-muted">Join the digital healthcare revolution. Safe, private, and fast.</p>
                 </div>
 
                 <form>
-                    <div class="row g-3 mb-3">
-                        <div class="col-sm-6">
-                            <label class="form-label text-dark fw-medium">First Name</label>
-                            <input type="text" class="glass-input" placeholder="First Name" required>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-bold">First Name</label>
+                            <div class="glass-input-wrapper">
+                                <i class="bi bi-person glass-input-icon"></i>
+                                <input type="text" class="glass-input with-icon" placeholder="First Name" required>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <label class="form-label text-dark fw-medium">Last Name</label>
-                            <input type="text" class="glass-input" placeholder="Last Name" required>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-bold">Last Name</label>
+                            <div class="glass-input-wrapper">
+                                <i class="bi bi-person glass-input-icon"></i>
+                                <input type="text" class="glass-input with-icon" placeholder="Last Name" required>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label text-dark fw-medium">Email address</label>
-                        <input type="email" class="glass-input" placeholder="you@example.com" required>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label text-dark fw-medium">Password</label>
-                        <input type="password" class="glass-input" placeholder="Create a strong password" required>
                     </div>
 
                     <div class="mb-4">
-                        <label class="form-label text-dark fw-medium">Confirm Password</label>
-                        <input type="password" class="glass-input" placeholder="Repeat your password" required>
+                        <label class="form-label text-dark fw-bold">Email Address</label>
+                        <div class="glass-input-wrapper">
+                            <i class="bi bi-envelope glass-input-icon"></i>
+                            <input type="email" class="glass-input with-icon" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label text-dark fw-bold mt-2">Create Password</label>
+                        <div class="glass-input-wrapper">
+                            <i class="bi bi-lock glass-input-icon"></i>
+                            <input type="password" class="glass-input with-icon" placeholder="Minimum 8 characters" required>
+                        </div>
                     </div>
 
-                    <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" id="terms" required>
-                        <label class="form-check-label text-secondary small" for="terms">I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a> and <a href="#" class="text-primary text-decoration-none">Privacy Policy</a>.</label>
+                    <div class="mb-4">
+                        <label class="form-label text-dark fw-bold mt-2">Confirm Password</label>
+                        <div class="glass-input-wrapper">
+                            <i class="bi bi-shield-lock glass-input-icon"></i>
+                            <input type="password" class="glass-input with-icon" placeholder="Repeat your password" required>
+                        </div>
                     </div>
 
-                    <div class="d-grid w-100">
-                        <button type="submit" class="btn btn-glass-primary btn-lg bg-success border-success">Create Account</button>
+                    <div class="mb-5 form-check mt-4">
+                        <input type="checkbox" class="form-check-input shadow-sm cursor-pointer border-secondary" id="terms" required>
+                        <label class="form-check-label text-secondary small ms-1 cursor-pointer" for="terms">I agree to the <a href="#" class="text-primary text-decoration-none fw-bold">Terms of Service</a> and <a href="#" class="text-primary text-decoration-none fw-bold">Privacy Policy</a>.</label>
                     </div>
+
+                    <button type="submit" class="btn btn-glass-success btn-lg w-100 shadow-lg py-3 rounded-pill fw-bold mb-4">Create Account <i class="bi bi-person-plus ms-1"></i></button>
+
                 </form>
 
-                <div class="text-center mt-4 pt-3 border-top border-secondary border-opacity-25">
-                    <p class="text-secondary mb-0">Already have an account? <a href="/login/" class="text-primary fw-medium text-decoration-none">Log in</a></p>
+                <div class="text-center pt-2">
+                    <p class="text-muted mb-0">Already registered? <a href="/login/" class="text-success fw-bold text-decoration-none">Log in here</a></p>
                 </div>
             </div>
         </div>

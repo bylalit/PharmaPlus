@@ -1,50 +1,75 @@
 {% extends 'frontend/base.html' %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}About PharmaPlus{% endblock %}
 
 {% block content %}
-<div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-            <div class="glass-card p-5 border-0">
-                <div class="text-center mb-5">
-                    <span class="badge bg-primary bg-opacity-25 text-primary mb-3 px-3 py-2 rounded-pill">About Us</span>
-                    <h1 class="fw-bold display-5">Revolutionizing Global Healthcare</h1>
-                    <p class="text-secondary lead mt-3">We believe everyone deserves access to safe, reliable, and authentic medications, regardless of where they live.</p>
-                </div>
+<div class="container py-5 mt-2">
+    <!-- Intro text -->
+    <div class="text-center mb-5 pb-3">
+        <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill px-3 py-2 mb-3">Our Story</span>
+        <h1 class="fw-bold display-4 mb-3">Revolutionizing Global Healthcare</h1>
+        <p class="text-muted lead mx-auto" style="max-width: 700px; line-height: 1.8;">We believe everyone deserves access to safe, reliable, and authentic medications, delivered directly without the hassle.</p>
+    </div>
 
-                <div class="row g-5 align-items-center mb-5">
-                    <div class="col-md-6">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=600" class="img-fluid rounded-4 shadow-sm w-100" alt="Pharmacy Lab">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="fw-bold mb-3 fs-2">Our Mission</h3>
-                        <p class="text-secondary" style="line-height: 1.8;">
-                            At PharmaPlus, our mission is to eliminate the complexities of traditional pharmacy experiences. By integrating state-of-the-art cold-chain logistics with a beautifully designed digital interface, we ensure that your essential wellness products and prescriptions reach your front door safely and on time.
-                        </p>
-                        <p class="text-secondary" style="line-height: 1.8;">
-                            Every product on our platform is sourced directly from certified original manufacturers.
-                        </p>
-                    </div>
+    <!-- Main Images & Mission -->
+    <div class="row g-5 align-items-center mb-5 pb-5">
+        <div class="col-lg-6 position-relative z-1">
+            <div class="glass-card p-2 border-0 shadow-lg transform-hover" style="transform: rotate(-2deg);">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 object-fit-cover w-100" style="height: 450px;" alt="Pharmacy Lab">
+            </div>
+            <!-- Decorative circle -->
+            <div class="position-absolute bg-success rounded-circle opacity-25 z-0" style="width: 200px; height: 200px; bottom: -30px; left: -30px; filter: blur(40px);"></div>
+        </div>
+        <div class="col-lg-6 px-lg-5 position-relative z-2">
+            <h2 class="fw-bold display-5 mb-4">Our Mission</h2>
+            <p class="text-secondary mb-4" style="line-height: 1.9; font-size: 1.1rem;">
+                At PharmaPlus, our mission is to eliminate the complexities of traditional pharmacy experiences. By integrating state-of-the-art cold-chain logistics with a beautifully designed digital interface, we ensure that your essential wellness products and prescriptions reach your front door safely and on time.
+            </p>
+            <p class="text-secondary mb-5" style="line-height: 1.9; font-size: 1.1rem;">
+                Every product on our platform is sourced directly from certified original manufacturers. No middle-men, no counterfeit risks.
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <div>
+                    <h3 class="fw-bold text-primary m-0 display-6">12+</h3>
+                    <span class="text-muted small text-uppercase">Distribution Centers</span>
                 </div>
-
-                <div class="row g-5 align-items-center flex-row-reverse mb-3">
-                    <div class="col-md-6">
-                        <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&q=80&w=600" class="img-fluid rounded-4 shadow-sm w-100" alt="Global Shipping">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="fw-bold mb-3 fs-2">Our Vision</h3>
-                        <p class="text-secondary" style="line-height: 1.8;">
-                            We envision a world where digital healthcare bridges the gap between premium medical facilities and the individual patient. Over the next decade, PharmaPlus aims to be the primary healthcare partner for millions worldwide.
-                        </p>
-                        <ul class="list-unstyled text-secondary mt-4 gap-3 d-flex flex-column">
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> 100% Verified Medications</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> World-Class 24/7 Pharmacist Support</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Environmentally Conscious Packaging</li>
-                        </ul>
-                    </div>
+                <div class="border-start border-secondary opacity-25" style="height: 50px;"></div>
+                <div>
+                    <h3 class="fw-bold text-success m-0 display-6">2M+</h3>
+                    <span class="text-muted small text-uppercase">Orders Fulfilled</span>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Why Choose Us Section (Newly Expanded) -->
+    <div class="glass-card p-5 border-0 shadow-sm mt-5 mb-5 rounded-5" style="background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(224, 242, 254, 0.4));">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Why Choose Us?</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">We go above and beyond standard pharmaceutical practices.</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm text-primary" style="width: 80px; height: 80px;">
+                    <i class="bi bi-shield-check display-6"></i>
+                </div>
+                <h5 class="fw-bold">100% Authentic</h5>
+                <p class="text-secondary small">Direct manufacturer sourcing guarantees that every pill is genuine and safe.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm text-success" style="width: 80px; height: 80px;">
+                    <i class="bi bi-thermometer-snow display-6"></i>
+                </div>
+                <h5 class="fw-bold">Cold Chain Delivery</h5>
+                <p class="text-secondary small">Temperature-tracked packaging ensures your insulin and vaccines arrive perfectly viable.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm text-warning" style="width: 80px; height: 80px;">
+                    <i class="bi bi-person-video2 display-6"></i>
+                </div>
+                <h5 class="fw-bold">Expert Consultations</h5>
+                <p class="text-secondary small">Access to board-certified pharmacists via video or text message 24/7.</p>
             </div>
         </div>
     </div>

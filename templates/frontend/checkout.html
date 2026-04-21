@@ -1,122 +1,191 @@
 {% extends 'frontend/base.html' %}
 
-{% block title %}Checkout{% endblock %}
+{% block title %}Secure Checkout{% endblock %}
 
 {% block content %}
 <div class="container py-4">
-    <div class="text-center mb-5">
-        <h2 class="fw-bold">Secure Checkout</h2>
-        <p class="text-secondary">Please enter your details below to complete your purchase.</p>
+    <!-- Header -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-2 justify-content-center text-center">
+        <div>
+            <span class="badge bg-success bg-opacity-25 text-success rounded-pill px-3 py-2 mb-3"><i class="bi bi-shield-lock-fill me-1"></i> 256-bit Encrypted Checkout</span>
+            <h1 class="fw-bold mb-0 display-6">Secure Checkout</h1>
+            <p class="text-muted mt-2 mx-auto" style="max-width: 500px;">Complete your purchase by providing your shipping and payment details below.</p>
+        </div>
     </div>
+    
+    <div class="row g-5 mb-5 pb-5">
+        <!-- Forms Area -->
+        <div class="col-lg-7 col-xl-8">
+            <form>
+                <!-- Section 1: Contact -->
+                <div class="glass-card mb-4 border-0 shadow-sm p-4 p-md-5">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; font-size: 1rem;">1</span>
+                        Contact Information
+                    </h4>
+                    
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-medium">Email Address</label>
+                            <input type="email" class="glass-input" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-medium">First name</label>
+                            <input type="text" class="glass-input" placeholder="First Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-dark fw-medium">Last name</label>
+                            <input type="text" class="glass-input" placeholder="Last Name" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-medium">Phone Number</label>
+                            <input type="tel" class="glass-input" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="row g-5">
-        <!-- Delivery Details -->
-        <div class="col-lg-8">
-            <div class="glass-card mb-4 p-4 p-md-5">
-                <h4 class="fw-bold mb-4">1. Delivery Address</h4>
-                <form>
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <label class="form-label">First name</label>
-                            <input type="text" class="glass-input" placeholder="John" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <label class="form-label">Last name</label>
-                            <input type="text" class="glass-input" placeholder="Doe" required>
+                <!-- Section 2: Address -->
+                <div class="glass-card mb-4 border-0 shadow-sm p-4 p-md-5">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; font-size: 1rem;">2</span>
+                        Shipping Address
+                    </h4>
+                    
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-medium">Address Line 1</label>
+                            <input type="text" class="glass-input" placeholder="Street address or P.O. Box" required>
                         </div>
                         <div class="col-12">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="glass-input" placeholder="you@example.com" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Address</label>
-                            <input type="text" class="glass-input" placeholder="1234 Main St" required>
+                            <label class="form-label text-dark fw-medium">Address Line 2 <span class="text-muted fw-normal">(Optional)</span></label>
+                            <input type="text" class="glass-input" placeholder="Apartment, suite, unit, building, floor, etc.">
                         </div>
                         <div class="col-md-5">
-                            <label class="form-label">Country</label>
-                            <select class="glass-input" required>
-                                <option value="">Choose...</option>
+                            <label class="form-label text-dark fw-medium">Country</label>
+                            <select class="form-select glass-input cursor-pointer" required>
+                                <option value="">Select country...</option>
                                 <option>United States</option>
+                                <option>Canada</option>
+                                <option>United Kingdom</option>
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label class="form-label">State</label>
-                            <select class="glass-input" required>
-                                <option value="">Choose...</option>
+                            <label class="form-label text-dark fw-medium">State / Province</label>
+                            <select class="form-select glass-input cursor-pointer" required>
+                                <option value="">Select state...</option>
                                 <option>California</option>
+                                <option>New York</option>
+                                <option>Texas</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Zip</label>
+                            <label class="form-label text-dark fw-medium">Zip / Postal Code</label>
                             <input type="text" class="glass-input" required>
                         </div>
                     </div>
-                </form>
-            </div>
-
-            <!-- Payment Method -->
-            <div class="glass-card p-4 p-md-5">
-                <h4 class="fw-bold mb-4">2. Payment Method</h4>
-                <div class="my-3">
-                    <div class="form-check mb-2">
-                        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                        <label class="form-check-label" for="credit"><i class="bi bi-credit-card mx-2 text-primary"></i> Credit / Debit Card</label>
-                    </div>
-                    <div class="form-check">
-                        <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                        <label class="form-check-label" for="paypal"><i class="bi bi-paypal mx-2 text-primary"></i> PayPal</label>
-                    </div>
                 </div>
 
-                <div class="row gy-3 mt-3">
-                    <div class="col-md-6">
-                        <label class="form-label">Name on card</label>
-                        <input type="text" class="glass-input" required>
+                <!-- Section 3: Payment -->
+                <div class="glass-card border-0 shadow-sm p-4 p-md-5">
+                    <h4 class="fw-bold mb-4 d-flex align-items-center gap-2">
+                        <span class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; font-size: 1rem;">3</span>
+                        Payment Method
+                    </h4>
+                    
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <label class="glass-card border-primary p-3 bg-white bg-opacity-75 cursor-pointer d-flex align-items-center">
+                            <input type="radio" name="payment" class="form-check-input mt-0 me-3" checked>
+                            <span class="fw-bold text-dark flex-grow-1">Credit / Debit Card</span>
+                            <div class="d-flex gap-1">
+                                <span class="badge bg-secondary bg-opacity-25 text-dark">VISA</span>
+                                <span class="badge bg-secondary bg-opacity-25 text-dark">MC</span>
+                                <span class="badge bg-secondary bg-opacity-25 text-dark">AMEX</span>
+                            </div>
+                        </label>
+                        <label class="glass-card p-3 bg-transparent cursor-pointer d-flex align-items-center opacity-75">
+                            <input type="radio" name="payment" class="form-check-input mt-0 me-3">
+                            <span class="fw-bold text-dark flex-grow-1">PayPal</span>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="20" alt="PayPal">
+                        </label>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Credit card number</label>
-                        <input type="text" class="glass-input" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Expiration</label>
-                        <input type="text" class="glass-input" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">CVV</label>
-                        <input type="text" class="glass-input" required>
+
+                    <div class="row g-4 bg-white bg-opacity-25 p-4 rounded-4 border border-light">
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-medium">Card Number</label>
+                            <div class="glass-input-wrapper">
+                                <i class="bi bi-credit-card glass-input-icon"></i>
+                                <input type="text" class="glass-input with-icon" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-medium">Name on Card</label>
+                            <input type="text" class="glass-input" placeholder="Name written on card" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label text-dark fw-medium">Expiration <span class="text-muted fw-normal">(MM/YY)</span></label>
+                            <input type="text" class="glass-input" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label text-dark fw-medium">CVC / CVV</label>
+                            <input type="password" class="glass-input" placeholder="123" required>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-
-        <!-- Order Summary -->
-        <div class="col-lg-4">
-            <div class="glass-card p-4 position-sticky" style="top: 100px;">
-                <h5 class="d-flex justify-content-between align-items-center mb-4">
-                    <span class="text-primary fw-bold">Order Summary</span>
-                    <span class="badge bg-primary rounded-pill">2</span>
+        
+        <!-- Sidebar Order Summary -->
+        <div class="col-lg-5 col-xl-4">
+            <div class="glass-card p-4 border-0 shadow-lg position-sticky" style="top: 100px;">
+                <h5 class="fw-bold mb-4 d-flex justify-content-between align-items-center">
+                    Order Summary 
+                    <span class="badge bg-primary rounded-pill">2 Items</span>
                 </h5>
-                <ul class="list-group list-group-flush mb-4 bg-transparent">
-                    <li class="list-group-item d-flex justify-content-between lh-sm bg-transparent border-secondary border-opacity-25 py-3">
-                        <div>
-                            <h6 class="my-0">Immune Boost C</h6>
-                            <small class="text-secondary">Quantity: 1</small>
+                
+                <ul class="list-group list-group-flush mb-4 bg-transparent border-0">
+                    <li class="list-group-item d-flex justify-content-between px-0 bg-transparent py-3 border-secondary border-opacity-10">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=100" class="rounded shadow-sm" style="width: 50px; height: 50px; object-fit: cover;" alt="">
+                            <div>
+                                <h6 class="my-0 fw-bold text-dark text-truncate" style="max-width: 150px;">Immune Boost C</h6>
+                                <small class="text-muted">Qty: 1</small>
+                            </div>
                         </div>
-                        <span class="text-body-secondary">$14.99</span>
+                        <span class="text-dark fw-medium align-self-center">$14.99</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm bg-transparent border-secondary border-opacity-25 py-3">
-                        <div>
-                            <h6 class="my-0">PainRelief Plus</h6>
-                            <small class="text-secondary">Quantity: 2</small>
+                    <li class="list-group-item d-flex justify-content-between px-0 bg-transparent py-3 border-secondary border-opacity-10">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=100" class="rounded shadow-sm" style="width: 50px; height: 50px; object-fit: cover;" alt="">
+                            <div>
+                                <h6 class="my-0 fw-bold text-dark text-truncate" style="max-width: 150px;">PainRelief Plus</h6>
+                                <small class="text-muted">Qty: 2</small>
+                            </div>
                         </div>
-                        <span class="text-body-secondary">$17.00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-transparent border-secondary border-opacity-25 py-3">
-                        <span class="fw-bold">Total (USD)</span>
-                        <strong class="text-primary fs-5">$31.99</strong>
+                        <span class="text-dark fw-medium align-self-center">$17.00</span>
                     </li>
                 </ul>
-                <button class="btn btn-glass-primary w-100 btn-lg" type="submit">Place Order</button>
+
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Subtotal</span>
+                    <span class="text-dark">$31.99</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Shipping</span>
+                    <span class="text-success">Free</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3 border-bottom border-secondary border-opacity-10 pb-3">
+                    <span class="text-muted">Tax</span>
+                    <span class="text-dark">$2.50</span>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <span class="fs-5 fw-bold text-dark">Total</span>
+                    <span class="display-6 fw-bold text-primary">$34.49</span>
+                </div>
+                
+                <button type="submit" class="btn btn-glass-success w-100 btn-lg shadow-lg py-3 rounded-pill">
+                    Confirm & Proceed <i class="bi bi-arrow-right ms-2"></i>
+                </button>
             </div>
         </div>
     </div>

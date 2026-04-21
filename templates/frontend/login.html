@@ -1,44 +1,60 @@
 {% extends 'frontend/base.html' %}
 
-{% block title %}Log In{% endblock %}
+{% block title %}Log In to PharmaPlus{% endblock %}
 
 {% block content %}
-<div class="container py-5">
+<div class="container py-5 mt-4 mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-            <div class="glass-form-card">
-                <div class="text-center mb-4">
-                    <i class="bi bi-capsule-pill display-4 text-primary"></i>
-                    <h3 class="fw-bold mt-3">Welcome Back</h3>
-                    <p class="text-secondary">Log in to manage your medical orders</p>
+        <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="glass-card border-0 shadow-lg p-4 p-sm-5 mx-auto" style="background: rgba(255,255,255,0.65);">
+                <div class="text-center mb-5">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                        <i class="bi bi-person-fill fs-1"></i>
+                    </div>
+                    <h2 class="fw-bold display-6">Welcome Back</h2>
+                    <p class="text-muted">Log in to safely manage your prescriptions, track orders, and interact with pharmacists.</p>
                 </div>
 
                 <form>
-                    <div class="mb-3">
-                        <label class="form-label text-dark fw-medium">Email address</label>
-                        <input type="email" class="glass-input" placeholder="Enter your email" required>
+                    <div class="mb-4">
+                        <label class="form-label text-dark fw-bold">Email Address</label>
+                        <div class="glass-input-wrapper">
+                            <i class="bi bi-envelope glass-input-icon"></i>
+                            <input type="email" class="glass-input with-icon" placeholder="name@pharmaplus.com" required>
+                        </div>
                     </div>
                     
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between">
-                            <label class="form-label text-dark fw-medium">Password</label>
-                            <a href="#" class="text-primary text-decoration-none small">Forgot password?</a>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label class="form-label text-dark fw-bold m-0">Password</label>
+                            <a href="#" class="text-primary text-decoration-none small text-hover-underline">Forgot password?</a>
                         </div>
-                        <input type="password" class="glass-input" placeholder="Enter your password" required>
+                        <div class="glass-input-wrapper mt-2">
+                            <i class="bi bi-lock glass-input-icon"></i>
+                            <input type="password" class="glass-input with-icon" placeholder="••••••••" required>
+                        </div>
                     </div>
 
-                    <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <label class="form-check-label text-secondary small" for="rememberMe">Remember me</label>
+                    <div class="mb-5 form-check">
+                        <input type="checkbox" class="form-check-input shadow-sm cursor-pointer" id="rememberMe">
+                        <label class="form-check-label text-secondary small ms-1 cursor-pointer" for="rememberMe">Remember me for 30 days</label>
                     </div>
 
-                    <div class="d-grid w-100">
-                        <button type="submit" class="btn btn-glass-primary btn-lg">Log In</button>
+                    <button type="submit" class="btn btn-glass-primary btn-lg w-100 shadow-lg py-3 rounded-pill fw-bold mb-4">Log in securely <i class="bi bi-shield-check ms-1"></i></button>
+                    
+                    <!-- OR Divider -->
+                    <div class="position-relative text-center mb-4">
+                        <hr class="border-secondary opacity-25">
+                        <span class="position-absolute top-50 start-50 translate-middle px-3 text-muted small" style="background: var(--bg-gradient-mid);">or</span>
                     </div>
+
+                    <button type="button" class="btn btn-glass-outline btn-lg w-100 py-3 rounded-pill d-flex justify-content-center align-items-center gap-2 mb-4 bg-white" style="color: #475569 !important; border-color: #cbd5e1;">
+                        <i class="bi bi-google text-danger"></i> Sign in with Google
+                    </button>
                 </form>
 
-                <div class="text-center mt-4 pt-3 border-top border-secondary border-opacity-25">
-                    <p class="text-secondary mb-0">Don't have an account? <a href="/signup/" class="text-primary fw-medium text-decoration-none">Sign up</a></p>
+                <div class="text-center">
+                    <p class="text-muted mb-0">Don't have an account? <a href="/signup/" class="text-primary fw-bold text-decoration-none">Sign up</a></p>
                 </div>
             </div>
         </div>
