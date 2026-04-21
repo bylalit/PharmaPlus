@@ -1,20 +1,20 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 
-{% block title %}Shop Products{% endblock %}
+{% block title %}Shop Premium Products{% endblock %}
 
 {% block content %}
-<div class="container py-4">
+<div class="container py-4 mt-4">
 
     <!-- Header Banner -->
-    <div class="glass-card mb-5 border-0 p-4 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="background: linear-gradient(to right, rgba(14, 165, 233, 0.1), rgba(255,255,255,0.4));">
+    <div class="glass-card mb-5 border-0 p-4 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center shadow-sm">
         <div>
-            <h1 class="fw-bold mb-2 display-6">All Healthcare Products</h1>
-            <p class="text-secondary mb-0">Browse our certified collection of wellness and medical items.</p>
+            <h1 class="fw-bold mb-2 display-5 text-dark">Healthcare Products</h1>
+            <p class="text-muted fs-5 mb-0">Browse our certified collection of premium wellness and medical items.</p>
         </div>
-        <div class="mt-4 mt-md-0 d-flex gap-2">
-            <span class="text-muted small align-self-center me-2">Sort by:</span>
-            <select class="form-select glass-input border-0 py-2 w-auto shadow-sm cursor-pointer">
+        <div class="mt-4 mt-md-0 d-flex align-items-center gap-3">
+            <span class="text-muted fw-bold">Sort by:</span>
+            <select class="form-select glass-input border-0 py-2 w-auto shadow-sm cursor-pointer fw-medium text-dark">
                 <option selected>Recommended</option>
                 <option value="1">Price: Low to High</option>
                 <option value="2">Price: High to Low</option>
@@ -26,190 +26,182 @@
     <div class="row g-5">
         <!-- Filter Sidebar (UI Only) -->
         <div class="col-lg-3 d-none d-lg-block">
-            <div class="glass-card p-4 position-sticky" style="top: 100px;">
-                <h5 class="fw-bold mb-4 d-flex justify-content-between align-items-center">
-                    Filters
-                    <i class="bi bi-funnel text-primary"></i>
+            <div class="glass-card p-4 position-sticky shadow-sm" style="top: 110px;">
+                <h5 class="fw-bold mb-4 d-flex justify-content-between align-items-center text-dark border-bottom pb-3">
+                    Filters <i class="bi bi-funnel-fill text-primary"></i>
                 </h5>
                 
                 <!-- Category Filter -->
                 <div class="mb-4">
-                    <h6 class="fw-bold mb-3">Categories</h6>
-                    <div class="form-check mb-2 custom-check">
-                        <input class="form-check-input" type="checkbox" id="cat1" checked>
-                        <label class="form-check-label text-muted" for="cat1">All Products <span class="ms-1 text-secondary small">(124)</span></label>
+                    <h6 class="fw-bold mb-3 text-dark">Categories</h6>
+                    <div class="form-check mb-3 custom-check d-flex align-items-center">
+                        <input class="form-check-input me-2 shadow-sm" type="checkbox" id="cat1" checked style="width: 1.2rem; height: 1.2rem;">
+                        <label class="form-check-label text-dark fw-medium w-100 d-flex justify-content-between" for="cat1">
+                            All Products <span class="badge bg-light text-dark shadow-sm border rounded-pill">124</span>
+                        </label>
                     </div>
-                    <div class="form-check mb-2 custom-check">
-                        <input class="form-check-input" type="checkbox" id="cat2">
-                        <label class="form-check-label text-muted" for="cat2">Vitamins <span class="ms-1 text-secondary small">(45)</span></label>
+                    <div class="form-check mb-3 custom-check d-flex align-items-center">
+                        <input class="form-check-input me-2 shadow-sm" type="checkbox" id="cat2" style="width: 1.2rem; height: 1.2rem;">
+                        <label class="form-check-label text-dark fw-medium w-100 d-flex justify-content-between" for="cat2">
+                            Vitamins <span class="badge bg-light text-dark shadow-sm border rounded-pill">45</span>
+                        </label>
                     </div>
-                    <div class="form-check mb-2 custom-check">
-                        <input class="form-check-input" type="checkbox" id="cat3">
-                        <label class="form-check-label text-muted" for="cat3">Prescriptions <span class="ms-1 text-secondary small">(32)</span></label>
+                    <div class="form-check mb-3 custom-check d-flex align-items-center">
+                        <input class="form-check-input me-2 shadow-sm" type="checkbox" id="cat3" style="width: 1.2rem; height: 1.2rem;">
+                        <label class="form-check-label text-dark fw-medium w-100 d-flex justify-content-between" for="cat3">
+                            Prescriptions <span class="badge bg-light text-dark shadow-sm border rounded-pill">32</span>
+                        </label>
                     </div>
-                    <div class="form-check mb-2 custom-check">
-                        <input class="form-check-input" type="checkbox" id="cat4">
-                        <label class="form-check-label text-muted" for="cat4">First Aid <span class="ms-1 text-secondary small">(18)</span></label>
-                    </div>
-                    <div class="form-check mb-2 custom-check">
-                        <input class="form-check-input" type="checkbox" id="cat5">
-                        <label class="form-check-label text-muted" for="cat5">Medical Devices <span class="ms-1 text-secondary small">(29)</span></label>
+                    <div class="form-check mb-3 custom-check d-flex align-items-center">
+                        <input class="form-check-input me-2 shadow-sm" type="checkbox" id="cat4" style="width: 1.2rem; height: 1.2rem;">
+                        <label class="form-check-label text-dark fw-medium w-100 d-flex justify-content-between" for="cat4">
+                            First Aid <span class="badge bg-light text-dark shadow-sm border rounded-pill">18</span>
+                        </label>
                     </div>
                 </div>
-
-                <hr class="border-secondary opacity-25">
 
                 <!-- Price Filter (UI) -->
-                <div class="mb-4 mt-4">
-                    <h6 class="fw-bold mb-3">Price Range</h6>
+                <div class="mb-4 pt-3 border-top">
+                    <h6 class="fw-bold mb-3 text-dark">Price Range</h6>
                     <input type="range" class="form-range" min="0" max="200" id="priceRange">
-                    <div class="d-flex justify-content-between mt-2">
-                        <span class="text-secondary small">$0</span>
-                        <span class="text-secondary small">$200+</span>
+                    <div class="d-flex justify-content-between mt-2 fw-medium text-dark">
+                        <span>$0</span>
+                        <span>$200+</span>
                     </div>
                 </div>
 
-                <button class="btn btn-glass-outline w-100 py-2">Apply Filters</button>
+                <button class="btn btn-glass-primary w-100 mt-2 py-2 fs-6 shadow-sm">Apply Filters</button>
             </div>
         </div>
 
         <!-- Products Grid Area -->
         <div class="col-lg-9">
             <div class="row g-4 mb-5 pb-5">
-                <!-- Repeated Product Card Logic (8 Cards) -->
-                <!-- P1 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
-                            <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">-15%</span>
+                
+                <!-- Product 1 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">-15% Off</span>
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">Immune Boost C</h6></a>
-                            <p class="text-muted small mb-3">500mg Supplements</p>
+                        <div class="card-body">
+                            <small class="text-success fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Vitamins</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">Immune Boost C</h5></a>
+                            <p class="text-muted small mb-3">500mg Supplements - 60 Caps</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$14.99</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$14.99</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- P2 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
+                <!-- Product 2 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">PainRelief Plus</h6></a>
-                            <p class="text-muted small mb-3">Ibuprofen 400mg</p>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Pain Relief</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">PainRelief Plus</h5></a>
+                            <p class="text-muted small mb-3">Ibuprofen 400mg Formula</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$8.50</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$8.50</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- P3 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
+                <!-- Product 3 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">Best Seller</span>
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">MediTemp Digital</h6></a>
-                            <p class="text-muted small mb-3">Fast Reading Device</p>
+                        <div class="card-body">
+                            <small class="text-warning fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Devices</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">MediTemp Digital</h5></a>
+                            <p class="text-muted small mb-3">Fast Reading FDA Device</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$22.00</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$22.00</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- P4 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
+                <!-- Product 4 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">Omega Heart Pro</h6></a>
+                        <div class="card-body">
+                            <small class="text-success fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Diet & Health</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">Omega Heart Pro</h5></a>
                             <p class="text-muted small mb-3">Fish Oil Extract - 60 Caps</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$18.75</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$18.75</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- P5 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
-                            <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">New</span>
+                <!-- Product 5 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">Top Rated</span>
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1542838531-1558273dfc29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">PureClean Shield</h6></a>
-                            <p class="text-muted small mb-3">70% Alcohol Gel</p>
+                        <div class="card-body">
+                            <small class="text-info fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Hygiene</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">PureClean Shield</h5></a>
+                            <p class="text-muted small mb-3">70% Alcohol Gel Wash</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$5.50</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$5.50</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- P6 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
+                <!-- Product 6 -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <div class="glass-card premium-product-card">
+                        <div class="product-img-wrapper">
                             <a href="/product_details/"><img src="https://images.unsplash.com/photo-1598288151044-f9dd1d5ee0e0?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                         </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">WheyFit Isolate</h6></a>
-                            <p class="text-muted small mb-3">Sports Nutrition</p>
+                        <div class="card-body">
+                            <small class="text-danger fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Nutrition</small>
+                            <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">WheyFit Isolate</h5></a>
+                            <p class="text-muted small mb-3">Advanced Sports Nutrition</p>
+                            
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$35.00</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P7 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
-                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
-                        </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">N95 Pro Masks</h6></a>
-                            <p class="text-muted small mb-3">Pack of 10</p>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$12.99</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P8 -->
-                <div class="col-12 col-md-4 col-sm-6">
-                    <div class="glass-card h-100 p-0 d-flex flex-column border-0 shadow-sm">
-                        <div class="product-img-wrapper" style="height: 200px;">
-                            <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
-                        </div>
-                        <div class="p-3 p-xl-4 d-flex flex-column flex-grow-1 bg-white bg-opacity-25">
-                            <a href="/product_details/" class="text-decoration-none"><h6 class="fw-bold m-0 text-dark">CareKit First Aid</h6></a>
-                            <p class="text-muted small mb-3">Emergency Supplies</p>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary fw-bold m-0">$29.50</h5>
-                                <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 38px; height:38px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                                <div class="price-tag">$35.00</div>
+                                <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart">
+                                    <i class="bi bi-cart-plus-fill fs-5"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -219,15 +211,15 @@
 
             <!-- Pagination -->
             <nav aria-label="Product Pagination" class="mb-5 pb-5">
-                <ul class="pagination justify-content-center gap-2">
+                <ul class="pagination justify-content-center gap-3">
                     <li class="page-item disabled">
-                        <a class="page-link rounded-circle border-0 shadow-sm text-muted d-flex align-items-center justify-content-center" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.5);"><i class="bi bi-chevron-left"></i></a>
+                        <a class="page-link rounded-circle border-0 shadow-sm text-muted d-flex align-items-center justify-content-center" href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.7);"><i class="bi bi-arrow-left"></i></a>
                     </li>
-                    <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-sm d-flex align-items-center justify-content-center fw-bold bg-primary text-white" href="#" style="width: 40px; height: 40px;">1</a></li>
-                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);">2</a></li>
-                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);">3</a></li>
+                    <li class="page-item active"><a class="page-link rounded-circle border-0 shadow-lg d-flex align-items-center justify-content-center fw-bold text-white" href="#" style="width: 45px; height: 45px; background: var(--primary-color);">1</a></li>
+                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.9);">2</a></li>
+                    <li class="page-item"><a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center fw-bold" href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.9);">3</a></li>
                     <li class="page-item">
-                        <a class="page-link rounded-circle border-0 shadow-sm text-dark d-flex align-items-center justify-content-center" href="#" style="width: 40px; height: 40px; background: rgba(255,255,255,0.7);"><i class="bi bi-chevron-right"></i></a>
+                        <a class="page-link rounded-circle border-0 shadow-sm text-primary d-flex align-items-center justify-content-center" href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.9);"><i class="bi bi-arrow-right"></i></a>
                     </li>
                 </ul>
             </nav>

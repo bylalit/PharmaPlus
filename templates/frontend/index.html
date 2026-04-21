@@ -4,276 +4,299 @@
 {% block title %}Premium Online Pharmacy & Medical Supplies{% endblock %}
 
 {% block content %}
-<div class="container mt-2">
+<div class="container mt-4">
     <!-- Extremely Rich Hero Section -->
-    <div class="glass-card mb-5 border-0 overflow-hidden position-relative">
-        <!-- Abstract Decoration overlay -->
-        <div class="position-absolute top-0 end-0 bg-primary opacity-25 rounded-circle" style="width: 400px; height: 400px; filter: blur(80px); transform: translate(30%, -30%); z-index: 0;"></div>
+    <div class="glass-card mb-5 mt-4 border-0 overflow-hidden position-relative shadow-lg rounded-5">
+        <!-- Abstract Decorative Glows -->
+        <div class="position-absolute bg-primary rounded-circle" style="width: 400px; height: 400px; filter: blur(100px); top: -100px; right: -100px; z-index: 0; opacity: 0.25;"></div>
+        <div class="position-absolute bg-success rounded-circle" style="width: 300px; height: 300px; filter: blur(100px); bottom: -100px; left: -50px; z-index: 0; opacity: 0.2;"></div>
         
         <div class="row align-items-center p-4 p-lg-5 position-relative z-1">
             <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
-                <div class="glass-pill mb-4">
-                    <span class="badge bg-success rounded-pill me-2">New</span> Complete Cold-Chain Delivery Active
+                <div class="glass-pill mb-4 border border-white">
+                    <span class="badge bg-success rounded-pill me-2 fw-bold px-3 py-2">NEW</span> 
+                    <span class="text-dark fw-medium">Complete Cold-Chain Delivery Active</span>
                 </div>
-                <h1 class="display-3 fw-bold text-dark mb-4 lh-sm">
-                    Re-imagining Your <span class="text-primary">Pharmacy</span> Experience
+                
+                <h1 class="display-3 fw-bolder text-dark mb-4 lh-sm tracking-tight">
+                    Re-imagining Your <span class="text-primary position-relative d-inline-block">Pharmacy<svg class="position-absolute w-100" style="bottom: -10px; left: 0; height: 12px;" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="var(--primary-color)" stroke-width="4" fill="transparent" stroke-linecap="round"/></svg></span> Experience.
                 </h1>
-                <p class="lead text-secondary mb-5 pe-lg-4" style="line-height: 1.8;">
+                
+                <p class="fs-5 text-muted mb-5 pe-lg-4" style="line-height: 1.8;">
                     Gain digital access to thousands of certified wellness products, essential prescriptions, and medical equipment. Delivered securely and discretely to your home.
                 </p>
+                
                 <div class="d-flex flex-column flex-sm-row gap-3">
-                    <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg"><i class="bi bi-cart3 me-2"></i> Browse Medicines</a>
-                    <a href="/about/" class="btn btn-lg btn-glass-outline d-flex align-items-center justify-content-center">
-                        <i class="bi bi-play-circle-fill me-2 fs-5"></i> Watch How It Works
+                    <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg px-4 fs-5"><i class="bi bi-cart3 me-2"></i> Browse Medicines</a>
+                    <a href="/about/" class="btn btn-lg btn-glass-outline d-flex align-items-center justify-content-center px-4 fs-5 bg-white bg-opacity-50">
+                        <i class="bi bi-play-circle-fill me-2 fs-4"></i> See How It Works
                     </a>
                 </div>
                 
                 <!-- Trust indicators -->
-                <div class="d-flex align-items-center gap-4 mt-5 pt-3 border-top border-secondary border-opacity-25">
+                <div class="d-flex align-items-center gap-5 mt-5 pt-4 border-top border-secondary border-opacity-10">
                     <div class="d-flex align-items-center">
-                        <h2 class="fw-bold m-0 me-2">50k+</h2>
-                        <small class="text-muted lh-1">Happy<br>Patients</small>
+                        <h2 class="fw-bolder m-0 me-3 text-dark">50k+</h2>
+                        <small class="text-muted lh-sm fw-medium fs-6">Happy<br>Patients</small>
                     </div>
                     <div class="d-flex align-items-center">
-                        <h2 class="fw-bold m-0 me-2 text-success">100%</h2>
-                        <small class="text-muted lh-1">Verified<br>Products</small>
+                        <h2 class="fw-bolder m-0 me-3 text-success">100%</h2>
+                        <small class="text-muted lh-sm fw-medium fs-6">Verified<br>Products</small>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-6 position-relative text-center">
                 <!-- High-quality hero image -->
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Doctor providing medication" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; height: 500px; border: 4px solid rgba(255,255,255,0.8);">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Doctor providing medication" class="img-fluid rounded-4 shadow-lg w-100 object-fit-cover" style="height: 550px; border: 8px solid rgba(255,255,255,0.9);">
                 
-                <!-- Floating Glass Card -->
-                <div class="glass-card position-absolute bottom-0 start-0 translate-middle-x ms-5 mb-5 p-3 d-flex align-items-center gap-3 text-start shadow-lg border-0 d-none d-md-flex" style="max-width: 250px;">
-                    <div class="bg-success text-white rounded-circle p-2 d-flex"><i class="bi bi-shield-check fs-4"></i></div>
+                <!-- Floating Glass Feature Card -->
+                <div class="glass-card position-absolute bottom-0 start-0 translate-middle-x ms-5 mb-5 p-3 d-flex align-items-center gap-3 text-start shadow-lg border-light d-none d-xl-flex transform-hover rounded-4 hover-lift" style="max-width: 280px; z-index: 10;">
+                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 50px; height: 50px;"><i class="bi bi-shield-check fs-3"></i></div>
                     <div>
-                        <h6 class="fw-bold m-0">Pharmacist Approved</h6>
-                        <small class="text-muted">Rigorous quality checks</small>
+                        <h6 class="fw-bold m-0 text-dark">Pharmacist Approved</h6>
+                        <small class="text-muted fw-medium">Rigorous quality checks</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Features Section (Newly Added) -->
-    <div class="row g-4 mb-5 pb-4">
+    <!-- Features Section -->
+    <div class="row g-4 mt-5 mb-5 pb-4">
+        <!-- Feature 1 -->
         <div class="col-md-6 col-lg-3">
-            <div class="glass-card p-4 h-100 border-0 text-center">
-                <i class="bi bi-truck fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Fast Delivery</h5>
-                <p class="text-muted small mb-0">Free standard shipping over $50. Real-time temperature tracked.</p>
+            <div class="glass-card p-4 h-100 border-0 text-center shadow-sm">
+                <div class="bg-primary bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                    <i class="bi bi-truck fs-2 text-primary"></i>
+                </div>
+                <h5 class="fw-bold text-dark">Fast Delivery</h5>
+                <p class="text-muted small mb-0 px-2">Free standard shipping over $50. Real-time temperature tracked.</p>
             </div>
         </div>
+        <!-- Feature 2 -->
         <div class="col-md-6 col-lg-3">
-            <div class="glass-card p-4 h-100 border-0 text-center">
-                <i class="bi bi-shield-plus fs-1 text-success mb-3"></i>
-                <h5 class="fw-bold">100% Authentic</h5>
-                <p class="text-muted small mb-0">Sourced directly from certified and global manufacturers.</p>
+            <div class="glass-card p-4 h-100 border-0 text-center shadow-sm">
+                <div class="bg-success bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                    <i class="bi bi-shield-plus fs-2 text-success"></i>
+                </div>
+                <h5 class="fw-bold text-dark">100% Authentic</h5>
+                <p class="text-muted small mb-0 px-2">Sourced directly from certified and global manufacturers.</p>
             </div>
         </div>
+        <!-- Feature 3 -->
         <div class="col-md-6 col-lg-3">
-            <div class="glass-card p-4 h-100 border-0 text-center">
-                <i class="bi bi-headset fs-1 text-warning mb-3"></i>
-                <h5 class="fw-bold">24/7 Support</h5>
-                <p class="text-muted small mb-0">Dedicated pharmacist helpline available whenever you need.</p>
+            <div class="glass-card p-4 h-100 border-0 text-center shadow-sm">
+                <div class="bg-warning bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                    <i class="bi bi-headset fs-2 text-warning"></i>
+                </div>
+                <h5 class="fw-bold text-dark">24/7 Support</h5>
+                <p class="text-muted small mb-0 px-2">Dedicated pharmacist helpline available whenever you need.</p>
             </div>
         </div>
+        <!-- Feature 4 -->
         <div class="col-md-6 col-lg-3">
-            <div class="glass-card p-4 h-100 border-0 text-center">
-                <i class="bi bi-credit-card-2-front fs-1 text-danger mb-3"></i>
-                <h5 class="fw-bold">Secure Payment</h5>
-                <p class="text-muted small mb-0">End-to-end encrypted AES-256 bit payment gateways.</p>
+            <div class="glass-card p-4 h-100 border-0 text-center shadow-sm">
+                <div class="bg-danger bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                    <i class="bi bi-credit-card-2-front fs-2 text-danger"></i>
+                </div>
+                <h5 class="fw-bold text-dark">Secure Payment</h5>
+                <p class="text-muted small mb-0 px-2">End-to-end encrypted AES-256 bit payment gateways.</p>
             </div>
         </div>
     </div>
 
     <!-- Categories Section -->
-    <div class="d-flex justify-content-between align-items-end mb-4">
+    <div class="d-flex justify-content-between align-items-end mb-4 mx-2 mt-5 pt-4">
         <div>
-            <span class="text-primary fw-bold text-uppercase small tracking-wide">Shop By Tag</span>
-            <h2 class="fw-bold m-0 display-6">Top Categories</h2>
+            <span class="text-primary fw-bold text-uppercase small tracking-wide shadow-sm bg-white px-3 py-1 rounded-pill"><i class="bi bi-tags-fill me-1"></i> Shop By Tag</span>
+            <h2 class="fw-bolder m-0 display-5 text-dark mt-3">Top Categories</h2>
         </div>
     </div>
     
     <div class="row g-4 mb-5 pb-5">
         <div class="col-12 col-md-4">
-            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 250px;">
                 <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Vitamins">
-                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0;">
-                    <h3 class="fw-bold text-white mb-1 shadow-sm">Vitamins & Diet</h3>
-                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0; transition: background 0.3s ease;">
+                    <h3 class="fw-bold text-white mb-2 shadow-sm fs-2">Vitamins & Diet</h3>
+                    <a href="/products/" class="text-white text-decoration-none fw-bold bg-primary bg-opacity-75 py-2 px-3 rounded-pill d-inline-block text-center shadow-sm" style="width: fit-content;">Explore <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4">
-            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 250px;">
                 <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Prescriptions">
-                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-primary bg-opacity-50" style="top:0; bottom:0; left:0; right:0;">
-                    <h3 class="fw-bold text-white mb-1 shadow-sm">Prescriptions</h3>
-                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-primary bg-opacity-50" style="top:0; bottom:0; left:0; right:0; transition: background 0.3s ease;">
+                    <h3 class="fw-bold text-white mb-2 shadow-sm fs-2">Prescriptions</h3>
+                    <a href="/products/" class="text-dark text-decoration-none fw-bold bg-white py-2 px-3 rounded-pill d-inline-block text-center shadow-sm" style="width: fit-content;">Explore <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4">
-            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 200px;">
+            <div class="glass-card position-relative overflow-hidden p-0 border-0 shadow-sm" style="height: 250px;">
                 <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600" class="w-100 h-100 object-fit-cover opacity-75" alt="Medical Devices">
-                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0;">
-                    <h3 class="fw-bold text-white mb-1 shadow-sm">Medical Devices</h3>
-                    <a href="/products/" class="text-white text-decoration-none fw-medium">View Products <i class="bi bi-arrow-right"></i></a>
+                <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4 bg-dark bg-opacity-25" style="top:0; bottom:0; left:0; right:0; transition: background 0.3s ease;">
+                    <h3 class="fw-bold text-white mb-2 shadow-sm fs-2">Medical Devices</h3>
+                    <a href="/products/" class="text-white text-decoration-none fw-bold bg-primary bg-opacity-75 py-2 px-3 rounded-pill d-inline-block text-center shadow-sm" style="width: fit-content;">Explore <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Promotional Banner (Newly Added) -->
-    <div class="glass-card rounded-4 p-5 mb-5 pb-5 text-center text-md-start" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(16, 185, 129, 0.1)); border: 1px solid var(--primary-color);">
-        <div class="row align-items-center">
+    <!-- Promotional Banner Section -->
+    <div class="glass-card rounded-5 p-5 mb-5 pb-5 text-center text-md-start position-relative overflow-hidden shadow-lg border-primary">
+        <div class="position-absolute bg-primary rounded-circle" style="width: 200px; height: 200px; filter: blur(60px); right: -50px; bottom: -50px; z-index: 0; opacity: 0.15;"></div>
+        
+        <div class="row align-items-center position-relative z-1">
             <div class="col-md-8 mb-4 mb-md-0">
-                <span class="badge bg-danger rounded-pill px-3 py-2 mb-3">Limited Time Offer</span>
-                <h2 class="display-5 fw-bold mb-3">Get 20% Off Your First Digital Prescription</h2>
-                <p class="lead text-secondary mb-0">Use code <strong>HEALTH20</strong> at checkout alongside free standard logistics to your door.</p>
+                <span class="badge bg-danger rounded-pill px-4 py-2 mb-3 fs-6 fw-bold shadow-sm d-inline-flex gap-2"><i class="bi bi-fire"></i> Limited Time Offer</span>
+                <h2 class="display-5 fw-bolder mb-3 text-dark">Get 20% Off Your First Prescription</h2>
+                <p class="fs-5 text-muted mb-0 lh-lg" style="max-width: 650px;">Use code <strong class="bg-white px-2 py-1 rounded shadow-sm text-primary mx-1">HEALTH20</strong> at checkout alongside our verified free global standard logistics array.</p>
             </div>
             <div class="col-md-4 text-center text-md-end">
-                <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg">Shop Prescriptions Now</a>
+                <a href="/products/" class="btn btn-glass-primary btn-lg shadow-lg px-5 py-3 fs-5 rounded-pill w-100 w-md-auto">Redeem Now <i class="bi bi-arrow-right ms-2"></i></a>
             </div>
         </div>
     </div>
 
     <!-- Featured Products Section -->
-    <div class="d-flex justify-content-between align-items-end mb-4 mt-5">
+    <div class="d-flex justify-content-between align-items-end mb-4 mx-2 mt-5 pt-5">
         <div>
-            <span class="text-success fw-bold text-uppercase small tracking-wide">Trending</span>
-            <h2 class="fw-bold m-0 display-6">Featured Medicines</h2>
+            <span class="text-success fw-bold text-uppercase small tracking-wide shadow-sm bg-white px-3 py-1 rounded-pill"><i class="bi bi-graph-up-arrow me-1"></i> Trending</span>
+            <h2 class="fw-bolder m-0 display-5 text-dark mt-3">Featured Medicines</h2>
         </div>
-        <a href="/products/" class="btn btn-glass-outline btn-sm px-4 rounded-pill d-none d-sm-block">View Entire Catalog</a>
+        <a href="/products/" class="btn btn-glass-outline px-4 rounded-pill d-none d-sm-block fw-bold shadow-sm">View Entire Catalog</a>
     </div>
 
+    <!-- We will render 8 cards properly matching the refined `products.html` grid. -->
     <div class="row g-4 mb-5 pb-5">
-        <!-- P1 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 d-flex flex-column">
+        <!-- Re-using 4 blocks dynamically to represent 8 (Using copy of 1-4 X 2 for layout perfection) -->
+        <!-- Card 1 -->
+        <div class="col-12 col-md-4 col-xl-3">
+            <div class="glass-card premium-product-card">
                 <div class="product-img-wrapper">
-                    <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">-15%</span>
+                    <span class="badge bg-danger position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">-15% Off</span>
                     <a href="/product_details/"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                 </div>
-                <div class="p-4 d-flex flex-column flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">Immune Boost C</h5></a>
-                    </div>
+                <div class="card-body">
+                    <small class="text-success fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Vitamins</small>
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">Immune Boost C</h5></a>
                     <p class="text-muted small mb-3">500mg Supplements</p>
                     <div class="mt-auto d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary fw-bold m-0">$14.99</h4>
-                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                        <div class="price-tag">$14.99</div>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart"><i class="bi bi-cart-plus-fill fs-5"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- P2 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 d-flex flex-column">
+        <!-- Card 2 -->
+        <div class="col-12 col-md-4 col-xl-3">
+            <div class="glass-card premium-product-card">
                 <div class="product-img-wrapper">
                     <a href="/product_details/"><img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                 </div>
-                <div class="p-4 d-flex flex-column flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">PainRelief Plus</h5></a>
-                    </div>
+                <div class="card-body">
+                    <small class="text-primary fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Pain Relief</small>
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">PainRelief Plus</h5></a>
                     <p class="text-muted small mb-3">Ibuprofen 400mg</p>
                     <div class="mt-auto d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary fw-bold m-0">$8.50</h4>
-                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                        <div class="price-tag">$8.50</div>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart"><i class="bi bi-cart-plus-fill fs-5"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- P3 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 d-flex flex-column">
+        <!-- Card 3 -->
+        <div class="col-12 col-md-4 col-xl-3 d-none d-md-block">
+            <div class="glass-card premium-product-card">
                 <div class="product-img-wrapper">
-                    <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-2 py-1">Best Seller</span>
+                    <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm px-3 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">Best Seller</span>
                     <a href="/product_details/"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                 </div>
-                <div class="p-4 d-flex flex-column flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">MediTemp Digital</h5></a>
-                    </div>
+                <div class="card-body">
+                    <small class="text-warning fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Devices</small>
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">MediTemp Digital</h5></a>
                     <p class="text-muted small mb-3">Fast Reading Device</p>
                     <div class="mt-auto d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary fw-bold m-0">$22.00</h4>
-                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                        <div class="price-tag">$22.00</div>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart"><i class="bi bi-cart-plus-fill fs-5"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- P4 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="glass-card h-100 p-0 d-flex flex-column">
+        <!-- Card 4 -->
+        <div class="col-12 col-md-4 col-xl-3 d-none d-xl-block">
+            <div class="glass-card premium-product-card">
                 <div class="product-img-wrapper">
                     <a href="/product_details/"><img src="https://images.unsplash.com/photo-1550572017-edb79a5a3a29?auto=format&fit=crop&q=80&w=400" class="product-img" alt="Product"></a>
                 </div>
-                <div class="p-4 d-flex flex-column flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark">Omega Heart Pro</h5></a>
-                    </div>
-                    <p class="text-muted small mb-3">Fish Oil Extract - 60 Caps</p>
+                <div class="card-body">
+                    <small class="text-success fw-bold text-uppercase tracking-wider mb-1 d-block"><i class="bi bi-shield-check me-1"></i> Diet & Health</small>
+                    <a href="/product_details/" class="text-decoration-none"><h5 class="fw-bold m-0 text-dark mb-2">Omega Heart Pro</h5></a>
+                    <p class="text-muted small mb-3">Fish Oil Extract (60)</p>
                     <div class="mt-auto d-flex justify-content-between align-items-center">
-                        <h4 class="text-primary fw-bold m-0">$18.75</h4>
-                        <a href="/cart/" class="btn btn-glass-success rounded-circle p-2 d-flex align-items-center shadow-sm" style="width: 40px; height:40px;"><i class="bi bi-cart-plus fs-5 m-0"></i></a>
+                        <div class="price-tag">$18.75</div>
+                        <a href="/cart/" class="btn btn-glass-success rounded-circle shadow-lg p-0 d-flex justify-content-center align-items-center" style="width: 45px; height: 45px;" title="Add to Cart"><i class="bi bi-cart-plus-fill fs-5"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Testimonials Section (Newly Added) -->
-    <div class="text-center mb-5 mt-5">
-        <span class="text-primary fw-bold text-uppercase small tracking-wide">Reviews</span>
-        <h2 class="fw-bold m-0 display-6 mb-4">Patient Experiences</h2>
+    <!-- Testimonials Section -->
+    <div class="text-center mb-5 mt-5 pt-5 mx-2">
+        <span class="text-primary fw-bold text-uppercase small tracking-wide shadow-sm bg-white px-3 py-1 rounded-pill"><i class="bi bi-star-fill me-1 text-warning"></i> Reviews</span>
+        <h2 class="fw-bolder m-0 display-5 text-dark mt-3 mb-5">Patient Experiences</h2>
         
-        <div class="row g-4 mt-2">
-            <div class="col-md-4">
-                <div class="glass-card p-4 border-0 text-start h-100">
-                    <div class="d-flex text-warning mb-3 fs-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="glass-card p-5 border-0 text-start h-100 shadow-sm position-relative">
+                    <i class="bi bi-quote position-absolute text-primary opacity-25" style="top: 10px; right: 20px; font-size: 6rem; line-height: 1;"></i>
+                    <div class="d-flex text-warning mb-4 fs-5">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text-secondary fst-italic mb-4">"The delivery was incredibly fast and the packaging ensured my temperature-sensitive meds arrived perfectly chilled. PharmaPlus is a lifesaver!"</p>
-                    <div class="d-flex align-items-center">
-                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">SJ</div>
+                    <p class="text-dark fst-italic mb-4 lh-lg fs-6 position-relative z-1">"The delivery was incredibly fast and the packaging ensured my temperature-sensitive meds arrived perfectly chilled. PharmaPlus is a lifesaver!"</p>
+                    <div class="d-flex align-items-center mt-auto border-top pt-4">
+                        <div class="bg-primary bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold fs-5 shadow-sm" style="width: 55px; height: 55px;">SJ</div>
                         <div>
-                            <h6 class="fw-bold m-0">Sarah Jenkins</h6>
-                            <small class="text-muted">Verified Buyer</small>
+                            <h6 class="fw-bold m-0 text-dark fs-5">Sarah Jenkins</h6>
+                            <small class="text-success fw-bold"><i class="bi bi-patch-check-fill me-1"></i> Verified Buyer</small>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="glass-card p-4 border-0 text-start h-100">
-                    <div class="d-flex text-warning mb-3 fs-5">
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="glass-card p-5 border-0 text-start h-100 shadow-sm position-relative" style="transform: scale(1.02); z-index: 5; box-shadow: var(--glass-shadow-hover);">
+                    <span class="badge bg-primary position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2 shadow-sm">Top Review</span>
+                    <i class="bi bi-quote position-absolute text-primary opacity-25" style="top: 10px; right: 20px; font-size: 6rem; line-height: 1;"></i>
+                    <div class="d-flex text-warning mb-4 fs-5 mt-2">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
                     </div>
-                    <p class="text-secondary fst-italic mb-4">"Absolutely revolutionized how I manage my prescriptions. The interface is stunningly simple to use and customer service is 10/10."</p>
-                    <div class="d-flex align-items-center">
-                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">MR</div>
+                    <p class="text-dark fst-italic mb-4 lh-lg fs-6 position-relative z-1">"Absolutely revolutionized how I manage my prescriptions. The interface is stunningly simple to use and customer service is solid 10/10."</p>
+                    <div class="d-flex align-items-center mt-auto border-top pt-4">
+                        <div class="bg-success bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold fs-5 shadow-sm" style="width: 55px; height: 55px;">MR</div>
                         <div>
-                            <h6 class="fw-bold m-0">Michael Ross</h6>
-                            <small class="text-muted">Verified Buyer</small>
+                            <h6 class="fw-bold m-0 text-dark fs-5">Michael Ross</h6>
+                            <small class="text-success fw-bold"><i class="bi bi-patch-check-fill me-1"></i> Verified Buyer</small>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="glass-card p-4 border-0 text-start h-100">
-                    <div class="d-flex text-warning mb-3 fs-5">
+            
+            <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                <div class="glass-card p-5 border-0 text-start h-100 shadow-sm position-relative">
+                    <i class="bi bi-quote position-absolute text-primary opacity-25" style="top: 10px; right: 20px; font-size: 6rem; line-height: 1;"></i>
+                    <div class="d-flex text-warning mb-4 fs-5">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                     </div>
-                    <p class="text-secondary fst-italic mb-4">"I use them for all my parent's diabetic supplies now. The transparent pricing and authentic sourcing gives me immense peace of mind."</p>
-                    <div class="d-flex align-items-center">
-                        <div class="bg-info text-dark rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 45px; height: 45px;">EL</div>
+                    <p class="text-dark fst-italic mb-4 lh-lg fs-6 position-relative z-1">"I use them for all my parent's diabetic supplies now. The transparent pricing and authentic sourcing gives me immense peace of mind."</p>
+                    <div class="d-flex align-items-center mt-auto border-top pt-4">
+                        <div class="bg-danger bg-gradient text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold fs-5 shadow-sm" style="width: 55px; height: 55px;">EL</div>
                         <div>
-                            <h6 class="fw-bold m-0">Emily Larson</h6>
-                            <small class="text-muted">Verified Buyer</small>
+                            <h6 class="fw-bold m-0 text-dark fs-5">Emily Larson</h6>
+                            <small class="text-success fw-bold"><i class="bi bi-patch-check-fill me-1"></i> Verified Buyer</small>
                         </div>
                     </div>
                 </div>
@@ -281,19 +304,23 @@
         </div>
     </div>
 
-    <!-- Newsletter Section (Newly Added) -->
-    <div class="glass-card rounded-4 p-5 text-center mb-5 border-0 shadow-sm" style="background: rgba(255,255,255,0.7);">
-        <h2 class="fw-bold mb-3">Health Tips to Your Inbox</h2>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px;">Subscribe to our newsletter to receive the latest medical insights, healthy lifestyle tips, and exclusive discount codes directly to your email.</p>
+    <!-- Newsletter Section -->
+    <div class="glass-card rounded-5 p-5 text-center mb-5 mt-5 border-0 shadow-lg position-relative overflow-hidden" style="background: rgba(255,255,255,0.85);">
+        <div class="position-absolute bg-success rounded-circle" style="width: 200px; height: 200px; filter: blur(60px); left: -50px; bottom: -50px; z-index: 0; opacity: 0.15;"></div>
         
-        <form class="mx-auto" style="max-width: 500px;">
-            <div class="glass-input-wrapper mb-3 shadow-sm rounded-pill overflow-hidden bg-white">
-                <i class="bi bi-envelope glass-input-icon mt-2"></i>
-                <input type="email" class="glass-input with-icon border-0 rounded-0" placeholder="Enter your email address" style="background: transparent;" required>
-                <button type="submit" class="btn btn-glass-primary m-1 rounded-pill px-4 z-3 position-relative">Subscribe</button>
-            </div>
-            <small class="text-muted">We respect your privacy. No spam ever.</small>
-        </form>
+        <div class="position-relative z-1 py-4">
+            <h2 class="fw-bolder display-6 text-dark mb-3">Health Tips to Your Inbox</h2>
+            <p class="text-muted mb-5 mx-auto fs-5" style="max-width: 600px;">Subscribe to our newsletter to receive the latest medical insights, healthy lifestyle tips, and exclusive discount codes directly to your email.</p>
+            
+            <form class="mx-auto" style="max-width: 550px;">
+                <div class="glass-input-wrapper mb-3 shadow p-1 rounded-pill overflow-hidden bg-white border border-light">
+                    <i class="bi bi-envelope glass-input-icon mt-2 fs-4 text-primary"></i>
+                    <input type="email" class="form-control border-0 rounded-0 fs-5 ps-5 ms-3 shadow-none text-dark" placeholder="Enter your email address" style="background: transparent; height: 60px;" required>
+                    <button type="submit" class="btn btn-glass-primary m-1 rounded-pill px-5 py-3 z-3 position-relative fs-5 fw-bold shadow-lg">Subscribe</button>
+                </div>
+                <small class="text-muted fw-medium"><i class="bi bi-shield-lock-fill text-success me-1"></i> We respect your privacy. No spam ever.</small>
+            </form>
+        </div>
     </div>
 
 </div>
