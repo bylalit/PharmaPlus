@@ -19,11 +19,11 @@ DUMMY_USERS = [
     {"name": "Jane Smith", "email": "jane@example.com", "role": "Customer", "joined": "2025-05-18"},
 ]
 
-# DUMMY_CATEGORIES = [
-#     {"id": 1, "name": "Prescription Medicines"},
-#     {"id": 2, "name": "Vitamins & Supplements"},
-#     {"id": 3, "name": "First Aid"},
-# ]
+DUMMY_CATEGORIES = [
+    {"id": 1, "name": "Prescription Medicines"},
+    {"id": 2, "name": "Vitamins & Supplements"},
+    {"id": 3, "name": "First Aid"},
+]
 
 
 def dashboard_home(request):
