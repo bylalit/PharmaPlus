@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PharmaPlus - Your Trusted Online Pharmacy{% endblock %}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-light: #e0f2fe;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand i {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark) !important;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: white;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        /* Utility animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-glass py-3">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fa-solid fa-notes-medical me-2"></i>PharmaPlus</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="/cart" class="btn btn-light rounded-circle position-relative p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-cart-shopping text-dark"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                    <a href="/login" class="btn btn-primary rounded-pill px-4">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="margin-top: 76px;">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <a href="/" class="footer-logo mb-3 d-block"><i class="fa-solid fa-notes-medical me-2 text-success"></i>PharmaPlus</a>
+                    <p class="text-muted">Your trusted partner for health and wellness. Delivering premium healthcare products right to your doorstep.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-muted fs-5 hover-primary"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-muted fs-5 hover-primary"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-muted fs-5 hover-primary"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/about" class="footer-link">About Us</a></li>
+                        <li><a href="/products" class="footer-link">Shop</a></li>
+                        <li><a href="/contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-3">Categories</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="footer-link">Vitamins</a></li>
+                        <li><a href="#" class="footer-link">Skincare</a></li>
+                        <li><a href="#" class="footer-link">First Aid</a></li>
+                        <li><a href="#" class="footer-link">Supplements</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p class="text-muted small">Subscribe to get special offers and health tips.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control rounded-start-pill" placeholder="Email address">
+                        <button class="btn btn-primary rounded-end-pill" type="button"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-4 border-top text-muted small">
+                &copy; 2026 PharmaPlus. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Intersection Observer for Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach((elem) => {
+                observer.observe(elem);
+            });
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
