@@ -35,9 +35,9 @@ def index(request):
 def products(request):
     return render(request, 'frontend/products.html', {"products": PRODUCTS, "categories": CATEGORIES})
 
-def product_detail(request, id):
-    product = next((p for p in PRODUCTS if p["id"] == id), None)
-    return render(request, 'frontend/product_detail.html', {"product": product})
+def product_detail(request):
+    # product = next((p for p in PRODUCTS if p["id"] == id), None)
+    return render(request, 'frontend/product_detail.html')
 
 def cart(request):
     return render(request, 'frontend/cart.html', {"cart_items": CART_ITEMS})
