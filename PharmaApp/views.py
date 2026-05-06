@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
-CATEGORIES = [
-    {"id": 1, "name": "Prescription Medicines", "image": "/static/images/cat-prescription.svg"},
-    {"id": 2, "name": "Vitamins & Supplements", "image": "/static/images/cat-vitamins.svg"},
-    {"id": 3, "name": "Personal Care", "image": "/static/images/cat-personal.svg"},
-    {"id": 4, "name": "Skin Care", "image": "/static/images/cat-skin-care.png"},
-    {"id": 5, "name": "Health Conditions", "image": "/static/images/cat-health-conditions.png"},
-    {"id": 6, "name": "Ayurveda", "image": "/static/images/cat-ayurveda.png"},
-]
+# CATEGORIES = [
+#     {"id": 1, "name": "Prescription Medicines", "image": "/static/images/cat-prescription.svg"},
+#     {"id": 2, "name": "Vitamins & Supplements", "image": "/static/images/cat-vitamins.svg"},
+#     {"id": 3, "name": "Personal Care", "image": "/static/images/cat-personal.svg"},
+#     {"id": 4, "name": "Skin Care", "image": "/static/images/cat-skin-care.png"},
+#     {"id": 5, "name": "Health Conditions", "image": "/static/images/cat-health-conditions.png"},
+#     {"id": 6, "name": "Ayurveda", "image": "/static/images/cat-ayurveda.png"},
+# ]
 
 PRODUCTS = [
     {
