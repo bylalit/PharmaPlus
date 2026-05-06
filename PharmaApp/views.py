@@ -4,7 +4,9 @@ CATEGORIES = [
     {"id": 1, "name": "Prescription Medicines", "image": "/static/images/cat-prescription.svg"},
     {"id": 2, "name": "Vitamins & Supplements", "image": "/static/images/cat-vitamins.svg"},
     {"id": 3, "name": "Personal Care", "image": "/static/images/cat-personal.svg"},
-    {"id": 4, "name": "First Aid", "image": "/static/images/cat-firstaid.svg"},
+    {"id": 4, "name": "Skin Care", "image": "/static/images/cat-skin-care.png"},
+    {"id": 5, "name": "Health Conditions", "image": "/static/images/cat-health-conditions.png"},
+    {"id": 6, "name": "Ayurveda", "image": "/static/images/cat-ayurveda.png"},
 ]
 
 PRODUCTS = [
@@ -36,7 +38,6 @@ def products(request):
     return render(request, 'frontend/products.html', {"products": PRODUCTS, "categories": CATEGORIES})
 
 def product_detail(request):
-    # product = next((p for p in PRODUCTS if p["id"] == id), None)
     return render(request, 'frontend/product_detail.html')
 
 def cart(request):
